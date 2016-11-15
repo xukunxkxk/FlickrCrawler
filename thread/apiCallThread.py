@@ -5,10 +5,11 @@ from lib.flickrApi.userFollowers import UserFollower
 from lib.flickrApi.userInformation import UserInformation
 from userFollowersThread import UserFollowersThread
 from userInformationThread import UserInformationThread
+from userPhotosThread import UserPhotosThread
 from time import sleep
 
 class ApiCallThread(Thread):
-    APILIST=["userFollowers","userInformation"]
+    APILIST=["userFollowers", "userInformation", "userPhotos"]
     def __init__(self,readQueue,writeQueue,api,app):
         Thread.__init__(self)
         self.api=api
@@ -41,6 +42,18 @@ class ApiCallThread(Thread):
                 print e
                 sleep(1)
                 self.apiCalled()
+
+        elif self.api == self.APILIST[2]:
+            self.uid = self.readQueue.get()
+            t = UserPhotosThread(self.uid, self.app, self.writeQueue)
+            try:
+                t.start()
+                t.join()
+            except Exception as e:
+                print e
+                sleep(1)
+                self.apiCalled()
+
         else:
             print self.api
             print "API NOT CODING YET"

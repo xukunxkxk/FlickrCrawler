@@ -3,7 +3,8 @@
 import MySQLdb
 from entity.userFollowersEntity import UserFollowersEntity
 from entity.userEntity import UserEntity
-
+from entity.userPhotosEntity import UserPhotosEntity
+from entity.photoSizeEntity import PhotoSizeEntity
 
 from res.log import Log
 from threading import Thread
@@ -75,7 +76,7 @@ class DBWrite:
         #         print "Uid %s Didn't have followers"%uid
         #     print "Updated User Finished"
         #     self.conn.commit()
-        maxSQLLength = 1
+        maxSQLLength = 10
         data=[]
         for i in range (maxSQLLength):
             data.append(self.writeQueue.get())
@@ -165,119 +166,64 @@ class DBWrite:
 
         #userInformation
         elif isinstance(data[0],UserEntity):
-            uid = data[0].getUid()
-            groupNum = group(uid)
-            groupString = "users_" + str(groupNum)
-            try:
-                self.cur.execute("SET CHARSET utf8mb4")
-                query = "UPDATE "+ groupString + " SET username=%s,realname=%s,location=%s,photosurl=%s,profileurl=%s,photocount=%s,firstdatetaken=%s,flag=0 WHERE uid=%s "
-                self.cur.execute(query,data[0].getValue())
-                self.conn.commit()
-            except MySQLdb.Error as e:
-                self.logQueue.put("***"+data[0].getUid()+str(e))
-                self.cur.execute("SET CHARSET utf8mb4")
-                if data[0].getValue()[0]:
-                    try:
-                        query = "UPDATE " + groupString
-                        query += " SET username=%s,flag=0 WHERE uid=%s "
-                        self.cur.execute(query,(data[0].getValue()[0],data[0].getUid()))
-                    except MySQLdb.Error as e:
-                        self.logQueue.put("***" + data[0].getUid() + data[0].getValue()[0] + str(e))
-                if data[0].getValue()[1]:
-                    try:
-                        query = "UPDATE " + groupString
-                        query += " SET realname=%s,flag=0 WHERE uid=%s "
-                        self.cur.execute(query,(data[0].getValue()[1],data[0].getUid()))
-                    except MySQLdb.Error as e:
-                        self.logQueue.put("***" + data[0].getUid() + data[0].getValue()[1] + str(e))
-                if data[0].getValue()[2]:
-                    try:
-                        query = "UPDATE " + groupString
-                        query += " SET location=%s,flag=0 WHERE uid=%s "
-                        self.cur.execute(query,(data[0].getValue()[2],data[0].getUid()))
-                    except MySQLdb.Error as e:
-                        self.logQueue.put("***" + data[0].getUid() + data[0].getValue()[2] + str(e))
-                if data[0].getValue()[3]:
-                    try:
-                        query = "UPDATE " + groupString
-                        query += " SET photosurl=%s,flag=0 WHERE uid=%s "
-                        self.cur.execute(query,(data[0].getValue()[3], data[0].getUid()))
-                    except MySQLdb.Error as e:
-                        self.logQueue.put("***" + data[0].getUid() + data[0].getValue()[3] + str(e))
-                if data[0].getValue()[4]:
-                    try:
-                        query = "UPDATE " + groupString
-                        query += " SET profileurl=%s,flag=0 WHERE uid=%s "
-                        self.cur.execute(query,(data[0].getValue()[4], data[0].getUid()))
-                    except MySQLdb.Error as e:
-                        self.logQueue.put("***" + data[0].getUid() + data[0].getValue()[4] + str(e))
-                if data[0].getValue()[5]:
-                    try:
-                        query = "UPDATE " + groupString
-                        query += " SET photocount=%s,flag=0 WHERE uid=%s "
-                        self.cur.execute(query, (data[0].getValue()[5], data[0].getUid()))
-                    except MySQLdb.Error as e:
-                        self.logQueue.put("***" + data[0].getUid() + data[0].getValue()[5] + str(e))
-                if data[0].getValue()[6]:
-                    try:
-                        query = "UPDATE " + groupString
-                        query += " SET firstdatetaken=%s,flag=0 WHERE uid=%s "
-                        self.cur.execute(query,(data[0].getValue()[6], data[0].getUid()))
-                    except MySQLdb.Error as e:
-                        self.logQueue.put("***" + data[0].getUid() + data[0].getValue()[6] + str(e))
-                self.conn.commit()
-
-            else:
-                if data[0].username:
-                    print "User uid:%s Information Has Been Updated " % data[0].getUid()
-                    self.logQueue.put("User uid:%s Information Has Been Updated " % data[0].getUid())
-                else:
-                    print "Wrong in uid:%s " % data[0].getUid()
-                    self.logQueue.put("***Wrong in uid:%s " % data[0].getUid())
-
-
-
-            ##返回错误用户
+            # uid = data[0].getUid()
+            # groupNum = group(uid)
+            # groupString = "users_" + str(groupNum)
             # try:
             #     self.cur.execute("SET CHARSET utf8mb4")
-            #     self.cur.execute("UPDATE users_5 SET username=%s,realname=%s,location=%s,photosurl=%s,profileurl=%s,photocount=%s,firstdatetaken=%s,flag=0 WHERE uid=%s ",data[0].getValue())
+            #     query = "UPDATE "+ groupString + " SET username=%s,realname=%s,location=%s,photosurl=%s,profileurl=%s,photocount=%s,firstdatetaken=%s,flag=0 WHERE uid=%s "
+            #     self.cur.execute(query,data[0].getValue())
             #     self.conn.commit()
             # except MySQLdb.Error as e:
             #     self.logQueue.put("***"+data[0].getUid()+str(e))
             #     self.cur.execute("SET CHARSET utf8mb4")
             #     if data[0].getValue()[0]:
             #         try:
-            #             self.cur.execute("UPDATE users_5 SET username=%s,flag=0 WHERE uid=%s ",(data[0].getValue()[0],data[0].getUid()))
+            #             query = "UPDATE " + groupString
+            #             query += " SET username=%s,flag=0 WHERE uid=%s "
+            #             self.cur.execute(query,(data[0].getValue()[0],data[0].getUid()))
             #         except MySQLdb.Error as e:
             #             self.logQueue.put("***" + data[0].getUid() + data[0].getValue()[0] + str(e))
             #     if data[0].getValue()[1]:
             #         try:
-            #             self.cur.execute("UPDATE users_5 SET realname=%s,flag=0 WHERE uid=%s ",(data[0].getValue()[1],data[0].getUid()))
+            #             query = "UPDATE " + groupString
+            #             query += " SET realname=%s,flag=0 WHERE uid=%s "
+            #             self.cur.execute(query,(data[0].getValue()[1],data[0].getUid()))
             #         except MySQLdb.Error as e:
             #             self.logQueue.put("***" + data[0].getUid() + data[0].getValue()[1] + str(e))
             #     if data[0].getValue()[2]:
             #         try:
-            #             self.cur.execute("UPDATE users_5 SET location=%s,flag=0 WHERE uid=%s ",(data[0].getValue()[2],data[0].getUid()))
+            #             query = "UPDATE " + groupString
+            #             query += " SET location=%s,flag=0 WHERE uid=%s "
+            #             self.cur.execute(query,(data[0].getValue()[2],data[0].getUid()))
             #         except MySQLdb.Error as e:
             #             self.logQueue.put("***" + data[0].getUid() + data[0].getValue()[2] + str(e))
             #     if data[0].getValue()[3]:
             #         try:
-            #             self.cur.execute("UPDATE users_5 SET photosurl=%s,flag=0 WHERE uid=%s ",(data[0].getValue()[3], data[0].getUid()))
+            #             query = "UPDATE " + groupString
+            #             query += " SET photosurl=%s,flag=0 WHERE uid=%s "
+            #             self.cur.execute(query,(data[0].getValue()[3], data[0].getUid()))
             #         except MySQLdb.Error as e:
             #             self.logQueue.put("***" + data[0].getUid() + data[0].getValue()[3] + str(e))
             #     if data[0].getValue()[4]:
             #         try:
-            #             self.cur.execute("UPDATE users_5 SET profileurl=%s,flag=0 WHERE uid=%s ",(data[0].getValue()[4], data[0].getUid()))
+            #             query = "UPDATE " + groupString
+            #             query += " SET profileurl=%s,flag=0 WHERE uid=%s "
+            #             self.cur.execute(query,(data[0].getValue()[4], data[0].getUid()))
             #         except MySQLdb.Error as e:
             #             self.logQueue.put("***" + data[0].getUid() + data[0].getValue()[4] + str(e))
             #     if data[0].getValue()[5]:
             #         try:
-            #             self.cur.execute("UPDATE users_5 SET photocount=%s,flag=0 WHERE uid=%s ", (data[0].getValue()[5], data[0].getUid()))
+            #             query = "UPDATE " + groupString
+            #             query += " SET photocount=%s,flag=0 WHERE uid=%s "
+            #             self.cur.execute(query, (data[0].getValue()[5], data[0].getUid()))
             #         except MySQLdb.Error as e:
             #             self.logQueue.put("***" + data[0].getUid() + data[0].getValue()[5] + str(e))
             #     if data[0].getValue()[6]:
             #         try:
-            #             self.cur.execute("UPDATE users_5 SET firstdatetaken=%s,flag=0 WHERE uid=%s ",(data[0].getValue()[6], data[0].getUid()))
+            #             query = "UPDATE " + groupString
+            #             query += " SET firstdatetaken=%s,flag=0 WHERE uid=%s "
+            #             self.cur.execute(query,(data[0].getValue()[6], data[0].getUid()))
             #         except MySQLdb.Error as e:
             #             self.logQueue.put("***" + data[0].getUid() + data[0].getValue()[6] + str(e))
             #     self.conn.commit()
@@ -290,6 +236,122 @@ class DBWrite:
             #         print "Wrong in uid:%s " % data[0].getUid()
             #         self.logQueue.put("***Wrong in uid:%s " % data[0].getUid())
 
+
+
+            #返回错误用户
+            try:
+                self.cur.execute("SET CHARSET utf8mb4")
+                self.cur.execute("UPDATE users_8 SET username=%s,realname=%s,location=%s,photosurl=%s,profileurl=%s,photocount=%s,firstdatetaken=%s,flag=0 WHERE uid=%s ",data[0].getValue())
+                self.conn.commit()
+            except MySQLdb.Error as e:
+                self.logQueue.put("***"+data[0].getUid()+str(e))
+                self.cur.execute("SET CHARSET utf8mb4")
+                if data[0].getValue()[0]:
+                    try:
+                        self.cur.execute("UPDATE users_8 SET username=%s,flag=0 WHERE uid=%s ",(data[0].getValue()[0],data[0].getUid()))
+                    except MySQLdb.Error as e:
+                        self.logQueue.put("***" + data[0].getUid() + data[0].getValue()[0] + str(e))
+                if data[0].getValue()[1]:
+                    try:
+                        self.cur.execute("UPDATE users_8 SET realname=%s,flag=0 WHERE uid=%s ",(data[0].getValue()[1],data[0].getUid()))
+                    except MySQLdb.Error as e:
+                        self.logQueue.put("***" + data[0].getUid() + data[0].getValue()[1] + str(e))
+                if data[0].getValue()[2]:
+                    try:
+                        self.cur.execute("UPDATE users_8 SET location=%s,flag=0 WHERE uid=%s ",(data[0].getValue()[2],data[0].getUid()))
+                    except MySQLdb.Error as e:
+                        self.logQueue.put("***" + data[0].getUid() + data[0].getValue()[2] + str(e))
+                if data[0].getValue()[3]:
+                    try:
+                        self.cur.execute("UPDATE users_8 SET photosurl=%s,flag=0 WHERE uid=%s ",(data[0].getValue()[3], data[0].getUid()))
+                    except MySQLdb.Error as e:
+                        self.logQueue.put("***" + data[0].getUid() + data[0].getValue()[3] + str(e))
+                if data[0].getValue()[4]:
+                    try:
+                        self.cur.execute("UPDATE users_8 SET profileurl=%s,flag=0 WHERE uid=%s ",(data[0].getValue()[4], data[0].getUid()))
+                    except MySQLdb.Error as e:
+                        self.logQueue.put("***" + data[0].getUid() + data[0].getValue()[4] + str(e))
+                if data[0].getValue()[5]:
+                    try:
+                        self.cur.execute("UPDATE users_8 SET photocount=%s,flag=0 WHERE uid=%s ", (data[0].getValue()[5], data[0].getUid()))
+                    except MySQLdb.Error as e:
+                        self.logQueue.put("***" + data[0].getUid() + data[0].getValue()[5] + str(e))
+                if data[0].getValue()[6]:
+                    try:
+                        self.cur.execute("UPDATE users_8 SET firstdatetaken=%s,flag=0 WHERE uid=%s ",(data[0].getValue()[6], data[0].getUid()))
+                    except MySQLdb.Error as e:
+                        self.logQueue.put("***" + data[0].getUid() + data[0].getValue()[6] + str(e))
+                self.conn.commit()
+
+            else:
+                if data[0].username:
+                    print "User uid:%s Information Has Been Updated " % data[0].getUid()
+                    self.logQueue.put("User uid:%s Information Has Been Updated " % data[0].getUid())
+                else:
+                    print "Wrong in uid:%s " % data[0].getUid()
+                    self.logQueue.put("***Wrong in uid:%s " % data[0].getUid())
+
+        elif isinstance(data[0], UserPhotosEntity):
+            # uid = data[0].getUid()
+            # photoList = data[0].getPhotoList()
+            # length = data[0].getCnt()
+            # if length:
+            #     tableName = "photos_" + str(group(uid))
+            #     statement = "insert into " + tableName + " (photoid, owner) values(%s, %s)"
+            #     for index in range(length):
+            #         try:
+            #             self.cur.execute(statement, (photoList[index], uid))
+            #         except MySQLdb.IntegrityError as e:
+            #             pass
+            #         except MySQLdb.Error as e:
+            #             print e
+            #     print "uid: %s photosid has been completed" % uid
+            #     self.logQueue.put("uid: %s photosid has been completed" % uid)
+            # else:
+            #     print "uid: %s did not have photos" % uid
+            #     self.logQueue.put("uid: %s did not have photos" % uid )
+            # s = "update " + "users_" + str(group(uid)) + " set flag=1 where uid=%s "
+            # self.cur.execute(s, (uid,))
+            # self.conn.commit()
+
+            uid = []
+            photoList = []
+            length = []
+            totalList = []
+            for i in range(maxSQLLength):
+                length.append(data[i].getCnt())
+                uid.append((data[i].getUid(),))
+                if length[i]:
+                    for j in range(length[i]):
+                        totalList.append((data[i].getPhotoList()[j], data[i].getUid()))
+                    print "uid: %s photosid has been completed" % uid[i][0]
+                    self.logQueue.put("uid: %s photosid has been completed" % uid[i][0])
+                else:
+                    print "uid: %s did not have photos" % uid[i][0]
+                    self.logQueue.put("uid: %s did not have photos" % uid[i][0])
+
+            try:
+                tableName = "photos_" + str(group(uid[0][0]))
+                statement = "insert into " + tableName + " (photoid, owner) values(%s, %s)"
+                self.cur.executemany(statement, totalList)
+            except MySQLdb.IntegrityError as e:
+                pass
+            except MySQLdb.OperationalError as e:  # 太长无法插入
+                tableName = "photos_" + str(group(uid[0][0]))
+                statement = "insert into " + tableName + " (photoid, owner) values(%s, %s)"
+                for i in totalList:
+                    self.cur.executemany(statement, i)
+            except MySQLdb.Error as e:
+                print e
+
+            s = "update " + "users_" + str(group(uid[0][0])) + " set flag=1 where uid=%s "
+            self.cur.executemany(s, uid)
+            self.conn.commit()
+
+        elif isinstance(data[0], PhotoSizeEntity):
+            photoId = data[0].getPhotoId()
+            url = data[0].getUrl()
+            self.cur.execute("update photos_0 set downloadurl = %s where photoid = %s", (url, photoId))
 
 
 if __name__ == '__main__':

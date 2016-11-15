@@ -12,20 +12,17 @@ from threading import Thread
 class DataThread(Thread):
     readingDBBound=0
     writingDBBound=1
-    APILIST = ["userFollowers", "userInformation"]
+    APILIST = ["userFollowers", "userInformation", "userPhotos"]
     def __init__(self,api,logQueue):
         Thread.__init__(self)
         self.isReadOver = False
-
-
-
 
         self.logQueue = logQueue
         self.isLimit = 0
 
         # 初始化读写队列
         self.readQueue=Queue()
-        self.writeQueue=Queue(maxsize=100)
+        self.writeQueue=Queue(maxsize = 100)
         self.api = api
         #初始化数据库
         self.conn, self.cur = dbConnect()
@@ -85,9 +82,8 @@ class DataThread(Thread):
 
 
 if __name__ == '__main__':
-
     app=MyApp()
-    dataThread=DataThread("userFollowers")
+    dataThread=DataThread("userPhotos")
     apiThread=ApiCallThread(dataThread.getReadQueue(),dataThread.getWriteQueue(),dataThread.getApi(),app)
     dataThread.start()
     apiThread.start()

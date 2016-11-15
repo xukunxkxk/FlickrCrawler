@@ -4,13 +4,7 @@ class UserPhotosEntity:
     def __init__(self,uid):
         self.uid=uid
         self.photosIdList=list()
-        self.downloadList = list()
-        self.photoCnt = 0
-
-    def setPhotos(self, photoList, downloadList):
-        self.photosIdList = photoList
-        self.downloadList = downloadList
-        self.photosCnt = len(self.photosIdList)
+        self.cnt = 0
 
     def getUid(self):
         return self.uid
@@ -18,14 +12,12 @@ class UserPhotosEntity:
     def getPhotoList(self):
         return self.photosIdList
 
-    def getDownloadList(self):
-        return self.downloadList
+    def getCnt(self):
+        return self.cnt
 
-    def getPhotoCnt(self):
-        return self.photoCnt
-
-
-
+    def add(self, photoId):
+        self.photosIdList.append(photoId)
+        self.cnt += 1
 
 
 if __name__ == '__main__':

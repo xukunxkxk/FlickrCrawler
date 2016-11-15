@@ -44,5 +44,5 @@ class ThreadGenerator(Thread):
                 ApiCallThread(self.readQueue, self.writeQueue, self.api, self.app).start()
 
 if __name__ == '__main__':
-    threadGenerator = ThreadGenerator("userInformation")
+    threadGenerator = ThreadGenerator("userPhotos")
     threadGenerator.start()

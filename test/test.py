@@ -2,22 +2,45 @@
 # -*- coding: utf-8 -*-
 from tools import myRequest
 from time import ctime
-
+from urllib import urlretrieve
+from urllib2 import HTTPError
 
 if __name__ == '__main__':
-    request = myRequest.Requests()
-    URL = "https://api.flickr.com/services/rest/?&method=flickr.people.getPublicPhotos&api_key=e6e96eed7af7deb2d35cac2e3739ed7d&user_id=100007433@N06&per_page=500&page=1"
-    request.get(URL)
-    # print request.getBSObjet()
-    # print len(request.getAllAttrsValue('photo', 'id'))
-    photoUrlPrefix = 'http://c5.staticflickr.com/'
+    ##下载flickr图片
+    # request = myRequest.Requests()
+    # photourl = raw_input("输入图片地址: ")
+    # request.get(photourl)
+    # url = 'http:'+ request.getAllAttrsValue("img", "src")[1].split('.jpg')[0] + '_h.jpg'
+    # filename ='D:/photos/'+ url.split('/')[5].split('_')[0] + '.jpg'
+    # try:
+    #     urlretrieve(url, filename)
+    # except HTTPError as e:
+    #     print e
 
-    print ctime()
-    for e in request.getAllLabel('photo'):
-        id = e['id']
-        farm = e['farm']
-        server = e['server']
-        secret = e['secret']
-        photoSuffix = str(e['farm'] + '/' + e['server'] + '/' + e['id'] + '_' + e['secret'] + '_h' + '.jpg')
-        print type(photoUrlPrefix + photoSuffix)
-    print ctime()
+
+    from urllib2 import urlopen
+    from urllib import urlretrieve
+    from bs4 import BeautifulSoup
+    import re
+    import sys
+
+    # html = urlopen('http://m.youmzi.com/meinv.html')
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
+    photoid = 12990
+    cnt = 10
+    for i in range(cnt):
+        print cnt
+        try:
+            url = 'http://m.youmzi.com/' + str(photoid) + '.html'
+            photoid = photoid + 1
+            html = urlopen(url)
+            photoname = html.geturl().split('/')[3].split('.')[0] + '.jpg'
+            bsoj = BeautifulSoup(html, 'html.parser')
+            l = []
+            for e in bsoj.findAll('a', {'href': re.compile('.jpg$')}):
+                l.append(e['href'])
+            for e in l:
+                urlretrieve(e, photoname)
+        except Exception as e:
+            print e
