@@ -52,6 +52,7 @@ def getApiKey(knoc,appFile):
     cookie = cookielib.CookieJar()
     opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookie))
     urllib2.install_opener(opener)
+
     url = "https://login.yahoo.com/config/login?.src=flickrsignin"
 
     response = urlopen(url)

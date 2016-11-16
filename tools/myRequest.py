@@ -4,20 +4,23 @@ from urllib import urlencode
 from urllib2 import urlopen,Request
 from bs4 import BeautifulSoup
 from myGzip import gzipDecode
-import urllib2
+import urllib2,cookielib
 import sys
 import re
 
 class Requests:
     html = None
     def __init__(self):
-        self.opener = None
         self.bsoj = None
         self.url = None
         self.html = None
         self.data ={}
         self.encode = "utf-8"
         self.lastDomainUrl = None
+
+        self.cookie = cookielib.CookieJar()
+        self.opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(self.cookie))
+
         reload(sys)
         sys.setdefaultencoding('utf-8')
 
@@ -34,6 +37,25 @@ class Requests:
         else:
             self.bsoj = BeautifulSoup(self.html, "html.parser", from_encoding = encoding)
         return self.bsoj
+
+
+    def post(self, url, formData = None, headers = None, gzip = False, encoding = None):
+        headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+        postData = urlencode(formData)
+        req = urllib2.Request(url, postData, headers)
+        self.html = self.opener.open(req).read()
+        if gzip:
+            if encoding:
+                self.bsoj = BeautifulSoup(gzipDecode(self.html), "html.parser", from_encoding = encoding)
+            else:
+                self.bsoj = BeautifulSoup(gzipDecode(self.html), "html.parser")
+        else:
+            if encoding:
+                self.bsoj = BeautifulSoup(self.html, "html.parser", from_encoding = encoding)
+            else:
+                self.bsoj = BeautifulSoup(self.html, "html.parser")
+        return self.bsoj
+
 
     def getBSObjet(self):
         if self.bsoj:
@@ -87,8 +109,8 @@ class Requests:
 
 
 
-    def post(self, url, data = None ):
-        pass
+
+
 
     def getUrl(self):
         url =  str(self.html.geturl())
@@ -106,10 +128,34 @@ class Requests:
 if __name__ == '__main__':
     request = Requests()
     # html = request.get("https://api.flickr.com/services/rest/?&method=flickr.people.getInfo&api_key=0b20e726fd5a04cb2be8a7177f20deac&user_id=95200220@N03")
-    URL = "https://api.flickr.com/services/rest/?&method=flickr.people.getPublicPhotos&api_key=e6e96eed7af7deb2d35cac2e3739ed7d&user_id=100007433@N06&per_page=500&page=1"
-    ## request.get("https://www.taobao.com/", True)
-    request.get("http://cl.dh4.biz/index.php", fraud = True, encoding = "gbk")
-    print request.getAllLabel('a')
-    lastDomainUrl =  request.getPreDomain()
-    for url in request.getAllAttrsValue('a', 'href'):
-        print lastDomainUrl + url
+    # request.get("http://cl.dh4.biz/index.php", fraud = True, encoding = "gbk")
+    # print request.getAllLabel('a')
+    # lastDomainUrl =  request.getPreDomain()
+    # for url in request.getAllAttrsValue('a', 'href'):
+    #     print lastDomainUrl + url
+
+
+    #posttest
+    url = "https://login.yahoo.com/config/login?.src=flickrsignin"
+    request.get(url)
+
+    e = request.getBSObjet().findAll('input', {'type': 'hidden'})
+    formData = {}
+    for values in e:
+        formData[str(values['name'])] = str(values['value'])
+    formData['passwd'] = 'sbdydd7z'
+    formData['username'] = 'xukunxkxk'
+    headers = {
+        'Accept': '*/*',
+        'Accept-Encoding': r'gzip, deflate, br',
+        'Accept-Language': 'zh-CN,zh;q=0.8',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep - alive',
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        'Host': 'login.yahoo.com',
+        'Origin': 'https://login.yahoo.com',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0',
+        'X-Requested-With': 'XMLHttpRequest'
+    }
+    loginUrl = "https://login.yahoo.com/config/login?.src=flickrsignin"
+    request.post(loginUrl, formData, headers, True)

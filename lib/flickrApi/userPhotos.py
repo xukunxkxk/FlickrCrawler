@@ -57,7 +57,6 @@ class UserPhotos:
 
         #照片数多于1页
         while self.page < self.pageCount:
-            print self.page
             self.page += 1
             api_key = app.getApikey()
             url = self.host + "&method=" + self.api + "&api_key=" + api_key + "&user_id=" + self.uid + '&per_page=500' + "&page=" + str(self.page)
@@ -84,7 +83,6 @@ class UserPhotos:
             #添加新的photosId
             self.userPhotosEnity.extend(self.request.getAllAttrsValue("photo", "id"))
 
-        print self.userPhotosEnity.getCnt()
         return self.userPhotosEnity
 
     def getStat(self):
