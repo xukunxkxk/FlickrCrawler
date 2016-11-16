@@ -10,7 +10,7 @@ from myException.ipLimitException import IpLimitException
 from lib.ipTest.ipLimited import IpLimited
 from ipLimitedThread import IpLimitedDectedThread
 class ThreadGenerator(Thread):
-    maxConcurrentThreadCount = 60
+    maxConcurrentThreadCount = 300
     def __init__(self,api):
         Thread.__init__(self)
         self.api = api

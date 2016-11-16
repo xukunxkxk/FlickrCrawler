@@ -71,6 +71,7 @@ class DBRead:
 
             #返回错误用户
             self.count = 0
+            # s = "SELECT uid FROM users_0 WHERE username IS NOT NULL AND flag = 0 LIMIT 0,1000"
             s = "SELECT uid FROM users_0 WHERE username IS NOT NULL AND flag = 0"
             self.cur.execute(s)
             for uid in self.cur.fetchall():

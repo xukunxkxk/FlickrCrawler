@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 from myGzip import gzipDecode
 import urllib2
 import sys
-
+import re
 
 class Requests:
     html = None
@@ -17,13 +17,22 @@ class Requests:
         self.html = None
         self.data ={}
         self.encode = "utf-8"
+        self.lastDomainUrl = None
         reload(sys)
         sys.setdefaultencoding('utf-8')
 
-    def get(self,url):
+    def get(self, url, fraud = False, encoding = None):
         self.url = url
-        self.html = urlopen(url = url)
-        self.bsoj = BeautifulSoup(self.html, "html.parser")
+        if not fraud:
+            self.html = urlopen(url = url)
+        else:
+            header = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'}
+            req = urllib2.Request(url, headers = header)
+            self.html = urlopen((req))
+        if not encoding:
+            self.bsoj = BeautifulSoup(self.html, "html.parser")
+        else:
+            self.bsoj = BeautifulSoup(self.html, "html.parser", from_encoding = encoding)
         return self.bsoj
 
     def getBSObjet(self):
@@ -38,15 +47,24 @@ class Requests:
     def getAllLabel(self, label):
         return self.bsoj.findAll(label)
 
+    def getAttrsValue(self, label, attrs, regex = None):
+        if not regex:
+            return str(self.bsoj.find(label)[attrs])
+        else:
+            return str(self.bsoj.find(label, {attrs : re.compile(regex)})[attrs])
 
-    def getAttrsValue(self, label, attrs):
-        return str(self.bsoj.find(label)[attrs])
-
-    def getAllAttrsValue(self, label, attrs):
-        attrsList = []
-        for element in self.bsoj.findAll(label):
-            attrsList.append(str(element[attrs]))
-        return attrsList
+    def getAllAttrsValue(self, label, attrs, regx = None):
+        if not regx:
+            attrsList = []
+            for element in self.bsoj.findAll(label):
+                if element.has_attr(attrs):
+                    attrsList.append(str(element[attrs]))
+            return attrsList
+        else:
+            attrsList = []
+            for element in self.bsoj.findAll(label, {attrs: re.compile(regx)}):
+                attrsList.append(str(element[attrs]))
+            return attrsList
 
 
     def getText(self, label, attrs = None, id = None):
@@ -73,13 +91,25 @@ class Requests:
         pass
 
     def getUrl(self):
-        return self.html.geturl()
+        url =  str(self.html.geturl())
+        pattern = re.compile("\S*/")
+        match = pattern.search(url)
+        if match:
+            self.lastDomainUrl =  match.group()
+        return url
 
+    def getPreDomain(self):
+        self.getUrl()
+        return self.lastDomainUrl
 
 
 if __name__ == '__main__':
     request = Requests()
     # html = request.get("https://api.flickr.com/services/rest/?&method=flickr.people.getInfo&api_key=0b20e726fd5a04cb2be8a7177f20deac&user_id=95200220@N03")
     URL = "https://api.flickr.com/services/rest/?&method=flickr.people.getPublicPhotos&api_key=e6e96eed7af7deb2d35cac2e3739ed7d&user_id=100007433@N06&per_page=500&page=1"
-    request.get("https://www.taobao.com/")
-    print request.bsoj
+    ## request.get("https://www.taobao.com/", True)
+    request.get("http://cl.dh4.biz/index.php", fraud = True, encoding = "gbk")
+    print request.getAllLabel('a')
+    lastDomainUrl =  request.getPreDomain()
+    for url in request.getAllAttrsValue('a', 'href'):
+        print lastDomainUrl + url

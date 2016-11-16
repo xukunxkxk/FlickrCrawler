@@ -16,18 +16,20 @@ class UserPhotosThread(Thread):
     def run(self):
         if self.stat == True:
             userPhotos = UserPhotos(self.uid)
-            userExisit, self.userPhotos = userPhotos.getPhotos(self.app)
+            self.userPhotos = userPhotos.getPhotos(self.app)
             self.stat = userPhotos.getStat()
             if self.userPhotos:
                 self.writeQueue.put(self.userPhotos)
-            elif userExisit :
+            else:
                 print "Try Again In UserPhotosThread uid: %s " % self.uid
                 self.run()
+
         else:
             self.stat = Stat.get_stat()
             while self.stat == False:
                 sleep(600)
                 self.stat = Stat.get_stat()
             self.run()
+
 if __name__ == '__main__':
     pass

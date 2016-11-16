@@ -17,7 +17,6 @@ class UserPhotos:
         self.pageCount=0
         self.page = 1
         self.total = 0
-        self.exist = True
 
     #返回UserFollowersEntity
     def getPhotos(self, app):
@@ -25,59 +24,75 @@ class UserPhotos:
         try:
             url = self.host + "&method=" + self.api + "&api_key=" + api_key + "&user_id=" + self.uid + '&per_page=500' + "&page=" + str(self.page)
             self.request.get(url)
+            #判断usersPhotos
+            try:
+                stat = str(self.request.getAttrsValue('rsp', 'stat'))
+                #用户不存在
+                if stat == "fail":
+                    self.stat = True
+                    return self.userPhotosEnity
+                #用户存在
+                elif stat == "ok":
+                    self.stat = True
+            except AttributeError as e:
+                self.stat = False
+                return self.userPhotosEnity
             self.pageCount = int(self.request.getAttrsValue('photos', 'pages'))
-            self.stat = str(self.request.getAttrsValue('rsp', 'stat'))
             self.total = str(self.request.getAttrsValue('photos', 'total'))
         except TypeError as e:
-            self.exist = False
-            return False, None
-        except AttributeError as e:
-            self.stat = False
-            return True, None
+            return self.userPhotosEnity
+
         except (HTTPError, IOError) as e:
             print e
             if str(e) == "HTTP Error 429: ":
                 self.stat = False
-            return True, None
+            return None
 
         if not self.request.getBSObjet():
-            return True, None
+            return None
 
-        #照片数大于0则加入
+        #照片数大于0则加入用户照片list
         if self.total > 0:
-            for id in self.request.getAllAttrsValue("photo", "id"):
-                self.userPhotosEnity.add(id)
+            self.userPhotosEnity.extend(self.request.getAllAttrsValue("photo", "id"))
 
         #照片数多于1页
         while self.page < self.pageCount:
+            print self.page
             self.page += 1
             api_key = app.getApikey()
             url = self.host + "&method=" + self.api + "&api_key=" + api_key + "&user_id=" + self.uid + '&per_page=500' + "&page=" + str(self.page)
-            try:
-                self.request.get(url)
-                self.pageCount = int(self.request.getAttrsValue('photos', 'pages'))
-                self.stat = str(self.request.getAttrsValue('rsp', 'stat'))
-            except AttributeError as e:
-                self.stat = False
-                return True, None
-            except (HTTPError, IOError) as e:
-                print e
-                if str(e) == "HTTP Error 429: ":
-                    self.stat = False
-                return True, None
-            if not self.request.getBSObjet():
-                return True, None
-            for id in self.request.getAllAttrsValue("photo", "id"):
-                self.userPhotosEnity.add(id)
+            error = True
+            while error:
+                try:
+                    self.request.get(url)
+                    try:
+                        stat = str(self.request.getAttrsValue('rsp', 'stat'))
+                        if stat == "ok":
+                            self.stat = True
+                        elif stat == "false":
+                            self.stat = True
+                            return self.userPhotosEnity
+                    except AttributeError as e:
+                        self.stat = False
+                        return None
+                except (HTTPError, IOError) as e:
+                    print e
+                    if str(e) == "HTTP Error 429: ":
+                        self.stat = False
+                else:
+                    error = False
+            #添加新的photosId
+            self.userPhotosEnity.extend(self.request.getAllAttrsValue("photo", "id"))
 
-        return True, self.userPhotosEnity
+        print self.userPhotosEnity.getCnt()
+        return self.userPhotosEnity
 
     def getStat(self):
         return self.stat
 
 
 if __name__ == '__main__':
-    u=UserPhotos("10001104@N00")
+    u=UserPhotos("27743519@N00")
     app=MyApp()
     usersEntity = u.getPhotos(app)
     for id in  usersEntity.getPhotoList():

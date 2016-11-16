@@ -19,6 +19,10 @@ class UserPhotosEntity:
         self.photosIdList.append(photoId)
         self.cnt += 1
 
+    def extend(self, photoList):
+        self.photosIdList.extend(photoList)
+        self.cnt += len(photoList)
+
 
 if __name__ == '__main__':
     pass

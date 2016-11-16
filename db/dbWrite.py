@@ -291,62 +291,63 @@ class DBWrite:
                     print "Wrong in uid:%s " % data[0].getUid()
                     self.logQueue.put("***Wrong in uid:%s " % data[0].getUid())
 
+
         elif isinstance(data[0], UserPhotosEntity):
-            # uid = data[0].getUid()
-            # photoList = data[0].getPhotoList()
-            # length = data[0].getCnt()
-            # if length:
-            #     tableName = "photos_" + str(group(uid))
-            #     statement = "insert into " + tableName + " (photoid, owner) values(%s, %s)"
-            #     for index in range(length):
-            #         try:
-            #             self.cur.execute(statement, (photoList[index], uid))
-            #         except MySQLdb.IntegrityError as e:
-            #             pass
-            #         except MySQLdb.Error as e:
-            #             print e
-            #     print "uid: %s photosid has been completed" % uid
-            #     self.logQueue.put("uid: %s photosid has been completed" % uid)
-            # else:
-            #     print "uid: %s did not have photos" % uid
-            #     self.logQueue.put("uid: %s did not have photos" % uid )
-            # s = "update " + "users_" + str(group(uid)) + " set flag=1 where uid=%s "
-            # self.cur.execute(s, (uid,))
-            # self.conn.commit()
-
-            uid = []
-            photoList = []
-            length = []
-            totalList = []
-            for i in range(maxSQLLength):
-                length.append(data[i].getCnt())
-                uid.append((data[i].getUid(),))
-                if length[i]:
-                    for j in range(length[i]):
-                        totalList.append((data[i].getPhotoList()[j], data[i].getUid()))
-                    print "uid: %s photosid has been completed" % uid[i][0]
-                    self.logQueue.put("uid: %s photosid has been completed" % uid[i][0])
-                else:
-                    print "uid: %s did not have photos" % uid[i][0]
-                    self.logQueue.put("uid: %s did not have photos" % uid[i][0])
-
-            try:
-                tableName = "photos_" + str(group(uid[0][0]))
+            uid = data[0].getUid()
+            photoList = data[0].getPhotoList()
+            length = data[0].getCnt()
+            if length:
+                tableName = "photos_" + str(group(uid))
                 statement = "insert into " + tableName + " (photoid, owner) values(%s, %s)"
-                self.cur.executemany(statement, totalList)
-            except MySQLdb.IntegrityError as e:
-                pass
-            except MySQLdb.OperationalError as e:  # 太长无法插入
-                tableName = "photos_" + str(group(uid[0][0]))
-                statement = "insert into " + tableName + " (photoid, owner) values(%s, %s)"
-                for i in totalList:
-                    self.cur.executemany(statement, i)
-            except MySQLdb.Error as e:
-                print e
-
-            s = "update " + "users_" + str(group(uid[0][0])) + " set flag=1 where uid=%s "
-            self.cur.executemany(s, uid)
+                for index in range(length):
+                    try:
+                        self.cur.execute(statement, (photoList[index], uid))
+                    except MySQLdb.IntegrityError as e:
+                        print e
+                    except MySQLdb.Error as e:
+                        print e
+                print "uid: %s photosid has been completed" % uid
+                self.logQueue.put("uid: %s photosid has been completed" % uid)
+            else:
+                print "uid: %s did not have photos" % uid
+                self.logQueue.put("uid: %s did not have photos" % uid )
+            s = "update " + "users_" + str(group(uid)) + " set flag=1 where uid=%s "
+            self.cur.execute(s, (uid,))
             self.conn.commit()
+
+            # uid = []
+            # photoList = []
+            # length = []
+            # totalList = []
+            # for i in range(maxSQLLength):
+            #     length.append(data[i].getCnt())
+            #     uid.append((data[i].getUid(),))
+            #     if length[i]:
+            #         for j in range(length[i]):
+            #             totalList.append((data[i].getPhotoList()[j], data[i].getUid()))
+            #         print "uid: %s photosid has been completed" % uid[i][0]
+            #         self.logQueue.put("uid: %s photosid has been completed" % uid[i][0])
+            #     else:
+            #         print "uid: %s did not have photos" % uid[i][0]
+            #         self.logQueue.put("uid: %s did not have photos" % uid[i][0])
+            #
+            # try:
+            #     tableName = "photos_" + str(group(uid[0][0]))
+            #     statement = "insert into " + tableName + " (photoid, owner) values(%s, %s)"
+            #     self.cur.executemany(statement, totalList)
+            # except MySQLdb.IntegrityError as e:
+            #     pass
+            # except MySQLdb.OperationalError as e:  # 太长无法插入
+            #     tableName = "photos_" + str(group(uid[0][0]))
+            #     statement = "insert into " + tableName + " (photoid, owner) values(%s, %s)"
+            #     for i in totalList:
+            #         self.cur.executemany(statement, i)
+            # except MySQLdb.Error as e:
+            #     print e
+            #
+            # s = "update " + "users_" + str(group(uid[0][0])) + " set flag=1 where uid=%s "
+            # self.cur.executemany(s, uid)
+            # self.conn.commit()
 
         elif isinstance(data[0], PhotoSizeEntity):
             photoId = data[0].getPhotoId()
