@@ -9,7 +9,6 @@ import sys
 import re
 
 class Requests:
-    html = None
     def __init__(self):
         self.bsoj = None
         self.url = None
@@ -24,44 +23,73 @@ class Requests:
         reload(sys)
         sys.setdefaultencoding('utf-8')
 
-    def get(self, url, fraud = False, encoding = None):
+    def get(self, url, fraud = False, encoding = None, cookies = False):
         self.url = url
+        if cookies:
+            self.html = self.opener.open(url)
+            self.content = self.html.read()
+            if encoding:
+                self.bsoj = BeautifulSoup(self.content, "html.parser", encoding = encoding)
+            else:
+                self.bsoj = BeautifulSoup(self.content, "html.parser")
+            return self.bsoj
+
         if not fraud:
-            self.html = urlopen(url = url)
+            self.html = urlopen(url=url)
         else:
-            header = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'}
-            req = urllib2.Request(url, headers = header)
+            header = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'}
+            req = urllib2.Request(url, headers=header)
             self.html = urlopen((req))
         if not encoding:
             self.bsoj = BeautifulSoup(self.html, "html.parser")
         else:
-            self.bsoj = BeautifulSoup(self.html, "html.parser", from_encoding = encoding)
+            self.bsoj = BeautifulSoup(self.html, "html.parser", from_encoding=encoding)
         return self.bsoj
 
-
-    def post(self, url, formData = None, headers = None, gzip = False, encoding = None):
+    def post(self, url, formData=None, headers=None, gzip=False, encoding=None):
+        self.url = url
         headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
         postData = urlencode(formData)
-        req = urllib2.Request(url, postData, headers)
-        self.html = self.opener.open(req).read()
+        req = urllib2.Request(self.url, postData, headers)
+        self.html = self.opener.open(req)
+        self.content = self.html.read()
         if gzip:
             if encoding:
-                self.bsoj = BeautifulSoup(gzipDecode(self.html), "html.parser", from_encoding = encoding)
+                self.bsoj = BeautifulSoup(gzipDecode(self.content), "html.parser", from_encoding=encoding)
             else:
-                self.bsoj = BeautifulSoup(gzipDecode(self.html), "html.parser")
+                self.bsoj = BeautifulSoup(gzipDecode(self.content), "html.parser")
         else:
             if encoding:
-                self.bsoj = BeautifulSoup(self.html, "html.parser", from_encoding = encoding)
+                self.bsoj = BeautifulSoup(self.content, "html.parser", from_encoding=encoding)
             else:
-                self.bsoj = BeautifulSoup(self.html, "html.parser")
+                self.bsoj = BeautifulSoup(self.content, "html.parser")
         return self.bsoj
-
 
     def getBSObjet(self):
         if self.bsoj:
             return self.bsoj
         else:
             return None
+
+    def getAttrsById(self,label, attrs1, attrs2 = None, id = None):
+        if attrs2:
+            return self.bsoj.find(label, {attrs2 : id})[attrs1]
+        else:
+            return self.bsoj.find(label, {attrs1 : id})[attrs1]
+
+
+    def getAllAttrsById(self,label, attrs1, attrs2= None, id= None):
+        if attrs2:
+            attrsList = []
+            for element in self.bsoj.findAll(label, {attrs2: id}):
+                attrsList.append(str(element[attrs1]))
+            return attrsList
+        else:
+            attrsList = []
+            for element in self.bsoj.findAll(label, {attrs1: id}):
+                attrsList.append(str(element[attrs1]))
+            return attrsList
+
 
     def getLabel(self, label):
         return self.bsoj.find(label)
@@ -84,7 +112,7 @@ class Requests:
             return attrsList
         else:
             attrsList = []
-            for element in self.bsoj.findAll(label, {attrs: re.compile(regx)}):
+            for element in self.bsoj.findAll(label, {attrs : re.compile(regx)}):
                 attrsList.append(str(element[attrs]))
             return attrsList
 
@@ -106,11 +134,6 @@ class Requests:
             for element in self.bsoj.findAll(label):
                 attrsList.append(str(element.get_text()))
             return attrsList
-
-
-
-
-
 
     def getUrl(self):
         url =  str(self.html.geturl())
@@ -137,7 +160,8 @@ if __name__ == '__main__':
 
     #posttest
     url = "https://login.yahoo.com/config/login?.src=flickrsignin"
-    request.get(url)
+    request.get(url, cookies=True)
+
 
     e = request.getBSObjet().findAll('input', {'type': 'hidden'})
     formData = {}
@@ -158,4 +182,31 @@ if __name__ == '__main__':
         'X-Requested-With': 'XMLHttpRequest'
     }
     loginUrl = "https://login.yahoo.com/config/login?.src=flickrsignin"
-    request.post(loginUrl, formData, headers, True)
+    request.post(loginUrl, formData, headers, gzip = True)
+
+    createApiakyUrl = "https://www.flickr.com/services/apps/create/noncommercial/?"
+    request.get(createApiakyUrl, cookies = True)
+    magic_cookie = request.getAttrsById('input', 'value', 'name', 'magic_cookie')
+
+    formData = {
+        'magic_cookie': magic_cookie,
+        'done': '1',
+        'app_name': '1',
+        'app_description': '1',
+        'agrees_to_respect': '1',
+        'agrees_to_tos': '1'
+    }
+    headers = {
+        'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept-Encoding': r'gzip, deflate, br',
+        'Accept-Language': 'zh-CN,zh;q=0.8',
+        'Cache-Control': 'no-cache',
+        'origin': 'https://www.flickr.com',
+        'pragma': 'no-cache',
+        'referer': 'https://www.flickr.com/services/apps/create/noncommercial/',
+        'upgrade-insecure-requests': '1',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0'
+    }
+    request.post(createApiakyUrl, formData, headers, gzip=True)
+    for e in request.getAllText('span', 'class', 'api-key-info'):
+        print e
