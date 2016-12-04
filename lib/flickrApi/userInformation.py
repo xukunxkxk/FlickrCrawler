@@ -2,31 +2,31 @@
 # -*- coding: utf-8 -*-
 from entity.userEntity import UserEntity
 # from urllib import urlopen
-from urllib2 import HTTPError,urlopen
+from urllib2 import HTTPError, urlopen
 from bs4 import BeautifulSoup
 import sys
 import urllib2
 
 
 class UserInformation:
-    host="https://api.flickr.com/services/rest/?"
-    api="flickr.people.getInfo"
+    host = "https://api.flickr.com/services/rest/?"
+    api = "flickr.people.getInfo"
 
-    def __init__(self,uid):
-        self.uid=uid
+    def __init__(self, uid):
+        self.uid = uid
         self.userEntity = UserEntity(uid)
         self.returnData = None
         self.stat = True
 
-    def getUserInformation(self,app):
+    def getUserInformation(self, app):
         api_key = app.getApikey()
         reload(sys)
         sys.setdefaultencoding('utf8')
         try:
             self.html = urlopen(self.host + "&method=" + self.api + "&api_key=" + api_key + \
-                                "&user_id=" + self.uid )
+                                "&user_id=" + self.uid)
             self.returnData = BeautifulSoup(self.html, "html.parser")
-            #判断是否被封ip
+            # 判断是否被封ip
             try:
                 self.stat = str(self.returnData.find("rsp").attrs["stat"])
             except AttributeError:
@@ -116,17 +116,20 @@ class UserInformation:
         return self.stat
 
 
-
 if __name__ == '__main__':
     from res.myApp import MyApp
+
     app = MyApp()
     userInfo = UserInformation("100000122@N08")
     entity = userInfo.getUserInformation(app).getValue()
     print entity
     from db.dbConnect import dbConnect
-    conn,cur = dbConnect()
+
+    conn, cur = dbConnect()
     cur.execute("SET CHARSET utf8mb4")
-    cur.execute("UPDATE user SET username=%s,realname=%s,location=%s,photosurl=%s,profileurl=%s,photocount=%s,firstdatetaken=%s WHERE uid=%s ",entity)
+    cur.execute(
+        "UPDATE user SET username=%s,realname=%s,location=%s,photosurl=%s,profileurl=%s,photocount=%s,firstdatetaken=%s WHERE uid=%s ",
+        entity)
     conn.commit()
     cur.close()
     conn.close()

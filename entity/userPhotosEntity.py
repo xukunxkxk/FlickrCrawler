@@ -1,9 +1,9 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
 class UserPhotosEntity:
-    def __init__(self,uid):
-        self.uid=uid
-        self.photosIdList=list()
+    def __init__(self, uid):
+        self.uid = uid
+        self.photosIdList = list()
         self.cnt = 0
 
     def getUid(self):
@@ -26,5 +26,3 @@ class UserPhotosEntity:
 
 if __name__ == '__main__':
     pass
-
-

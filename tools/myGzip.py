@@ -2,21 +2,22 @@
 # -*- coding: utf-8 -*-
 import StringIO, gzip
 
-#解压
-def gzipDecode(encodedData) :
+
+# 解压
+def gzipDecode(encodedData):
     compressedStream = StringIO.StringIO(encodedData)
-    gziper = gzip.GzipFile(fileobj = compressedStream)
-    decodeData = gziper.read()   # 读取解压缩后数据
+    gziper = gzip.GzipFile(fileobj=compressedStream)
+    decodeData = gziper.read()  # 读取解压缩后数据
     return decodeData
 
-#压缩
+
+# 压缩
 def gzipEncode(encodeData):
     buf = StringIO.StringIO()
-    gziper = gzip.GzipFile(mode = 'wb',fileobj = buf)
-    gziper.write(encodeData)   # 读取压缩后数据
+    gziper = gzip.GzipFile(mode='wb', fileobj=buf)
+    gziper.write(encodeData)  # 读取压缩后数据
     gziper.close()
     return buf.getvalue()
-
 
 
 if __name__ == '__main__':

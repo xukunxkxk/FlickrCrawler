@@ -3,19 +3,23 @@
 '写数据库'
 import MySQLdb
 
+
 def group(uid):
-    return uid[uid.index(r'@')+3]
+    return uid[uid.index(r'@') + 3]
+
 
 class DBRead:
     APILIST = ["userFollowers", "userInformation", "userPhotos", "photoSize"]
+
     def __init__(self, readQueue, api, conn, cur):
         self.readQueue = readQueue
         self.api = api
         self.conn = conn
         self.cur = cur
         self.count = 0
+
     def readDB(self):
-        if self.api == self.APILIST[0] or self.api == self.APILIST[1] or self.APILIST[2]:
+        if self.api == self.APILIST[0] or self.api == self.APILIST[1] or self.api == self.APILIST[2]:
             return self.readUid()
         elif self.api == self.APILIST[3]:
             return self.readPhotoId()
@@ -33,7 +37,7 @@ class DBRead:
         # except MySQLdb.Error as e:
         #     return False
 
-        #userFollowerApi
+        # userFollowerApi
         # try:
         #     self.count=0
         #     for i in range(9):
@@ -69,17 +73,17 @@ class DBRead:
             # else:
             #     return False
 
-            #返回错误用户
+            # 返回错误用户
             self.count = 0
             # s = "SELECT uid FROM users_0 WHERE username IS NOT NULL AND flag = 0 LIMIT 0,1000"
-            s = "SELECT uid FROM users_0 WHERE username IS NOT NULL AND flag = 0"
+            s = "SELECT uid FROM users_8 WHERE username IS NOT NULL AND flag = 0"
             self.cur.execute(s)
             for uid in self.cur.fetchall():
                 self.readQueue.put(uid[0])  # 返回的是一个元组，取第一个
                 self.count += 1
             self.conn.commit()
             if self.count >= 0:
-                print "Had Read %d uid" %self.count
+                print "Had Read %d uid" % self.count
                 return True
             else:
                 return False
@@ -96,7 +100,7 @@ class DBRead:
                 self.count += 1
             self.conn.commit()
             if self.count >= 0:
-                print "Had Read %d uid" %self.count
+                print "Had Read %d uid" % self.count
                 return True
             else:
                 return False
@@ -106,22 +110,18 @@ class DBRead:
     def setDBConn(self, conn):
         self.conn = conn
 
-    def setDBcur(self , cur):
+    def setDBcur(self, cur):
         self.cur = cur
-
-
 
 
 if __name__ == '__main__':
     from db.dbConnect import dbConnect
-    from  Queue import  Queue
+    from  Queue import Queue
+
     readQueue = Queue()
-    conn,cur = dbConnect()
+    conn, cur = dbConnect()
     dbR = DBRead(readQueue, "userPhotos", conn, cur)
     dbR.readUid()
     len = readQueue.qsize()
     for i in range(1000):
         print readQueue.get()
-
-
-

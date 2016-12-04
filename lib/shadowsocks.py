@@ -3,11 +3,14 @@
 import re
 from myException.ipLimitException import IpLimitException
 # from urllib import urlopen
-from urllib2 import HTTPError,urlopen
+from urllib2 import HTTPError, urlopen
 from bs4 import BeautifulSoup
 import urllib2
+
+
 class Stat:
     statTryCount = 0
+
     def __init__(self):
         pass
 
@@ -22,7 +25,7 @@ class Stat:
         try:
             Stat.statTryCount += 1
             html = urlopen(host + "&method=" + api + "&api_key=" + api_key + \
-                           "&user_id=" + uid + "&page=" + page)#proxies={'socket5':'127.0.0.1:1080'}
+                           "&user_id=" + uid + "&page=" + page)  # proxies={'socket5':'127.0.0.1:1080'}
             returnData = BeautifulSoup(html, "html.parser")
             stat = str(returnData.find("rsp").attrs["stat"])
             if stat == 'ok':

@@ -5,20 +5,23 @@ from res.myApp import MyApp
 from entity.photoSizeEntity import PhotoSizeEntity
 from tools.myRequest import Requests
 
+
 class PhotoSize:
     host = "https://api.flickr.com/services/rest/?"
     api = "flickr.photos.getSizes"
+
     def __init__(self, photoId):
         self.photoId = photoId
         self.photoSizeEntity = PhotoSizeEntity(photoId)
         self.request = Requests()
         self.stat = True
 
-    #返回UserFollowersEntity
+    # 返回UserFollowersEntity
     def getPhotos(self, app):
         api_key = app.getApikey()
         try:
-            url = self.host + "&method=" + self.api + "&api_key=" + api_key + "&user_id=" + self.uid + '&per_page=500' + "&page=" + str(self.page)
+            url = self.host + "&method=" + self.api + "&api_key=" + api_key + "&user_id=" + self.uid + '&per_page=500' + "&page=" + str(
+                self.page)
             self.request.get(url)
             self.pageCount = int(self.request.getAttrsValue('photos', 'pages'))
             self.stat = str(self.request.getAttrsValue('rsp', 'stat'))
@@ -35,16 +38,17 @@ class PhotoSize:
         if not self.request.getBSObjet():
             return None
 
-        #照片数大于0则加入
+        # 照片数大于0则加入
         if self.total > 0:
             for id in self.request.getAllAttrsValue("photo", "id"):
                 self.userPhotosEnity.add(id)
 
-        #照片数多于1页
+        # 照片数多于1页
         while self.page < self.pageCount:
             self.page += 1
             api_key = app.getApikey()
-            url = self.host + "&method=" + self.api + "&api_key=" + api_key + "&user_id=" + self.uid + '&per_page=500' + "&page=" + str(self.page)
+            url = self.host + "&method=" + self.api + "&api_key=" + api_key + "&user_id=" + self.uid + '&per_page=500' + "&page=" + str(
+                self.page)
             try:
                 self.request.get(url)
                 self.pageCount = int(self.request.getAttrsValue('photos', 'pages'))
@@ -69,40 +73,11 @@ class PhotoSize:
 
 
 if __name__ == '__main__':
-    u=UserPhotos("10001104@N00")
-    app=MyApp()
+    u = UserPhotos("10001104@N00")
+    app = MyApp()
     usersEntity = u.getPhotos(app)
-    for id in  usersEntity.getPhotoList():
+    for id in usersEntity.getPhotoList():
         print id
     print usersEntity.getCnt()
     print usersEntity.getUid()
     print u.page
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

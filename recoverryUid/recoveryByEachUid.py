@@ -8,9 +8,9 @@ import re
 from dbConnect import dbConnect
 
 
-
 def group(uid):
-    return uid[len(uid)-1]
+    return uid[len(uid) - 1]
+
 
 # def clean(path):
 #     wrongFile=open(path,'r')
@@ -49,20 +49,21 @@ def clean(path):
 
 
 def recovery():
-    conn,cur=dbConnect()
+    conn, cur = dbConnect()
     clean(r'C:\Users\xk\PycharmProjects\Coding\res\eachUid')
     wrongFile = open(r'C:\Users\xk\PycharmProjects\Coding\res\eachUid', 'r')
-    data=wrongFile.readlines()
-    #raw_input("Enter AnyKey To StartRecovery~~~")
+    data = wrongFile.readlines()
+    # raw_input("Enter AnyKey To StartRecovery~~~")
     for line in data:
-        uid=line.strip('\n')
-        g=group(uid)
-        s="UPDATE users_"+str(g)+" SET FLAG=0 WHERE uid=%s"
+        uid = line.strip('\n')
+        g = group(uid)
+        s = "UPDATE users_" + str(g) + " SET FLAG=0 WHERE uid=%s"
         cur.execute(s, (uid,))
         print uid
     conn.commit()
     cur.close()
     conn.close()
+
+
 if __name__ == '__main__':
     recovery()
-

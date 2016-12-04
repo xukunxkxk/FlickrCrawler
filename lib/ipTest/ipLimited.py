@@ -1,14 +1,18 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
-from urllib2 import HTTPError,urlopen
+from urllib2 import HTTPError, urlopen
 from bs4 import BeautifulSoup
 import urllib2
+
+
 class IpLimited:
     statTryCount = 0
+
     def __init__(self):
         self.stat = 1
+
     def ipLimitedTest(self):
-        if self.stat == 0 :
+        if self.stat == 0:
             host = "https://api.flickr.com/services/rest/?"
             api = "flickr.people.getInfo"
             uid = "95200220@N03"
@@ -16,7 +20,7 @@ class IpLimited:
             try:
                 self.statTryCount += 1
                 html = urlopen(host + "&method=" + api + "&api_key=" + api_key + \
-                              "&user_id=" + uid)  # proxies={'socket5':'127.0.0.1:1080'}
+                               "&user_id=" + uid)  # proxies={'socket5':'127.0.0.1:1080'}
                 returnData = BeautifulSoup(html, "html.parser")
                 stat = str(returnData.find("rsp").attrs["stat"])
                 if stat == 'ok':
@@ -27,7 +31,7 @@ class IpLimited:
                 return False
             except (HTTPError, IOError) as e:
                 if self.statTryCount < 3:
-                     return self.ipLimitedTest()
+                    return self.ipLimitedTest()
                 else:
                     self.statTryCount = 0
                     self.stat = 1
@@ -40,7 +44,7 @@ class IpLimited:
             try:
                 self.statTryCount += 1
                 html = urllib2.urlopen(host + "&method=" + api + "&api_key=" + api_key + \
-                              "&user_id=" + uid)  # proxies={'socket5':'127.0.0.1:1080'}
+                                       "&user_id=" + uid)  # proxies={'socket5':'127.0.0.1:1080'}
                 returnData = BeautifulSoup(html, "html.parser")
                 stat = str(returnData.find("rsp").attrs["stat"])
                 if stat == 'ok':
@@ -51,7 +55,7 @@ class IpLimited:
                 return False
             except (HTTPError, IOError) as e:
                 if self.statTryCount < 3:
-                     return self.ipLimitedTest()
+                    return self.ipLimitedTest()
                 else:
                     self.statTryCount = 0
                     self.stat = 0
@@ -70,9 +74,9 @@ class IpLimited:
 
     def setStat(self, stat):
         self.stat = stat
+
     def getStat(self):
         return self.stat
-
 
 
 if __name__ == '__main__':

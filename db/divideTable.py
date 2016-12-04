@@ -3,19 +3,23 @@
 import MySQLdb
 from dbConnect import dbConnect
 from threading import Thread
+
+
 def group(uid):
-    pos=len(uid)-5
-    return uid[pos-2]+uid[pos-1]+uid[pos]
+    pos = len(uid) - 5
+    return uid[pos - 2] + uid[pos - 1] + uid[pos]
+
 
 def tablesId(i):
-    if i>=0 and i<=9:
-        return "00"+str(i)
-    elif i>=10 and i<=99:
-        return "0"+str(i)
+    if i >= 0 and i <= 9:
+        return "00" + str(i)
+    elif i >= 10 and i <= 99:
+        return "0" + str(i)
     else:
         return str(i)
 
-def insertTableThread(data,conn,cur,tableId):
+
+def insertTableThread(data, conn, cur, tableId):
     for i in data:
         try:
             s = "INSERT INTO users_" + tableId + "(uid,flag) VALUES(%s,%s)"
@@ -26,10 +30,9 @@ def insertTableThread(data,conn,cur,tableId):
         conn.commit()
 
 
-
 def divideTable():
     try:
-        conn,cur=dbConnect()
+        conn, cur = dbConnect()
         # for i in range(10):
         #     for j in range(10):
         #         for k in range(10):
@@ -84,13 +87,13 @@ def divideTable():
         # cur.execute("INSERT INTO users_"+g+"(uid,flag) VALUES(%  s,%s)",("10001104@N00",1))
         # conn.commit()
         for i in range(1000):
-            cur.execute("DROP TABLE users_"+tablesId(i))
+            cur.execute("DROP TABLE users_" + tablesId(i))
             conn.commit()
         cur.close()
         conn.close()
     except MySQLdb.Error as e:
         print e
 
+
 if __name__ == '__main__':
     divideTable()
-

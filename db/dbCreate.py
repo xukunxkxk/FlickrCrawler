@@ -1,8 +1,10 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
-#用于创建数据库
+# 用于创建数据库
 
 import MySQLdb
+
+
 def dbCreate():
     try:
         conn = MySQLdb.connect('localhost', 'dyn', '123')

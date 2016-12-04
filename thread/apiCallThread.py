@@ -8,20 +8,22 @@ from userInformationThread import UserInformationThread
 from userPhotosThread import UserPhotosThread
 from time import sleep
 
+
 class ApiCallThread(Thread):
-    APILIST=["userFollowers", "userInformation", "userPhotos"]
-    def __init__(self,readQueue,writeQueue,api,app):
+    APILIST = ["userFollowers", "userInformation", "userPhotos"]
+
+    def __init__(self, readQueue, writeQueue, api, app):
         Thread.__init__(self)
-        self.api=api
-        self.app=app
-        self.uid=""
-        self.readQueue=readQueue
-        self.writeQueue=writeQueue
+        self.api = api
+        self.app = app
+        self.uid = ""
+        self.readQueue = readQueue
+        self.writeQueue = writeQueue
 
     def apiCalled(self):
         if self.api == self.APILIST[0]:
             self.uid = self.readQueue.get()
-            t = UserFollowersThread(self.uid,self.app,self.writeQueue)
+            t = UserFollowersThread(self.uid, self.app, self.writeQueue)
             try:
                 t.start()
                 t.join()
@@ -34,7 +36,7 @@ class ApiCallThread(Thread):
 
         elif self.api == self.APILIST[1]:
             self.uid = self.readQueue.get()
-            t = UserInformationThread(self.uid,self.app,self.writeQueue)
+            t = UserInformationThread(self.uid, self.app, self.writeQueue)
             try:
                 t.start()
                 t.join()
@@ -64,25 +66,25 @@ class ApiCallThread(Thread):
                 self.apiCalled()
                 sleep(1)
             except Exception as e:
-                print e," Happened In ApiCalledThread!"
+                print e, " Happened In ApiCalledThread!"
                 sleep(1)
-
 
 
 if __name__ == '__main__':
     from Queue import Queue
     from res.myApp import MyApp
     from lib.flickrApi.userFollowers import UserFollowersEntity
-    api="userFollowers"
+
+    api = "userFollowers"
     readQueue = Queue()
     writeQueue = Queue()
-    app=MyApp()
+    app = MyApp()
     readQueue.put("95200220@N03")
     readQueue.put("41585601@N05")
     readQueue.put("43496939@N00")
-    th=[]
+    th = []
     for i in range(3):
-        th.append(ApiCallThread(readQueue,writeQueue,api,app))
+        th.append(ApiCallThread(readQueue, writeQueue, api, app))
     for i in th:
         i.start()
     for i in th:
@@ -97,4 +99,3 @@ if __name__ == '__main__':
 
     for i in writeQueue.get():
         print i
-

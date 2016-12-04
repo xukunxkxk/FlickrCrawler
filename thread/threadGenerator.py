@@ -1,6 +1,6 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
-from threading import Thread,Lock
+from threading import Thread, Lock
 from time import sleep
 from apiCallThread import ApiCallThread
 from dataThread import DataThread
@@ -9,9 +9,12 @@ from lib.flickrApi.stat import Stat
 from myException.ipLimitException import IpLimitException
 from lib.ipTest.ipLimited import IpLimited
 from ipLimitedThread import IpLimitedDectedThread
+
+
 class ThreadGenerator(Thread):
-    maxConcurrentThreadCount = 300
-    def __init__(self,api):
+    maxConcurrentThreadCount = 160
+
+    def __init__(self, api):
         Thread.__init__(self)
         self.api = api
         self.logThread = LogThread()
@@ -38,10 +41,11 @@ class ThreadGenerator(Thread):
     def threadInit(self):
         for i in range(self.maxConcurrentThreadCount):
             try:
-                ApiCallThread(self.readQueue,self.writeQueue,self.api,self.app).start()
+                ApiCallThread(self.readQueue, self.writeQueue, self.api, self.app).start()
             except Exception as e:
                 sleep(1)
                 ApiCallThread(self.readQueue, self.writeQueue, self.api, self.app).start()
+
 
 if __name__ == '__main__':
     threadGenerator = ThreadGenerator("userPhotos")

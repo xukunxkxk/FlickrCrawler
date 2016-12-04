@@ -9,11 +9,13 @@ from time import sleep
 from apiCallThread import ApiCallThread
 from threading import Thread
 
+
 class DataThread(Thread):
-    readingDBBound=0
-    writingDBBound=1
+    readingDBBound = 0
+    writingDBBound = 1
     APILIST = ["userFollowers", "userInformation", "userPhotos"]
-    def __init__(self,api,logQueue):
+
+    def __init__(self, api, logQueue):
         Thread.__init__(self)
         self.isReadOver = False
 
@@ -21,27 +23,27 @@ class DataThread(Thread):
         self.isLimit = 0
 
         # 初始化读写队列
-        self.readQueue=Queue()
-        self.writeQueue=Queue(maxsize = 100)
+        self.readQueue = Queue()
+        self.writeQueue = Queue(maxsize=200)
         self.api = api
-        #初始化数据库
+        # 初始化数据库
         self.conn, self.cur = dbConnect()
 
         self.app = MyApp()
 
-        #初始化数据库Reader & Writer
-        self.dbReader=DBRead(self.readQueue,self.api,self.conn,self.cur)
-        self.dbWriter=DBWrite(self.writeQueue,self.logQueue,self.conn,self.cur)
-        #预读数据库
+        # 初始化数据库Reader & Writer
+        self.dbReader = DBRead(self.readQueue, self.api, self.conn, self.cur)
+        self.dbWriter = DBWrite(self.writeQueue, self.logQueue, self.conn, self.cur)
+        # 预读数据库
         self.dbReader.readDB()
 
-    #读写线程函数
+    # 读写线程函数
     def dataThreadRunning(self):
         try:
             if self.writeQueue.qsize() >= self.writingDBBound:
                 self.dbWriter.writeDB()
-                #ApiCallThread(self.readQueue, self.writeQueue, self.api, self.app).start()
-                #启动线程
+                # ApiCallThread(self.readQueue, self.writeQueue, self.api, self.app).start()
+                # 启动线程
                 if not self.isReadOver:
                     if self.readQueue.qsize() < self.readingDBBound:
                         if not self.dbReader.readDB():
@@ -55,13 +57,14 @@ class DataThread(Thread):
         self.dbReader.setDBcur(self.cur)
         self.dbWriter.setDBConn(self.conn)
         self.dbWriter.setDBcur(self.cur)
-    #读写线程
+
+    # 读写线程
     def run(self):
         while 1:
             try:
                 self.dataThreadRunning()
             except Exception as e:
-                print e," Happened In DataThread!"
+                print e, " Happened In DataThread!"
                 if self.cur:
                     self.cur.close()
                 if self.conn:
@@ -70,20 +73,22 @@ class DataThread(Thread):
                 self.reSetDBRandW()
                 sleep(1)
 
-
     def getReadQueue(self):
         return self.readQueue
+
     def getWriteQueue(self):
         return self.writeQueue
+
     def getApi(self):
         return self.api
+
     def getApp(self):
         return self.app
 
 
 if __name__ == '__main__':
-    app=MyApp()
-    dataThread=DataThread("userPhotos")
-    apiThread=ApiCallThread(dataThread.getReadQueue(),dataThread.getWriteQueue(),dataThread.getApi(),app)
+    app = MyApp()
+    dataThread = DataThread("userPhotos")
+    apiThread = ApiCallThread(dataThread.getReadQueue(), dataThread.getWriteQueue(), dataThread.getApi(), app)
     dataThread.start()
     apiThread.start()

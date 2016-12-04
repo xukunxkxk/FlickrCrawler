@@ -14,7 +14,6 @@ class PhotoSizeEntity:
     def setUrl(self, url):
         self.url = url
 
+
 if __name__ == '__main__':
     pass
-
-

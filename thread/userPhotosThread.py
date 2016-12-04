@@ -5,6 +5,7 @@ from lib.flickrApi.userPhotos import UserPhotos
 from time import sleep
 from lib.flickrApi.stat import Stat
 
+
 class UserPhotosThread(Thread):
     def __init__(self, uid, app, writeQueue):
         Thread.__init__(self)
@@ -30,6 +31,7 @@ class UserPhotosThread(Thread):
                 sleep(600)
                 self.stat = Stat.get_stat()
             self.run()
+
 
 if __name__ == '__main__':
     pass
