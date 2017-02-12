@@ -2,11 +2,10 @@
 # -*- coding: utf-8 -*-
 # from urllib import urlopen
 from urllib2 import HTTPError, urlopen
-from bs4 import BeautifulSoup
-from res.myApp import MyApp
-from entity.userFollowersEntity import UserFollowersEntity
 
-import urllib2
+from bs4 import BeautifulSoup
+from entity.userFollowersEntity import UserFollowersEntity
+from tools.myApp import MyApp
 
 
 class UserFollower:

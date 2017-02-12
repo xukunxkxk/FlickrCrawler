@@ -9,7 +9,7 @@ def group(uid):
 
 
 class DBRead:
-    APILIST = ["userFollowers", "userInformation", "userPhotos", "photoSize"]
+    APILIST = ["userFollowers", "userInformation", "userPhotos", "photoInformation"]
 
     def __init__(self, readQueue, api, conn, cur):
         self.readQueue = readQueue
@@ -76,7 +76,7 @@ class DBRead:
             # 返回错误用户
             self.count = 0
             # s = "SELECT uid FROM users_0 WHERE username IS NOT NULL AND flag = 0 LIMIT 0,1000"
-            s = "SELECT uid FROM users_8 WHERE username IS NOT NULL AND flag = 0"
+            s = "SELECT uid FROM users_2 WHERE username IS NOT NULL AND flag = 0"
             self.cur.execute(s)
             for uid in self.cur.fetchall():
                 self.readQueue.put(uid[0])  # 返回的是一个元组，取第一个
@@ -93,14 +93,14 @@ class DBRead:
     def readPhotoId(self):
         try:
             self.count = 0
-            s = "SELECT photoid FROM photos_0 WHERE flag = 0"
+            s = "SELECT photoid FROM photos_0 WHERE flag = 0 limit 0,1000000"
             self.cur.execute(s)
             for uid in self.cur.fetchall():
                 self.readQueue.put(uid[0])  # 返回的是一个元组，取第一个
                 self.count += 1
             self.conn.commit()
             if self.count >= 0:
-                print "Had Read %d uid" % self.count
+                print "Had Read %d photoid" % self.count
                 return True
             else:
                 return False

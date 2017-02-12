@@ -1,11 +1,10 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
-from entity.userEntity import UserEntity
-# from urllib import urlopen
-from urllib2 import HTTPError, urlopen
-from bs4 import BeautifulSoup
 import sys
-import urllib2
+from urllib2 import HTTPError, urlopen
+
+from bs4 import BeautifulSoup
+from entity.userEntity import UserEntity
 
 
 class UserInformation:
@@ -117,7 +116,7 @@ class UserInformation:
 
 
 if __name__ == '__main__':
-    from res.myApp import MyApp
+    from tools.myApp import MyApp
 
     app = MyApp()
     userInfo = UserInformation("100000122@N08")

@@ -5,22 +5,24 @@ from myException.ipLimitException import IpLimitException
 # from urllib import urlopen
 from urllib2 import HTTPError, urlopen
 from bs4 import BeautifulSoup
+from tools.myApp import MyApp
 import urllib2
 
 
 class Stat:
     statTryCount = 0
-
+    # myApp = MyApp()
     def __init__(self):
         pass
 
     @staticmethod
     def get_stat():
         host = "https://api.flickr.com/services/rest/?"
+        # api_key = Stat.myApp.getApikey()
         api = "flickr.contacts.getPublicList"
         uid = "95200220@N03"
         page = '1'
-        api_key = "b08c387d713a1ec32b6e22afb455ea56"
+        api_key = "7bed02742a91566413039b76e7cc3c46"
         isWrong = False
         try:
             Stat.statTryCount += 1

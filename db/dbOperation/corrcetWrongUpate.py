@@ -1,6 +1,6 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
-from dbConnect import dbConnect
+from db.dbConnect import dbConnect
 import MySQLdb
 
 

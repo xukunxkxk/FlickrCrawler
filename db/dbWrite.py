@@ -1,13 +1,11 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
 import MySQLdb
-from entity.userFollowersEntity import UserFollowersEntity
-from entity.userEntity import UserEntity
-from entity.userPhotosEntity import UserPhotosEntity
+from entity.photoEntity import PhotoEntity
 from entity.photoSizeEntity import PhotoSizeEntity
-
-from res.log import Log
-from threading import Thread
+from entity.userEntity import UserEntity
+from entity.userFollowersEntity import UserFollowersEntity
+from entity.userPhotosEntity import UserPhotosEntity
 
 
 def group(uid):
@@ -80,7 +78,7 @@ class DBWrite:
         #     print "Updated User Finished"
         #     self.conn.commit()
         # maxSQLLength = 10
-        maxSQLLength = 1
+        maxSQLLength = 100
         data = []
         for i in range(maxSQLLength):
             data.append(self.writeQueue.get())
@@ -343,7 +341,7 @@ class DBWrite:
                     for j in range(length[i]):
                         totalList.append((data[i].getPhotoList()[j], data[i].getUid()))
                     print "uid: %s photosid has been completed %s photos writeQueue %s" % (
-                    uid[i][0], data[i].getCnt(), self.writeQueue.qsize())
+                        uid[i][0], data[i].getCnt(), self.writeQueue.qsize())
                     self.logQueue.put("uid: %s photosid has been completed" % uid[i][0])
                 else:
                     print "uid: %s did not have photos" % uid[i][0]
@@ -366,10 +364,49 @@ class DBWrite:
             self.cur.executemany(s, uid)
             self.conn.commit()
 
+        # photoInfo
+        elif isinstance(data[0], PhotoEntity):
+            photoidList = []
+            valueList = []
+            for i in range(maxSQLLength):
+                photoidList.append(data[i].getPhotoId())
+                valueList.append(data[i].getValue())
+                # print "Photo id:%s Information Has Been Updated photos writeQueue %s" % (photoidList[i], self.writeQueue.qsize())
+                # self.logQueue.put("Photo id:%s Information Has Been Updated " % photoidList[i])
+            try:
+                tableName = "photos_0"
+                self.cur.execute("SET CHARSET utf8mb4")
+                query = "UPDATE " + tableName + " SET views=%s,title=%s,dates=%s,comments=%s,tags=%s,flag=1 WHERE photoid=%s "
+                self.cur.executemany(query, valueList)
+                self.conn.commit()
+
+                self.cur.execute("select cnt from tableCnt where tableName = %s", (tableName,))
+                cnt = self.cur.fetchone()[0] + maxSQLLength
+                self.cur.execute("update tableCnt set cnt = %s where tableName = %s", (cnt, tableName))
+                self.conn.commit()
+            except MySQLdb.Error as e:
+                print e
+                self.logQueue.put("***" + str(photoidList) + str(e))
+
+            # photoid = data[0].getPhotoId()
+            # try:
+            #     self.cur.execute("SET CHARSET utf8mb4")
+            #     query = "UPDATE " + "photos_1_copy" + " SET views=%s,title=%s,dates=%s,comments=%s,tags=%s,flag=1 WHERE photoid=%s "
+            #     self.cur.execute(query, data[0].getValue())
+            #     self.conn.commit()
+            # except MySQLdb.Error as e:
+            #     print e
+            # #     self.logQueue.put("***" + photoid + str(e))
+            # else:
+            #     print "Photo id:%s Information Has Been Updated " % photoid
+            #     self.logQueue.put("Photo id:%s Information Has Been Updated " % photoid)
+
+
+
         elif isinstance(data[0], PhotoSizeEntity):
             photoId = data[0].getPhotoId()
             url = data[0].getUrl()
-            self.cur.execute("update photos_0 set downloadurl = %s where photoid = %s", (url, photoId))
+            self.cur.execute("update photos_1_copy set downloadurl = %s where photoid = %s", (url, photoId))
 
 
 if __name__ == '__main__':
@@ -377,7 +414,7 @@ if __name__ == '__main__':
     from db.dbRead import DBRead
     from dbClose import dbClose
     from  Queue import Queue
-    from res.myApp import MyApp
+    from tools.myApp import MyApp
     from apiCallThread import ApiCallThread
 
     readQueue = Queue()

@@ -4,6 +4,7 @@ from time import time
 from Queue import Queue
 from threading import Lock
 from time import sleep
+import random
 
 
 class MyApp:
@@ -60,6 +61,8 @@ class MyApp:
     def getApp(self):
         try:
             self.lock.acquire()
+            # index = random.randint(0, self.size - 1)
+            # return (self.api_key[index], self.secret[index])
             for i in range(self.size):
                 # api次数小于限制
                 if self.remainCount[i] > 0:

@@ -1,8 +1,9 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
 from urllib2 import HTTPError
-from res.myApp import MyApp
+
 from entity.photoSizeEntity import PhotoSizeEntity
+from tools.myApp import MyApp
 from tools.myRequest import Requests
 
 

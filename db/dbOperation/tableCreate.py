@@ -1,7 +1,7 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
 import MySQLdb
-from dbConnect import dbConnect
+from db.dbConnect import dbConnect
 
 
 def tableCreate():

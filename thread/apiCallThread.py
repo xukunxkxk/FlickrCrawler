@@ -1,22 +1,23 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
 from threading import Thread
-from lib.flickrApi.userFollowers import UserFollower
-from lib.flickrApi.userInformation import UserInformation
-from userFollowersThread import UserFollowersThread
-from userInformationThread import UserInformationThread
-from userPhotosThread import UserPhotosThread
 from time import sleep
+
+from apiThread.photoInformationThread import PhotoInformationThread
+from apiThread.userFollowersThread import UserFollowersThread
+from apiThread.userInformationThread import UserInformationThread
+from apiThread.userPhotosThread import UserPhotosThread
 
 
 class ApiCallThread(Thread):
-    APILIST = ["userFollowers", "userInformation", "userPhotos"]
+    APILIST = ["userFollowers", "userInformation", "userPhotos", "photoInformation"]
 
     def __init__(self, readQueue, writeQueue, api, app):
         Thread.__init__(self)
         self.api = api
         self.app = app
         self.uid = ""
+        self.photoid = ""
         self.readQueue = readQueue
         self.writeQueue = writeQueue
 
@@ -56,6 +57,17 @@ class ApiCallThread(Thread):
                 sleep(1)
                 self.apiCalled()
 
+        elif self.api == self.APILIST[3]:
+            self.photoid = self.readQueue.get()
+            t = PhotoInformationThread(self.photoid, self.app, self.writeQueue)
+            try:
+                t.start()
+                t.join()
+            except Exception as e:
+                print e
+                sleep(1)
+                self.apiCalled()
+
         else:
             print self.api
             print "API NOT CODING YET"
@@ -72,8 +84,7 @@ class ApiCallThread(Thread):
 
 if __name__ == '__main__':
     from Queue import Queue
-    from res.myApp import MyApp
-    from lib.flickrApi.userFollowers import UserFollowersEntity
+    from tools.myApp import MyApp
 
     api = "userFollowers"
     readQueue = Queue()

@@ -5,7 +5,7 @@
 
 
 import re
-from dbConnect import dbConnect
+from db.dbConnect import dbConnect
 
 
 def group(uid):

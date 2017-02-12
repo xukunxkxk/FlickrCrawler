@@ -1,9 +1,9 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
-from urllib2 import HTTPError, urlopen
-from bs4 import BeautifulSoup
-from res.myApp import MyApp
+from urllib2 import HTTPError
+
 from entity.userPhotosEntity import UserPhotosEntity
+from tools.myApp import MyApp
 from tools.myRequest import Requests
 
 

@@ -1,10 +1,9 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
-from threading import Thread
-from res.log import Log
 from Queue import Queue
-from time import sleep
-from myException.ipLimitException import IpLimitException
+from threading import Thread
+
+from tools.log import Log
 
 
 class LogThread(Thread):

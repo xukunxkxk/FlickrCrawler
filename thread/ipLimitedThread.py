@@ -16,7 +16,7 @@ class IpLimitedDectedThread(Thread):
                 if (self.ipLimited.test()):
                     sleep(60)
                 else:
-                    sleep(600)
+                    sleep(300)
         except Exception as e:
             self.run()
 
