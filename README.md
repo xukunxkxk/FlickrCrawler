@@ -1,2 +1,2 @@
 # FlickrCrawler
-Crawl Flickr data For Studying and Researching Use
+Crawl Flickr Data For Studying and Researching Use
