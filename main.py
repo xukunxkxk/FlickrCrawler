@@ -7,6 +7,7 @@ import os
 
 if __name__ == '__main__':
     threadGenerator=ThreadGenerator("photoInformation")
+    # threadGenerator=ThreadGenerator("photoUrl")
     # threadGenerator.setDaemon(True)
     threadGenerator.start()
     # while 1:

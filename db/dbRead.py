@@ -9,7 +9,7 @@ def group(uid):
 
 
 class DBRead:
-    APILIST = ["userFollowers", "userInformation", "userPhotos", "photoInformation"]
+    APILIST = ["userFollowers", "userInformation", "userPhotos", "photoInformation", "photoUrl"]
 
     def __init__(self, readQueue, api, conn, cur):
         self.readQueue = readQueue
@@ -21,7 +21,7 @@ class DBRead:
     def readDB(self):
         if self.api == self.APILIST[0] or self.api == self.APILIST[1] or self.api == self.APILIST[2]:
             return self.readUid()
-        elif self.api == self.APILIST[3]:
+        elif self.api == self.APILIST[3] or self.api == self.APILIST[4]:
             return self.readPhotoId()
 
     def readUid(self):
@@ -93,7 +93,7 @@ class DBRead:
     def readPhotoId(self):
         try:
             self.count = 0
-            s = "SELECT photoid FROM photos_0 WHERE flag = 0 limit 0,1000000"
+            s = "SELECT photoid FROM photos_2 WHERE flag = 1 limit 0,1000000"
             self.cur.execute(s)
             for uid in self.cur.fetchall():
                 self.readQueue.put(uid[0])  # 返回的是一个元组，取第一个

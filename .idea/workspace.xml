@@ -5,47 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45125a5d-0f61-40fa-bed4-7861b0fd50da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/dbOperation/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/dbOperation/alterTable.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/dbOperation/createIndex.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/entity/photoEntity.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thread/apiThread/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thread/apiThread/photoInformationThread.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thread/writingThread.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/timeStamp.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/corrcetWrongUpate.py" afterPath="$PROJECT_DIR$/db/dbOperation/corrcetWrongUpate.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/countUser.py" afterPath="$PROJECT_DIR$/db/dbOperation/countUser.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/dbCreate.py" afterPath="$PROJECT_DIR$/db/dbOperation/dbCreate.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/dbInit.py" afterPath="$PROJECT_DIR$/db/dbOperation/dbInit.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/dbUserCount.py" afterPath="$PROJECT_DIR$/db/dbOperation/dbUserCount.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/divideTable.py" afterPath="$PROJECT_DIR$/db/dbOperation/divideTable.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/mergeTable.py" afterPath="$PROJECT_DIR$/db/dbOperation/mergeTable.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/tableCreate.py" afterPath="$PROJECT_DIR$/db/dbOperation/tableCreate.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/cleanApp.py" afterPath="$PROJECT_DIR$/tools/cleanApp.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/log.py" afterPath="$PROJECT_DIR$/tools/log.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res/myApp.py" afterPath="$PROJECT_DIR$/tools/myApp.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/thread/userFollowersThread.py" afterPath="$PROJECT_DIR$/thread/apiThread/userFollowersThread.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/thread/userInformationThread.py" afterPath="$PROJECT_DIR$/thread/apiThread/userInformationThread.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/thread/userPhotosThread.py" afterPath="$PROJECT_DIR$/thread/apiThread/userPhotosThread.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/flickrApi/photoUrl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thread/apiThread/photoUrlThread.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/flickrApi/photoSize.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/shadowsocks.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/entity/photoSizeEntity.py" afterPath="$PROJECT_DIR$/entity/photoUrlEntity.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/dbRead.py" afterPath="$PROJECT_DIR$/db/dbRead.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/dbWrite.py" afterPath="$PROJECT_DIR$/db/dbWrite.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/flickrApi/photoInformation.py" afterPath="$PROJECT_DIR$/lib/flickrApi/photoInformation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/flickrApi/photoSize.py" afterPath="$PROJECT_DIR$/lib/flickrApi/photoSize.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/flickrApi/stat.py" afterPath="$PROJECT_DIR$/lib/flickrApi/stat.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/flickrApi/userFollowers.py" afterPath="$PROJECT_DIR$/lib/flickrApi/userFollowers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/flickrApi/userInformation.py" afterPath="$PROJECT_DIR$/lib/flickrApi/userInformation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/flickrApi/userPhotos.py" afterPath="$PROJECT_DIR$/lib/flickrApi/userPhotos.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recoverryUid/recoveryByEachUid.py" afterPath="$PROJECT_DIR$/recoverryUid/recoveryByEachUid.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recoverryUid/recoveryUid.py" afterPath="$PROJECT_DIR$/recoverryUid/recoveryUid.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/myApp" afterPath="$PROJECT_DIR$/res/myApp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test.py" afterPath="$PROJECT_DIR$/test/test.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thread/apiCallThread.py" afterPath="$PROJECT_DIR$/thread/apiCallThread.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thread/dataThread.py" afterPath="$PROJECT_DIR$/thread/dataThread.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thread/ipLimitedThread.py" afterPath="$PROJECT_DIR$/thread/ipLimitedThread.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thread/logThread.py" afterPath="$PROJECT_DIR$/thread/logThread.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thread/threadGenerator.py" afterPath="$PROJECT_DIR$/thread/threadGenerator.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thread/writingThread.py" afterPath="$PROJECT_DIR$/thread/writingThread.py" />
     </list>
     <ignored path="Flickr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,9 +31,10 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Flickr$db.coverage" NAME="userFllowers Coverage Results" MODIFIED="1474807553248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" />
     <SUITE FILE_PATH="coverage/Coding$userFllowersTask.coverage" NAME="userFllowersTask Coverage Results" MODIFIED="1475304402263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Flickr/lib/flickr-api" />
-    <SUITE FILE_PATH="coverage/Coding$main.coverage" NAME="main Coverage Results" MODIFIED="1482998570854" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Coding$main.coverage" NAME="main Coverage Results" MODIFIED="1487848044270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Flickr$main.coverage" NAME="main Coverage Results" MODIFIED="1475234482738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/task" />
-    <SUITE FILE_PATH="coverage/Coding$stat.coverage" NAME="stat Coverage Results" MODIFIED="1483002203128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi" />
+    <SUITE FILE_PATH="coverage/Coding$photoSize.coverage" NAME="photoSize Coverage Results" MODIFIED="1487845471084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi" />
+    <SUITE FILE_PATH="coverage/Coding$stat.coverage" NAME="stat Coverage Results" MODIFIED="1487847392267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi" />
     <SUITE FILE_PATH="coverage/Flickr$cleanMyAPP.coverage" NAME="cleanMyAPP Coverage Results" MODIFIED="1475155536158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/res" />
     <SUITE FILE_PATH="coverage/Coding$countUser.coverage" NAME="countUser Coverage Results" MODIFIED="1476959664911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />
     <SUITE FILE_PATH="coverage/Coding$testing.coverage" NAME="testing Coverage Results" MODIFIED="1481033462303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
@@ -71,6 +43,7 @@
     <SUITE FILE_PATH="coverage/Coding$nowTesting.coverage" NAME="testing Coverage Results" MODIFIED="1475751149615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />
     <SUITE FILE_PATH="coverage/Coding$app.coverage" NAME="app Coverage Results" MODIFIED="1476751539053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/res" />
     <SUITE FILE_PATH="coverage/Flickr$test.coverage" NAME="test Coverage Results" MODIFIED="1475149896468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" />
+    <SUITE FILE_PATH="coverage/Coding$myApp.coverage" NAME="myApp Coverage Results" MODIFIED="1487330560403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tools" />
     <SUITE FILE_PATH="coverage/Coding$recovery.coverage" NAME="recovery Coverage Results" MODIFIED="1476931982057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/res" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -89,80 +62,74 @@
     <favorites_list name="Flickr" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="myApp.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tools/myApp.py">
+    <leaf>
+      <file leaf-file-name="dbRead.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/dbRead.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="64" selection-end-column="62" />
+            <state relative-caret-position="0">
+              <caret line="90" column="17" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
               <folding>
-                <element signature="e#40#61#0" expanded="true" />
+                <marker date="1487848044094" expanded="true" signature="2668:2731" ph="SELECT uid F... users_0" />
+                <marker date="1487848044094" expanded="true" signature="3237:3279" ph="SELECT photo... photos_0" />
+                <marker date="1487848044094" expanded="true" signature="3237:3296" ph="SELECT photo... photos_0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="prc.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/prc.py">
+      <file leaf-file-name="dbWrite.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/dbWrite.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-6506">
+              <caret line="80" column="26" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
+              <folding>
+                <element signature="e#40#54#0" expanded="true" />
+                <marker date="1487848044209" expanded="true" signature="5754:5802" ph="INSERT INTO users_missing_value... " />
+                <marker date="1487848044209" expanded="true" signature="6222:6270" ph="INSERT INTO users_missing_value... " />
+                <marker date="1487848044209" expanded="true" signature="11521:11654" ph="UPDATE users... " />
+                <marker date="1487848044209" expanded="true" signature="12006:12056" ph="UPDATE users... " />
+                <marker date="1487848044209" expanded="true" signature="12401:12451" ph="UPDATE users... " />
+                <marker date="1487848044209" expanded="true" signature="12796:12846" ph="UPDATE users... " />
+                <marker date="1487848044209" expanded="true" signature="13191:13242" ph="UPDATE users... " />
+                <marker date="1487848044209" expanded="true" signature="13587:13639" ph="UPDATE users... " />
+                <marker date="1487848044209" expanded="true" signature="13984:14036" ph="UPDATE users... " />
+                <marker date="1487848044209" expanded="true" signature="14381:14437" ph="UPDATE users... " />
+                <marker date="1487848044209" expanded="true" signature="18975:19018" ph="select cnt f... tableCnt" />
+                <marker date="1487848044209" expanded="true" signature="18975:19020" ph="select cnt f... tableCnt" />
+                <marker date="1487848044209" expanded="true" signature="19131:19180" ph="update table... " />
+                <marker date="1487848044209" expanded="true" signature="20225:20280" ph="update photo... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createIndex.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/dbOperation/createIndex.py">
+      <file leaf-file-name="photoUrlEntity.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/entity/photoUrlEntity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding>
-                <marker date="1481032442988" expanded="true" signature="400:585" ph="delete from " />
-                <marker date="1481032442988" expanded="true" signature="440:503" ph="select photo... photos_2" />
-                <marker date="1481032442988" expanded="true" signature="521:584" ph="select min(i... photos_2" />
-                <marker date="1481032442988" expanded="true" signature="588:660" ph="insert into photos_1... " />
-                <marker date="1481032442988" expanded="true" signature="614:660" ph="select a,b f... photos_0" />
-              </folding>
+            <state relative-caret-position="46">
+              <caret line="2" column="20" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dbRead.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/dbRead.py">
+      <file leaf-file-name="photoUrl.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/flickrApi/photoUrl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+            <state relative-caret-position="442">
+              <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
               <folding>
-                <marker date="1481334703024" expanded="true" signature="2625:2688" ph="SELECT uid F... users_0" />
-                <marker date="1481334703024" expanded="true" signature="3194:3237" ph="SELECT photo... photos_0" />
-                <marker date="1481334703024" expanded="true" signature="3194:3253" ph="SELECT photo... photos_0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dbWrite.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/dbWrite.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9963">
-              <caret line="374" column="97" selection-start-line="374" selection-start-column="97" selection-end-line="374" selection-end-column="97" />
-              <folding>
-                <element signature="e#40#54#0" expanded="true" />
-                <marker date="1481859583141" expanded="true" signature="5756:5804" ph="INSERT INTO users_missing_value... " />
-                <marker date="1481859583141" expanded="true" signature="6224:6272" ph="INSERT INTO users_missing_value... " />
-                <marker date="1481859583141" expanded="true" signature="11523:11656" ph="UPDATE users... " />
-                <marker date="1481859583141" expanded="true" signature="12008:12058" ph="UPDATE users... " />
-                <marker date="1481859583141" expanded="true" signature="12403:12453" ph="UPDATE users... " />
-                <marker date="1481859583141" expanded="true" signature="12798:12848" ph="UPDATE users... " />
-                <marker date="1481859583141" expanded="true" signature="13193:13244" ph="UPDATE users... " />
-                <marker date="1481859583141" expanded="true" signature="13589:13641" ph="UPDATE users... " />
-                <marker date="1481859583141" expanded="true" signature="13986:14038" ph="UPDATE users... " />
-                <marker date="1481859583141" expanded="true" signature="14383:14439" ph="UPDATE users... " />
-                <marker date="1481859583141" expanded="true" signature="18977:19020" ph="select cnt f... tableCnt" />
-                <marker date="1481859583141" expanded="true" signature="18977:19022" ph="select cnt f... tableCnt" />
-                <marker date="1481859583141" expanded="true" signature="19133:19182" ph="update table... " />
-                <marker date="1481859583141" expanded="true" signature="20209:20269" ph="update photo... " />
+                <element signature="e#40#69#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -171,11 +138,53 @@
       <file leaf-file-name="threadGenerator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/thread/threadGenerator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+            <state relative-caret-position="362">
+              <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="apiCallThread.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thread/apiCallThread.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="74" column="25" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
               <folding>
-                <element signature="e#40#74#0" expanded="true" />
+                <element signature="e#40#68#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="photoUrlThread.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thread/apiThread/photoUrlThread.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="759">
+              <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+              <folding>
+                <element signature="e#41#69#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userPhotos.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/flickrApi/userPhotos.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="writingThread.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thread/writingThread.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -198,10 +207,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tools/MD5.py" />
-        <option value="$PROJECT_DIR$/tools/myGzip.py" />
-        <option value="$PROJECT_DIR$/tools/myRequest.py" />
-        <option value="$PROJECT_DIR$/entity/photoEntity.py" />
         <option value="$PROJECT_DIR$/tools/timeStamp.py" />
         <option value="$PROJECT_DIR$/thread/photoInformationThread.py" />
         <option value="$PROJECT_DIR$/res/log/log05-21-41-11" />
@@ -209,7 +214,6 @@
         <option value="$PROJECT_DIR$/res/log/log05-21-47-50" />
         <option value="$PROJECT_DIR$/res/log/log05-21-51-22" />
         <option value="$PROJECT_DIR$/db/createIndex.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/res/log/log06-11-25-23" />
         <option value="$PROJECT_DIR$/res/log/log06-18-25-52" />
         <option value="$PROJECT_DIR$/res/log/log06-18-39-09" />
@@ -235,20 +239,25 @@
         <option value="$PROJECT_DIR$/res/log/log06-19-51-12" />
         <option value="$PROJECT_DIR$/res/log/log06-19-53-22" />
         <option value="$PROJECT_DIR$/db/alterTable.py" />
-        <option value="$PROJECT_DIR$/thread/writingThread.py" />
         <option value="$PROJECT_DIR$/recoverryUid/recoveryByEachUid.py" />
         <option value="$PROJECT_DIR$/recoverryUid/recoveryUid.py" />
         <option value="$PROJECT_DIR$/test/test.py" />
-        <option value="$PROJECT_DIR$/thread/apiCallThread.py" />
         <option value="$PROJECT_DIR$/thread/ipLimitedThread.py" />
         <option value="$PROJECT_DIR$/res/log/log07-08-57-54" />
-        <option value="$PROJECT_DIR$/thread/dataThread.py" />
-        <option value="$PROJECT_DIR$/db/dbRead.py" />
         <option value="$PROJECT_DIR$/lib/flickrApi/photoInformation.py" />
         <option value="$PROJECT_DIR$/lib/flickrApi/stat.py" />
         <option value="$PROJECT_DIR$/tools/myApp.py" />
-        <option value="$PROJECT_DIR$/db/dbWrite.py" />
         <option value="$PROJECT_DIR$/res/myApp" />
+        <option value="$PROJECT_DIR$/thread/dataThread.py" />
+        <option value="$PROJECT_DIR$/lib/flickrApi/photoSize.py" />
+        <option value="$PROJECT_DIR$/entity/photoUrlEntity.py" />
+        <option value="$PROJECT_DIR$/thread/apiThread/photoUrlThread.py" />
+        <option value="$PROJECT_DIR$/thread/writingThread.py" />
+        <option value="$PROJECT_DIR$/thread/apiCallThread.py" />
+        <option value="$PROJECT_DIR$/lib/flickrApi/photoUrl.py" />
+        <option value="$PROJECT_DIR$/db/dbWrite.py" />
+        <option value="$PROJECT_DIR$/db/dbRead.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -306,18 +315,8 @@
               <option name="myItemId" value="Coding" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Coding" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Coding" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="tools" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -331,7 +330,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
+              <option name="myItemId" value="thread" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -345,11 +344,63 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
+              <option name="myItemId" value="thread" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="log" />
+              <option name="myItemId" value="apiThread" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Coding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Coding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Coding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Coding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Coding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Coding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Coding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Coding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -357,22 +408,26 @@
         <option name="show-excluded-files" value="false" />
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/spider-develop" />
     <property name="SearchEverywhereHistoryKey" value="update&#9;null&#9;null" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\xk\PycharmProjects\Coding\db" />
-      <recent name="C:\Users\xk\PycharmProjects\Flickr\lib" />
-      <recent name="C:\Users\xk\PycharmProjects\Flickr" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\xk\PycharmProjects\Coding\thread\apiThread" />
       <recent name="C:\Users\xk\PycharmProjects\Coding\db\dbOperation" />
@@ -380,8 +435,52 @@
       <recent name="C:\Users\xk\PycharmProjects\Coding\machineLearing" />
       <recent name="C:\Users\xk\PycharmProjects\Coding\res\uidNotExist" />
     </key>
+    <key name="OPEN_URL_DIALOG">
+      <recent name="https://github.com/dataSnail/spider" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\xk\PycharmProjects\Coding\db" />
+      <recent name="C:\Users\xk\PycharmProjects\Flickr\lib" />
+      <recent name="C:\Users\xk\PycharmProjects\Flickr" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.stat">
+  <component name="RunManager" selected="Python.main">
+    <configuration default="false" name="myApp" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Python27\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tools" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Flickr" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/myApp.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="photoSize" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Python27\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib/flickrApi" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Flickr" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\xk\PycharmProjects\Coding\lib\flickrApi\photoUrl.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -734,7 +833,7 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <list size="8">
+    <list size="10">
       <item index="0" class="java.lang.String" itemvalue="Python.prc" />
       <item index="1" class="java.lang.String" itemvalue="Python.MD5" />
       <item index="2" class="java.lang.String" itemvalue="Python.testing" />
@@ -743,7 +842,15 @@
       <item index="5" class="java.lang.String" itemvalue="Python.countUser" />
       <item index="6" class="java.lang.String" itemvalue="Python.stat" />
       <item index="7" class="java.lang.String" itemvalue="Python.app" />
+      <item index="8" class="java.lang.String" itemvalue="Python.myApp" />
+      <item index="9" class="java.lang.String" itemvalue="Python.photoSize" />
     </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Python.photoSize" />
+        <item index="1" class="java.lang.String" itemvalue="Python.myApp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -759,6 +866,14 @@
       <option name="presentableId" value="Default" />
       <updated>1474715475556</updated>
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1486900033912</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1486900033912</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -771,27 +886,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="0" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23294243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489339" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="false" weight="0.2410148" sideWeight="0.50208336" order="9" side_tool="true" content_ui="tabs" x="2703" y="330" width="957" height="228" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20260021" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39935064" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20260021" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39935064" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -825,76 +940,17 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/thread/apiThread/userPhotosThread.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thread/apiThread/userInformationThread.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thread/apiThread/userFollowersThread.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thread/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/usefullCodeSegement.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recoverryUid/recoveryUid.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recoverryUid/recoveryByEachUid.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myException/ipLimitException.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/dbOperation/dbCreate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/dbOperation/dbInit.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -927,13 +983,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
           <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thread/apiCallThread.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="78" column="22" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -977,20 +1026,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/myRequest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thread/dataThread.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/log/log16-11-31-07" />
     <entry file="file://$PROJECT_DIR$/res/myApp">
       <provider selected="true" editor-type-id="text-editor">
@@ -1020,16 +1055,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/myApp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="64" selection-end-column="62" />
-          <folding>
-            <element signature="e#40#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/res/log/log16-11-39-43" />
+    <entry file="file://$PROJECT_DIR$/res/log/log12-19-51-09" />
     <entry file="file://$PROJECT_DIR$/test/prc.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1038,9 +1065,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tools/myApp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="e#40#61#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db/dbOperation/createIndex.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
+        <state relative-caret-position="322">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <marker date="1481032442988" expanded="true" signature="400:585" ph="delete from " />
@@ -1052,56 +1089,139 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/dbRead.py">
+    <entry file="https://github.com/dataSnail/spider">
+      <provider selected="true" editor-type-id="httpFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thread/dataThread.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        <state relative-caret-position="828">
+          <caret line="44" column="39" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/myRequest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="106" column="8" selection-start-line="106" selection-start-column="8" selection-end-line="106" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thread/apiThread/userInformationThread.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <marker date="1481334703024" expanded="true" signature="2625:2688" ph="SELECT uid F... users_0" />
-            <marker date="1481334703024" expanded="true" signature="3194:3237" ph="SELECT photo... photos_0" />
-            <marker date="1481334703024" expanded="true" signature="3194:3253" ph="SELECT photo... photos_0" />
+            <element signature="e#40#68#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/dbWrite.py">
+    <entry file="file://$PROJECT_DIR$/lib/flickrApi/userPhotos.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9963">
-          <caret line="374" column="97" selection-start-line="374" selection-start-column="97" selection-end-line="374" selection-end-column="97" />
-          <folding>
-            <element signature="e#40#54#0" expanded="true" />
-            <marker date="1481859583141" expanded="true" signature="5756:5804" ph="INSERT INTO users_missing_value... " />
-            <marker date="1481859583141" expanded="true" signature="6224:6272" ph="INSERT INTO users_missing_value... " />
-            <marker date="1481859583141" expanded="true" signature="11523:11656" ph="UPDATE users... " />
-            <marker date="1481859583141" expanded="true" signature="12008:12058" ph="UPDATE users... " />
-            <marker date="1481859583141" expanded="true" signature="12403:12453" ph="UPDATE users... " />
-            <marker date="1481859583141" expanded="true" signature="12798:12848" ph="UPDATE users... " />
-            <marker date="1481859583141" expanded="true" signature="13193:13244" ph="UPDATE users... " />
-            <marker date="1481859583141" expanded="true" signature="13589:13641" ph="UPDATE users... " />
-            <marker date="1481859583141" expanded="true" signature="13986:14038" ph="UPDATE users... " />
-            <marker date="1481859583141" expanded="true" signature="14383:14439" ph="UPDATE users... " />
-            <marker date="1481859583141" expanded="true" signature="18977:19020" ph="select cnt f... tableCnt" />
-            <marker date="1481859583141" expanded="true" signature="18977:19022" ph="select cnt f... tableCnt" />
-            <marker date="1481859583141" expanded="true" signature="19133:19182" ph="update table... " />
-            <marker date="1481859583141" expanded="true" signature="20209:20269" ph="update photo... " />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/log/log16-11-39-43">
+    <entry file="file://$PROJECT_DIR$/thread/writingThread.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="322">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/thread/threadGenerator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        <state relative-caret-position="362">
+          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thread/apiCallThread.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="74" column="25" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
           <folding>
-            <element signature="e#40#74#0" expanded="true" />
+            <element signature="e#40#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thread/apiThread/photoUrlThread.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+          <folding>
+            <element signature="e#41#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/flickrApi/photoUrl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+          <folding>
+            <element signature="e#40#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/photoUrlEntity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/dbRead.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="90" column="17" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
+          <folding>
+            <marker date="1487848044094" expanded="true" signature="2668:2731" ph="SELECT uid F... users_0" />
+            <marker date="1487848044094" expanded="true" signature="3237:3279" ph="SELECT photo... photos_0" />
+            <marker date="1487848044094" expanded="true" signature="3237:3296" ph="SELECT photo... photos_0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/dbWrite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6506">
+          <caret line="80" column="26" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
+          <folding>
+            <element signature="e#40#54#0" expanded="true" />
+            <marker date="1487848044209" expanded="true" signature="5754:5802" ph="INSERT INTO users_missing_value... " />
+            <marker date="1487848044209" expanded="true" signature="6222:6270" ph="INSERT INTO users_missing_value... " />
+            <marker date="1487848044209" expanded="true" signature="11521:11654" ph="UPDATE users... " />
+            <marker date="1487848044209" expanded="true" signature="12006:12056" ph="UPDATE users... " />
+            <marker date="1487848044209" expanded="true" signature="12401:12451" ph="UPDATE users... " />
+            <marker date="1487848044209" expanded="true" signature="12796:12846" ph="UPDATE users... " />
+            <marker date="1487848044209" expanded="true" signature="13191:13242" ph="UPDATE users... " />
+            <marker date="1487848044209" expanded="true" signature="13587:13639" ph="UPDATE users... " />
+            <marker date="1487848044209" expanded="true" signature="13984:14036" ph="UPDATE users... " />
+            <marker date="1487848044209" expanded="true" signature="14381:14437" ph="UPDATE users... " />
+            <marker date="1487848044209" expanded="true" signature="18975:19018" ph="select cnt f... tableCnt" />
+            <marker date="1487848044209" expanded="true" signature="18975:19020" ph="select cnt f... tableCnt" />
+            <marker date="1487848044209" expanded="true" signature="19131:19180" ph="update table... " />
+            <marker date="1487848044209" expanded="true" signature="20225:20280" ph="update photo... " />
           </folding>
         </state>
       </provider>

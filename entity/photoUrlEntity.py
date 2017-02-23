@@ -1,6 +1,6 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
-class PhotoSizeEntity:
+class PhotoUrlEntity:
     def __init__(self, photoId):
         self.photoId = photoId
         self.url = None

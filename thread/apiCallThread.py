@@ -7,10 +7,10 @@ from apiThread.photoInformationThread import PhotoInformationThread
 from apiThread.userFollowersThread import UserFollowersThread
 from apiThread.userInformationThread import UserInformationThread
 from apiThread.userPhotosThread import UserPhotosThread
-
+from apiThread.photoUrlThread import PhotoUrlThread
 
 class ApiCallThread(Thread):
-    APILIST = ["userFollowers", "userInformation", "userPhotos", "photoInformation"]
+    APILIST = ["userFollowers", "userInformation", "userPhotos", "photoInformation", "photoUrl"]
 
     def __init__(self, readQueue, writeQueue, api, app):
         Thread.__init__(self)
@@ -60,6 +60,17 @@ class ApiCallThread(Thread):
         elif self.api == self.APILIST[3]:
             self.photoid = self.readQueue.get()
             t = PhotoInformationThread(self.photoid, self.app, self.writeQueue)
+            try:
+                t.start()
+                t.join()
+            except Exception as e:
+                print e
+                sleep(1)
+                self.apiCalled()
+
+        elif self.api == self.APILIST[4]:
+            self.photoid = self.readQueue.get()
+            t = PhotoUrlThread(self.photoid, self.app, self.writeQueue)
             try:
                 t.start()
                 t.join()

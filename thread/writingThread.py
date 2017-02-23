@@ -10,7 +10,7 @@ from tools.myApp import MyApp
 
 class WritingThread(Thread):
     writingDBBound = 1
-    APILIST = ["userFollowers", "userInformation", "userPhotos", "photoInformation"]
+    APILIST = ["userFollowers", "userInformation", "userPhotos", "photoInformation", "photoUrl"]
 
     def __init__(self, api,writeQueue, logQueue):
         Thread.__init__(self)

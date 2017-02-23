@@ -47,6 +47,7 @@ class DataThread(Thread):
                 # 启动线程
                 if not self.isReadOver:
                     if self.readQueue.qsize() < self.readingDBBound:
+                        sleep(10)
                         if not self.dbReader.readDB():
                             self.isReadOver = True
         except RuntimeError as e:

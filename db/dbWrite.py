@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import MySQLdb
 from entity.photoEntity import PhotoEntity
-from entity.photoSizeEntity import PhotoSizeEntity
+from entity.photoUrlEntity import PhotoUrlEntity
 from entity.userEntity import UserEntity
 from entity.userFollowersEntity import UserFollowersEntity
 from entity.userPhotosEntity import UserPhotosEntity
@@ -374,7 +374,7 @@ class DBWrite:
                 # print "Photo id:%s Information Has Been Updated photos writeQueue %s" % (photoidList[i], self.writeQueue.qsize())
                 # self.logQueue.put("Photo id:%s Information Has Been Updated " % photoidList[i])
             try:
-                tableName = "photos_0"
+                tableName = "photos_2"
                 self.cur.execute("SET CHARSET utf8mb4")
                 query = "UPDATE " + tableName + " SET views=%s,title=%s,dates=%s,comments=%s,tags=%s,flag=1 WHERE photoid=%s "
                 self.cur.executemany(query, valueList)
@@ -401,12 +401,15 @@ class DBWrite:
             #     print "Photo id:%s Information Has Been Updated " % photoid
             #     self.logQueue.put("Photo id:%s Information Has Been Updated " % photoid)
 
-
-
-        elif isinstance(data[0], PhotoSizeEntity):
+        elif isinstance(data[0], PhotoUrlEntity):
             photoId = data[0].getPhotoId()
             url = data[0].getUrl()
-            self.cur.execute("update photos_1_copy set downloadurl = %s where photoid = %s", (url, photoId))
+            try:
+                self.cur.execute("update photos_1 set downloadurl = %s where photoid = %s", (url, photoId))
+                self.conn.commit()
+            except MySQLdb.Error as e:
+                print e
+                self.logQueue.put("***" + str(photoId) + str(e))
 
 
 if __name__ == '__main__':
