@@ -8,5 +8,6 @@ class AbstractPhotoEntity(Entity):
         super(AbstractPhotoEntity, self).__init__()
         self.uid = photoid
 
+
 if __name__ == '__main__':
     pass
