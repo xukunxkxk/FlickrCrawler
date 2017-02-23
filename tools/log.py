@@ -1,7 +1,6 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
 from time import ctime, time, localtime, strftime
-from myException.ipLimitException import IpLimitException
 from time import sleep
 from bs4 import BeautifulSoup
 from urllib import urlopen

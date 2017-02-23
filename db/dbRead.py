@@ -93,7 +93,7 @@ class DBRead:
     def readPhotoId(self):
         try:
             self.count = 0
-            s = "SELECT photoid FROM photos_2 WHERE flag = 1 limit 0,1000000"
+            s = "SELECT photoid FROM photos_2 WHERE flag = 1  limit 0,1000000"
             self.cur.execute(s)
             for uid in self.cur.fetchall():
                 self.readQueue.put(uid[0])  # 返回的是一个元组，取第一个

@@ -1,7 +1,6 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
 import re
-from myException.ipLimitException import IpLimitException
 # from urllib import urlopen
 from urllib2 import HTTPError, urlopen
 from bs4 import BeautifulSoup
