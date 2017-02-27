@@ -4,27 +4,8 @@
     <bookmark url="file://$PROJECT_DIR$/test/prc.py" line="15" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45125a5d-0f61-40fa-bed4-7861b0fd50da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/flickrApi/abstractApi/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrApi.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrPhotoApi.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrUserApi.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/myRequest.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/entity/baseEntity/photoEntity.py" afterPath="$PROJECT_DIR$/entity/baseEntity/abstractPhotoEntity.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/entity/baseEntity/userEntity.py" afterPath="$PROJECT_DIR$/entity/baseEntity/abstractUserEntity.py" />
+    <list default="true" id="45125a5d-0f61-40fa-bed4-7861b0fd50da" name="Default" comment="apiAdded">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/entity/baseEntity/entity.py" afterPath="$PROJECT_DIR$/entity/baseEntity/entity.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/entity/photoEntity.py" afterPath="$PROJECT_DIR$/entity/photoEntity.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/entity/photoUrlEntity.py" afterPath="$PROJECT_DIR$/entity/photoUrlEntity.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/entity/userEntity.py" afterPath="$PROJECT_DIR$/entity/userEntity.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/entity/userFollowersEntity.py" afterPath="$PROJECT_DIR$/entity/userFollowersEntity.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/entity/userPhotosEntity.py" afterPath="$PROJECT_DIR$/entity/userPhotosEntity.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/flickrApi/photoInformation.py" afterPath="$PROJECT_DIR$/lib/flickrApi/photoInformation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/flickrApi/photoUrl.py" afterPath="$PROJECT_DIR$/lib/flickrApi/photoUrl.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/flickrApi/userFollowers.py" afterPath="$PROJECT_DIR$/lib/flickrApi/userFollowers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/flickrApi/userInformation.py" afterPath="$PROJECT_DIR$/lib/flickrApi/userInformation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/flickrApi/userPhotos.py" afterPath="$PROJECT_DIR$/lib/flickrApi/userPhotos.py" />
     </list>
     <ignored path="Flickr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,7 +38,7 @@
     <SUITE FILE_PATH="coverage/Coding$userPhotosEntity.coverage" NAME="userPhotosEntity Coverage Results" MODIFIED="1488095102802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/entity" />
     <SUITE FILE_PATH="coverage/Coding$main.coverage" NAME="main Coverage Results" MODIFIED="1488088449961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Coding$photoSize.coverage" NAME="photoSize Coverage Results" MODIFIED="1487845471084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi" />
-    <SUITE FILE_PATH="coverage/Coding$stat.coverage" NAME="stat Coverage Results" MODIFIED="1488194411199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi" />
+    <SUITE FILE_PATH="coverage/Coding$stat.coverage" NAME="stat Coverage Results" MODIFIED="1488198908490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi" />
     <SUITE FILE_PATH="coverage/Flickr$cleanMyAPP.coverage" NAME="cleanMyAPP Coverage Results" MODIFIED="1475155536158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/res" />
     <SUITE FILE_PATH="coverage/Coding$userPhotos.coverage" NAME="userPhotos Coverage Results" MODIFIED="1488117189012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi" />
     <SUITE FILE_PATH="coverage/Coding$flickrUserApi.coverage" NAME="flickrUserApi Coverage Results" MODIFIED="1488109623633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi/abstractApi" />
@@ -1075,7 +1056,14 @@
       <option name="project" value="LOCAL" />
       <updated>1487850723944</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="apiAdded">
+      <created>1488198564881</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1488198564881</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
