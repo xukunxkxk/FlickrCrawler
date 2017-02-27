@@ -3,10 +3,11 @@
 import sys
 from urllib2 import HTTPError
 
-from entity.photoEntity import PhotoEntity
+from entity.photoEntity import PhotoEntity, PhotoEntity2
 from tools.myRequest import Requests
 from tools.timeStamp import timestampConvertToTime
 
+from lib.flickrApi.abstractApi.flickrPhotoApi import FlickrPhotoApi
 
 class PhotoInformation:
     host = "https://api.flickr.com/services/rest/?"
@@ -128,14 +129,98 @@ class PhotoInformation:
     def getStat(self):
         return self.stat
 
+class PhotoInformation2(FlickrPhotoApi):
+    def __init__(self, app, photoid):
+        super(PhotoInformation2, self).__init__(app, photoid)
+        self.api = "flickr.photos.getInfo"
+        self.entity = PhotoEntity2(photoid)
+
+    def analyze(self):
+        reload(sys)
+        sys.setdefaultencoding('utf8')
+
+        if not self.exits:
+            return
+
+        # views
+        try:
+            views = self.request.getAttrsValue("photo", "views")
+            self.entity.setValue(views=views)
+        except AttributeError:
+            pass
+        except UnicodeEncodeError:
+            reload(sys)
+            sys.setdefaultencoding('utf8')
+            views = self.request.getAttrsValue("photo", "views")
+            self.entity.setValue(views=views)
+
+        # titles
+        try:
+            title = self.request.getText("title")
+            self.entity.setValue(title=title)
+        except AttributeError:
+            pass
+        except UnicodeEncodeError:
+            reload(sys)
+            sys.setdefaultencoding('utf8')
+            title = self.request.getText("title")
+            self.entity.setValue(title=title)
+
+        # dates
+        try:
+            dates = self.request.getAttrsValue("dates", "posted")
+            dates = timestampConvertToTime(dates)
+            self.entity.setValue(dates=dates)
+        except AttributeError:
+            pass
+
+        # comments
+        try:
+            comments = self.request.getText("comments")
+            self.entity.setValue(comments=comments)
+        except AttributeError:
+            pass
+
+        # tags
+        try:
+            tags = ""
+            tagList = self.request.getAllAttrsValue("tag", "raw")
+            pre = ""
+            for tag in tagList:
+                tags += tag + ","
+                if len(tags) > 797:
+                    tags = pre
+                    break
+                else:
+                    pre = tags
+            if tags == "":
+                tags = None
+            else:
+                tags = tags[0: len(tags) - 2]
+            if tags and len(tags ) > 797:
+                tags = None
+            self.entity.setValue(tags=tags)
+        except AttributeError:
+            pass
+        except UnicodeEncodeError:
+            reload(sys)
+            sys.setdefaultencoding('utf8')
+            tags = ""
+            tagList = self.request.getAllAttrsValue("tag", "raw")
+            for tag in tagList:
+                tags += tag + ","
+            if not tags == "":
+                tags = tags[0: len(tags) - 2]
+                self.entity.setValue(tags=tags)
+
 
 if __name__ == '__main__':
     from tools.myApp import MyApp
 
     app = MyApp()
-    photoInfo = PhotoInformation("96452426")
-    entity = photoInfo.getPhotoInformation(app).getValue()
-    print entity
+    photoInfo = PhotoInformation2(app, "96452426")
+    entity = photoInfo.work()
+    print entity.getValue()
     # from db.dbConnect import dbConnect
     #
     # conn, cur = dbConnect()

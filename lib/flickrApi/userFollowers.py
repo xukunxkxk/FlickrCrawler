@@ -4,8 +4,12 @@
 from urllib2 import HTTPError, urlopen
 
 from bs4 import BeautifulSoup
-from entity.userFollowersEntity import UserFollowersEntity
+from entity.userFollowersEntity import UserFollowersEntity, UserFollowersEntity2
 from tools.myApp import MyApp
+
+from lib.flickrApi.abstractApi.flickrUserApi import FlickrUserApi
+
+
 
 
 class UserFollower:
@@ -51,6 +55,45 @@ class UserFollower:
         else:
             return None
 
+class UserFollower2(FlickrUserApi):
+    def __init__(self, app, uid):
+        super(UserFollower2, self).__init__(app, uid)
+        self.api = "flickr.contacts.getPublicList"
+        self.entity = UserFollowersEntity2(uid)
+
+    def analyze(self):
+        pass
+
+    def getFollower(self, app):
+        page = '1'
+        api_key = app.getApikey()
+        isWrong = False
+        try:
+            self.html = urlopen(self.host + "&method=" + self.api + "&api_key=" + api_key + \
+                                "&user_id=" + self.uid + "&page=" + page)
+            self.returnData = BeautifulSoup(self.html, "html.parser")
+            self.pageCount = int(self.returnData.find("contacts").attrs["pages"])
+            while 1:
+                for f in self.returnData.findAll("contact"):
+                    self.userFllowers.addFollowers(f.attrs["nsid"])
+                if int(page) < self.pageCount:
+                    page = str(int(page) + 1)
+                    api_key = app.getApikey()
+                    self.html = urlopen(self.host + "&method=" + self.api + "&api_key=" + api_key + \
+                                        "&user_id=" + self.uid + "&page=" + page)
+                    self.returnData = BeautifulSoup(self.html, "html.parser")
+                else:
+                    break
+        except AttributeError as e:
+            pass
+        except (HTTPError, IOError) as e:
+            print e
+            isWrong = True
+
+        if isWrong == False:
+            return self.userFllowers
+        else:
+            return None
 
 if __name__ == '__main__':
     u = UserFollower("95200220@N03")

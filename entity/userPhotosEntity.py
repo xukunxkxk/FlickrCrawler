@@ -1,6 +1,7 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
-class UserPhotosEntity:
+from baseEntity.abstractUserEntity import AbstractUserEntity
+class UserPhotosEntity():
     def __init__(self, uid):
         self.uid = uid
         self.photosIdList = list()
@@ -24,5 +25,16 @@ class UserPhotosEntity:
         self.cnt += len(photoList)
 
 
+class UserPhotosEntity2(AbstractUserEntity):
+    def __init__(self, uid):
+        super(UserPhotosEntity2, self).__init__(uid)
+        self.filedName = ["photoid"]
+        self.filedSize = 1
+        self.setFiledInitValues(None)
+
 if __name__ == '__main__':
-    pass
+    up = UserPhotosEntity2("aaaa")
+    print up.getValue()
+    v = ["111","2222"]
+    up.setValue(photoid = v)
+    print up.getValue()

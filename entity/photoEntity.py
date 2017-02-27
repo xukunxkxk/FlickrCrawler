@@ -1,6 +1,7 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
-class PhotoEntity:
+from baseEntity.abstractPhotoEntity import AbstractPhotoEntity
+class PhotoEntity():
     def __init__(self, photoId):
         self.photoId = photoId
         self.views = 0
@@ -22,6 +23,23 @@ class PhotoEntity:
         self.comments = comments
         self.tags = tags
 
+class PhotoEntity2(AbstractPhotoEntity):
+    def __init__(self, photoid):
+        super(PhotoEntity2, self).__init__(photoid)
+        self.filedName = ["views", "title", "dates", "comments", "tags"]
+        self.filedSize = 5
+        self.setFiledInitValues(0, None, None, 0, None)
+
+
+
 
 if __name__ == '__main__':
-    pass
+    p = PhotoEntity2("1111")
+    print p.getValue()
+    print p.getId()
+    p.setValue(views = 2)
+    p.setValue(title = "11")
+    p.setValue(dates = "22222")
+    p.setValue(comments = 2)
+    p.setValue(tags = "222")
+    print p.getValue()

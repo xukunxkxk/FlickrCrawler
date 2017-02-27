@@ -1,9 +1,12 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
 from urllib2 import HTTPError
-from entity.photoUrlEntity import PhotoUrlEntity
+from entity.photoUrlEntity import PhotoUrlEntity, PhotoUrlEntity2
 from tools.myApp import MyApp
 from tools.myRequest import Requests
+
+from lib.flickrApi.abstractApi.flickrPhotoApi import FlickrPhotoApi
+
 
 
 class PhotoUrl:
@@ -23,7 +26,6 @@ class PhotoUrl:
             url = self.host + "&method=" + self.api + "&api_key=" + api_key + "&photo_id=" + self.photoId
             self.request.get(url)
             self.stat = str(self.request.getAttrsValue('rsp', 'stat'))
-            photoUrlList = []
             photoUrlList = self.request.getAllAttrsValue('size', 'source')
             photoUrl = photoUrlList[len(photoUrlList) - 1]
             self.photoSizeEntity.setUrl(photoUrl)
@@ -42,8 +44,26 @@ class PhotoUrl:
         return self.stat
 
 
+class PhotoUrl2(FlickrPhotoApi):
+    def __init__(self, app, photoid):
+        super(PhotoUrl2, self).__init__(app, photoid)
+        self.api = "flickr.photos.getSizes"
+        self.entity = PhotoUrlEntity2(photoid)
+
+    def analyze(self):
+        if not self.exits:
+            return
+        try:
+            photoUrlList = self.request.getAllAttrsValue('size', 'source')
+            downloadurl = photoUrlList[len(photoUrlList) - 1]
+            self.entity.setValue(downloadurl=downloadurl)
+        except AttributeError as e:
+            self.stat = False
+            return
+
 if __name__ == '__main__':
-    u = PhotoUrl("31033031911")
     app = MyApp()
-    PhotoSize = u.getPhotosUrl(app)
+    u = PhotoUrl2(app, "31033031911")
+    entity  = u.work()
+    print entity.getValue()
 

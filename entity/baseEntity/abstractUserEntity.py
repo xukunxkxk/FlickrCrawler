@@ -7,5 +7,8 @@ class AbstractUserEntity(Entity):
         super(AbstractUserEntity, self).__init__()
         self.uid = uid
 
+    def getId(self):
+        return self.uid
+
 if __name__ == '__main__':
     pass

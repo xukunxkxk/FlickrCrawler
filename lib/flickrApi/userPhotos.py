@@ -2,9 +2,12 @@
 # -*- coding: utf-8 -*-
 from urllib2 import HTTPError
 
-from entity.userPhotosEntity import UserPhotosEntity
+from entity.userPhotosEntity import UserPhotosEntity, UserPhotosEntity2
 from tools.myApp import MyApp
 from tools.myRequest import Requests
+
+from lib.flickrApi.abstractApi.flickrUserApi import FlickrUserApi
+
 
 
 class UserPhotos:
@@ -202,14 +205,41 @@ class UserPhotos:
         return self.stat
 
 
+class UserPhotos2(FlickrUserApi):
+    def __init__(self, app, uid):
+        super(UserPhotos2, self).__init__(app, uid)
+        self.api = "flickr.people.getPublicPhotos"
+        self.entity = UserPhotosEntity2(uid)
+
+    def getAddress(self):
+        return super(UserPhotos2, self).getAddress() + '&per_page=100'
+
+    def analyze(self):
+        if not self.exits:
+            return
+        try:
+            total = int(self.request.getAttrsValue('photos', 'total'))
+            if total > 0:
+                photoid = self.request.getAllAttrsValue("photo", "id")
+                self.entity.setValue(photoid=photoid)
+        except AttributeError as e:
+            self.stat = False
+            return
+
+
 if __name__ == '__main__':
-    u = UserPhotos("27743519@N00")
-    u = UserPhotos("34952840@N00")
+    # u = UserPhotos("27743519@N00")
+    # u = UserPhotos("34952840@N00")
+    # app = MyApp()
+    # usersEntity = u.getPhotos(app)
+    # print u.stat
+    # for id in usersEntity.getPhotoList():
+    #     print id
+    # print usersEntity.getCnt()
+    # print usersEntity.getUid()
+    # print u.page
     app = MyApp()
-    usersEntity = u.getPhotos(app)
-    print u.stat
-    for id in usersEntity.getPhotoList():
-        print id
-    print usersEntity.getCnt()
-    print usersEntity.getUid()
-    print u.page
+    u = UserPhotos2(app, "27743519@N00")
+    e = u.work()
+    print e.getValue()
+

@@ -1,5 +1,6 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
+from baseEntity.abstractUserEntity import AbstractUserEntity
 class UserFollowersEntity:
     def __init__(self, uid):
         self.uid = uid
@@ -29,9 +30,18 @@ class UserFollowersEntity:
         return self
 
 
+class UserFollowersEntity2(AbstractUserEntity):
+    def __init__(self, uid):
+        super(UserFollowersEntity2, self).__init__(uid)
+        self.filedName = ["uid", "follower"]
+        self.filedSize = 2
+        self.setFiledInitValues(None, None)
+
 if __name__ == '__main__':
-    a = UserFollowersEntity("11111")
-    for i in range(10):
-        a.addFollowers(str(i))
-    for i in a:
-        print i
+    a = UserFollowersEntity2("11111")
+    print a.getValue()
+    print a.getId()
+    a.setValue(uid = 2)
+    a.setValue(follower = 3)
+    print a.getValue()
+
