@@ -1,7 +1,7 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
 from urllib import urlencode, urlretrieve
-from urllib2 import urlopen, Request
+from urllib2 import urlopen
 from bs4 import BeautifulSoup
 from myGzip import gzipDecode
 import urllib2, cookielib

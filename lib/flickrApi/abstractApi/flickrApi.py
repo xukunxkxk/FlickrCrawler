@@ -2,49 +2,76 @@
 # -*- coding: utf-8 -*-
 from urllib2 import HTTPError
 from tools.myRequest import Requests
+from exception.ipLimitedException import IpLimitedExcetpion
+from entity.flickrEntity import *
 
-class FlickrApi(object):
-    def __init__(self, app):
+class AbstractFlickrApi(object):
+    def __init__(self):
         self.request = Requests()
-        self.app = app
         self.stat = True
         self.host = "https://api.flickr.com/services/rest/?"
         self.api = None
         self.webData = None
         self.entity = None
         self.exits = True
+        self.taskList = []
+        self.apiName = str(self.__class__).split(".")[1][:-2]
+
+    def setApp(self, app):
+        self.app = app
+
+    def setTaskId(self, taskId, apiName=None):
+        self.taskId = taskId
+        if apiName:
+            self.entity = eval(apiName + "Entity")(self.taskId)
+        else:
+            self.entity = eval(self.apiName + "Entity")(self.taskId)
 
     def work(self):
         try:
             self._get()
             self._statCheck()
-        except (HTTPError, IOError) as e:
-            #检测HTTP ERROR  若429 则暂停爬取
-            print e
-            if str(e) == "HTTP Error 429: ":
-                self.stat = False
-            elif str(e) == r"HTTP Error 418: I'm a teapot (RFC 2324)\r\nExpires: Thu, 01 Jan 1970 22:00:00 GMT\r\nCache-Control: private, no-cache, no-store\r\n\r\nHTTP/1.0 418 I'm a teapot (RFC 2324)\r\nExpires: Thu, 01 Jan 1970 22:00:00 GMT\r\nCache-Control: private, no-cache, no-store\r\n\r\n":
-                self.stat = False
+        #爬取出现异常，分析并处理
+        except (HTTPError, IOError) as errorMsg:
+            print errorMsg
+            self._exceptionCheck(errorMsg)
             return None
 
-        if not self.webData:
-            return None
-        else:
+        #正常爬取
+        if self.exits and self._webDataCheck():
             self.analyze()
             return self.entity
-
+        else:
+            return None
 
     def getStat(self):
         return self.stat
 
+    #分析返回页面
     def analyze(self):
         pass
 
+    #覆盖爬取地址
     def getAddress(self):
         pass
 
-    def _get(self):
-        htmlAddress = self.getAddress()
+
+    def _taskListCheck(self):
+        if len(self.taskList) != 0:
+            self._work()
+
+    def _work(self):
+        for html in self.taskList:
+            self._get(html)
+            self.analyze()
+        self.taskList = []
+
+
+    def _get(self, html=None):
+        if html == None:
+            htmlAddress = self.getAddress()
+        else:
+            htmlAddress = html
         self.request.get(htmlAddress)
         self.webData = self.request.getBSObjet()
 
@@ -60,8 +87,22 @@ class FlickrApi(object):
         except AttributeError:
             self.stat = False
 
+    def _exceptionCheck(self, errorMsg):
+        if str(errorMsg) == "HTTP Error 429: ":
+            self.stat = False
+            raise IpLimitedExcetpion("HTTP Error 429: ")
+        elif str(errorMsg) == r"HTTP Error 418: I'm a teapot (RFC 2324)\r\nExpires: Thu, 01 Jan 1970 22:00:00 GMT\r\nCache-Control: private, no-cache, no-store\r\n\r\nHTTP/1.0 418 I'm a teapot (RFC 2324)\r\nExpires: Thu, 01 Jan 1970 22:00:00 GMT\r\nCache-Control: private, no-cache, no-store\r\n\r\n":
+            self.stat = False
+            raise IpLimitedExcetpion("HTTP Error 418: Teapot Error")
+        else:
+            pass
 
-
+    def _webDataCheck(self):
+        if not self.webData:
+            return False
+        else:
+            return True
 
 if __name__ == '__main__':
-    pass
+    a = AbstractFlickrApi()
+    a.setTaskId("1111")

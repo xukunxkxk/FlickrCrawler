@@ -6,9 +6,10 @@ from threading import Lock
 from time import sleep
 import random
 
+import os
 
 class MyApp:
-    filePath = r'C:\Users\xk\PycharmProjects\Coding\res\myApp'
+    filePath = os.path.join(os.path.dirname(__file__) + r'/../res/myApp')
     APIKYELIMIT = 3600
     APITIMING = 3600
 

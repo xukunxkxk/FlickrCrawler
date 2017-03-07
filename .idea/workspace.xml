@@ -2,10 +2,85 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/test/prc.py" line="15" />
+    <bookmark url="file://$PROJECT_DIR$/thread/spider_Thread/abstractSpiderThread.py" line="19" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45125a5d-0f61-40fa-bed4-7861b0fd50da" name="Default" comment="apiAdded">
+    <list default="true" id="45125a5d-0f61-40fa-bed4-7861b0fd50da" name="Default" comment="reconstruct">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/entity/flickrEntity.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thread/dataThread/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thread/dataThread/dataThreadControl.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exception/dbException.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thread/spiderThread/abstractSpiderThread.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exception/threadCrashException.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thread/spiderThread/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thread/dataThread/writingThread.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exception/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thread/dataThread/readingThread.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thread/threadPool.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thread/spiderThread/spiderThread.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/hostname.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/exception/ipLimitedException.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thread/spiderThread/taskAllocation.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/thread/apiCallThread.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/uidNotExist/wrongUsers_3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/photoid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/thread/apiThread/userFollowersThread.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/eachUid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/uidNotExist/wrongUsers_6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/uidNotExist/wrongUsers_2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/thread/threadGenerator.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/thread/dataThread.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/uidNotExist/wrongUsers_8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/uidNotExist/wrongUsers_7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/uidNotExist/wrongUsers_0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/entity/photoUrlEntity.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recoverryUid/recoveryByEachUid.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/token" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/thread/writingThread.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/text" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/ipTest/ipLimited.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/usefullCodeSegement.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/thread/ipLimitedThread.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db/dbWrite.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/logwrong" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/thread/apiThread/userPhotosThread.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db/dbRead.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/entity/userFollowersEntity.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/thread/logThread.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/wrong" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/uidNotExist/wrongUsers_1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/thread/apiThread/photoInformationThread.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/thread/apiThread/userInformationThread.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/uidNotExist/wrongUsers_4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/entity/userPhotosEntity.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/log/wrongUid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/entity/photoEntity.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recoverryUid/recoveryUid.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/res/uidNotExist/wrongUsers_5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/entity/userEntity.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/thread/apiThread/photoUrlThread.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/flickrApi/photoUrl.py" afterPath="$PROJECT_DIR$/lib/flickrApi/photoUrl.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/entity/baseEntity/entity.py" afterPath="$PROJECT_DIR$/entity/abstractEntity/entity.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/myApp.py" afterPath="$PROJECT_DIR$/tools/myApp.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrApi.py" afterPath="$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrApi.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Flickr.iml" afterPath="$PROJECT_DIR$/.idea/Flickr.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/recoverryUid/__init__.py" afterPath="$PROJECT_DIR$/lib/flickrApi/api.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/myRequest.py" afterPath="$PROJECT_DIR$/tools/myRequest.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/thread/apiThread/__init__.py" afterPath="$PROJECT_DIR$/entity/abstractEntity/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/flickrApi/userFollowers.py" afterPath="$PROJECT_DIR$/lib/flickrApi/userFollowers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/flickrApi/userInformation.py" afterPath="$PROJECT_DIR$/lib/flickrApi/userInformation.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/entity/baseEntity/abstractPhotoEntity.py" afterPath="$PROJECT_DIR$/entity/abstractEntity/abstractPhotoEntity.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/ipTest/__init__.py" afterPath="$PROJECT_DIR$/db/dbWritingRules/abstractDBWriting.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrPhotoApi.py" afterPath="$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrPhotoApi.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/entity/baseEntity/__init__.py" afterPath="$PROJECT_DIR$/db/dbWritingRules/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/entity/baseEntity/abstractUserEntity.py" afterPath="$PROJECT_DIR$/entity/abstractEntity/abstractUserEntity.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/dbConnect.py" afterPath="$PROJECT_DIR$/db/dbConnect.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/flickrApi/photoInformation.py" afterPath="$PROJECT_DIR$/lib/flickrApi/photoInformation.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/flickrApi/stat.py" afterPath="$PROJECT_DIR$/lib/flickrApi/statCheck.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/flickrApi/userPhotos.py" afterPath="$PROJECT_DIR$/lib/flickrApi/userPhotos.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrUserApi.py" afterPath="$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrUserApi.py" />
     </list>
     <ignored path="Flickr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -18,37 +93,59 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Flickr$db.coverage" NAME="userFllowers Coverage Results" MODIFIED="1474807553248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$userInformation.coverage" NAME="userInformation Coverage Results" MODIFIED="1488461164237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1488807917139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Coding$userFllowersTask.coverage" NAME="userFllowersTask Coverage Results" MODIFIED="1475304402263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Flickr/lib/flickr-api" />
     <SUITE FILE_PATH="coverage/Coding$userInformation.coverage" NAME="userInformation Coverage Results" MODIFIED="1488114355750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi" />
     <SUITE FILE_PATH="coverage/Coding$photoInformation.coverage" NAME="photoInformation Coverage Results" MODIFIED="1488115206809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi" />
+    <SUITE FILE_PATH="coverage/Flickr$prc.coverage" NAME="prc Coverage Results" MODIFIED="1475146972904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$abstractDBWriting.coverage" NAME="abstractDBWriting Coverage Results" MODIFIED="1488807907386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db/dbWritingRules" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$stat.coverage" NAME="stat Coverage Results" MODIFIED="1488801833126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi" />
+    <SUITE FILE_PATH="coverage/Coding$nowTesting.coverage" NAME="testing Coverage Results" MODIFIED="1475751149615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />
+    <SUITE FILE_PATH="coverage/Flickr$test.coverage" NAME="test Coverage Results" MODIFIED="1475149896468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" />
+    <SUITE FILE_PATH="coverage/Coding$recovery.coverage" NAME="recovery Coverage Results" MODIFIED="1476931982057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/res" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$loggingTest.coverage" NAME="loggingTest Coverage Results" MODIFIED="1488857633235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/res" />
+    <SUITE FILE_PATH="coverage/Coding$userFollowersEntity.coverage" NAME="userFollowersEntity Coverage Results" MODIFIED="1488093963677" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/entity" />
+    <SUITE FILE_PATH="coverage/Coding$userPhotosEntity.coverage" NAME="userPhotosEntity Coverage Results" MODIFIED="1488095102802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/entity" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$userPhotos.coverage" NAME="userPhotos Coverage Results" MODIFIED="1488459350643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi" />
+    <SUITE FILE_PATH="coverage/Coding$main.coverage" NAME="main Coverage Results" MODIFIED="1488088449961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Coding$stat.coverage" NAME="stat Coverage Results" MODIFIED="1488198908490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$abstractSpiderThread.coverage" NAME="abstractSpiderThread Coverage Results" MODIFIED="1488459955539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/thread/spiderThread" />
+    <SUITE FILE_PATH="coverage/Flickr$cleanMyAPP.coverage" NAME="cleanMyAPP Coverage Results" MODIFIED="1475155536158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/res" />
+    <SUITE FILE_PATH="coverage/Coding$userPhotos.coverage" NAME="userPhotos Coverage Results" MODIFIED="1488117189012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$main.coverage" NAME="main Coverage Results" MODIFIED="1488808239567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$dataThreadControl.coverage" NAME="dataThreadControl Coverage Results" MODIFIED="1488803153231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/thread/dataThread" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$photoUrl.coverage" NAME="photoUrl Coverage Results" MODIFIED="1488459374736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$ipLimitedException.coverage" NAME="ipLimitedException Coverage Results" MODIFIED="1488254131670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exception" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$testing.coverage" NAME="testing Coverage Results" MODIFIED="1487866228914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$dbConnect.coverage" NAME="dbConnect Coverage Results" MODIFIED="1488615827505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$readingThread.coverage" NAME="readingThread Coverage Results" MODIFIED="1488805248927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/thread/data_Thread" />
+    <SUITE FILE_PATH="coverage/Flickr$db.coverage" NAME="userFllowers Coverage Results" MODIFIED="1474807553248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$statcheck.coverage" NAME="statcheck Coverage Results" MODIFIED="1488856250641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$spiderThread.coverage" NAME="spiderThread Coverage Results" MODIFIED="1488803290940" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/thread/spiderThread" />
     <SUITE FILE_PATH="coverage/Flickr$main.coverage" NAME="main Coverage Results" MODIFIED="1475234482738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/task" />
     <SUITE FILE_PATH="coverage/Coding$countUser.coverage" NAME="countUser Coverage Results" MODIFIED="1476959664911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />
     <SUITE FILE_PATH="coverage/Coding$testing.coverage" NAME="testing Coverage Results" MODIFIED="1481033462303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/Coding$photoUrlEntity.coverage" NAME="photoUrlEntity Coverage Results" MODIFIED="1488095247367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/entity" />
-    <SUITE FILE_PATH="coverage/Flickr$prc.coverage" NAME="prc Coverage Results" MODIFIED="1475146972904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" />
-    <SUITE FILE_PATH="coverage/Coding$nowTesting.coverage" NAME="testing Coverage Results" MODIFIED="1475751149615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />
-    <SUITE FILE_PATH="coverage/Flickr$test.coverage" NAME="test Coverage Results" MODIFIED="1475149896468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$threadPool.coverage" NAME="threadPool Coverage Results" MODIFIED="1488805300613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/thread" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$codingLineCounting.coverage" NAME="codingLineCounting Coverage Results" MODIFIED="1488699978911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tools" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$photoInformation.coverage" NAME="photoInformation Coverage Results" MODIFIED="1488459535475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi" />
     <SUITE FILE_PATH="coverage/Coding$photoEntity.coverage" NAME="photoEntity Coverage Results" MODIFIED="1488094425402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/entity" />
-    <SUITE FILE_PATH="coverage/Coding$recovery.coverage" NAME="recovery Coverage Results" MODIFIED="1476931982057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/res" />
-    <SUITE FILE_PATH="coverage/FlickrCrawler$loggingTest.coverage" NAME="loggingTest Coverage Results" MODIFIED="1487866285642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mylog" />
-    <SUITE FILE_PATH="coverage/Coding$userFollowersEntity.coverage" NAME="userFollowersEntity Coverage Results" MODIFIED="1488093963677" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/entity" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$writingThread.coverage" NAME="writingThread Coverage Results" MODIFIED="1488640075875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/thread/dataThread" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$flickrApi.coverage" NAME="flickrApi Coverage Results" MODIFIED="1488461113713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi/abstractApi" />
     <SUITE FILE_PATH="coverage/Coding$photoUrl.coverage" NAME="photoUrl Coverage Results" MODIFIED="1488117792074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi" />
     <SUITE FILE_PATH="coverage/Coding$userEntity.coverage" NAME="userEntity Coverage Results" MODIFIED="1488093757875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/entity" />
-    <SUITE FILE_PATH="coverage/Coding$userPhotosEntity.coverage" NAME="userPhotosEntity Coverage Results" MODIFIED="1488095102802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/entity" />
-    <SUITE FILE_PATH="coverage/Coding$main.coverage" NAME="main Coverage Results" MODIFIED="1488088449961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Coding$photoSize.coverage" NAME="photoSize Coverage Results" MODIFIED="1487845471084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi" />
-    <SUITE FILE_PATH="coverage/Coding$stat.coverage" NAME="stat Coverage Results" MODIFIED="1488198908490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi" />
-    <SUITE FILE_PATH="coverage/Flickr$cleanMyAPP.coverage" NAME="cleanMyAPP Coverage Results" MODIFIED="1475155536158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/res" />
-    <SUITE FILE_PATH="coverage/Coding$userPhotos.coverage" NAME="userPhotos Coverage Results" MODIFIED="1488117189012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi" />
     <SUITE FILE_PATH="coverage/Coding$flickrUserApi.coverage" NAME="flickrUserApi Coverage Results" MODIFIED="1488109623633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib/flickrApi/abstractApi" />
     <SUITE FILE_PATH="coverage/Coding$prc.coverage" NAME="prc Coverage Results" MODIFIED="1482292065342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$spiderThread__1_.coverage" NAME="spiderThread (1) Coverage Results" MODIFIED="1488458003768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/thread/spiderThread" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$taskAllocation.coverage" NAME="taskAllocation Coverage Results" MODIFIED="1488455814698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/thread/spiderThread" />
+    <SUITE FILE_PATH="coverage/FlickrCrawler$myApp.coverage" NAME="myApp Coverage Results" MODIFIED="1488609502406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tools" />
     <SUITE FILE_PATH="coverage/Coding$app.coverage" NAME="app Coverage Results" MODIFIED="1476751539053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/res" />
-    <SUITE FILE_PATH="coverage/FlickrCrawler$testing.coverage" NAME="testing Coverage Results" MODIFIED="1487866228914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/Coding$myApp.coverage" NAME="myApp Coverage Results" MODIFIED="1487330560403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tools" />
   </component>
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="C:\Users\xk\PycharmProjects\FlickrCrawler" />
   </component>
   <component name="DatabaseView">
     <option name="GROUP_SCHEMA" value="true" />
@@ -58,182 +155,118 @@
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="userInformation.py" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/lib/flickrApi/userInformation.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-1035">
-                    <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-                    <folding>
-                      <element signature="e#40#50#0" expanded="true" />
-                      <marker date="1488114144529" expanded="true" signature="6773:6896" ph="UPDATE user " />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="photoInformation.py" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/lib/flickrApi/photoInformation.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-3064">
-                    <caret line="47" column="39" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
-                    <folding>
-                      <element signature="e#40#50#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="userPhotos.py" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/lib/flickrApi/userPhotos.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="733">
-                    <caret line="228" column="0" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
-                    <folding>
-                      <element signature="e#40#69#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="photoUrl.py" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/lib/flickrApi/photoUrl.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="639">
-                    <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-                    <folding>
-                      <element signature="e#40#69#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="userFollowers.py" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/lib/flickrApi/userFollowers.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="1196">
-                    <caret line="76" column="60" selection-start-line="76" selection-start-column="60" selection-end-line="76" selection-end-column="60" />
-                    <folding>
-                      <element signature="e#69#107#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="Flickr" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="flickrUserApi.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrUserApi.py">
+      <file leaf-file-name="abstractDBWriting.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/dbWritingRules/abstractDBWriting.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="207">
-              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-              <folding />
+              <caret line="36" column="54" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
+              <folding>
+                <element signature="e#40#54#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="photoUrlEntity.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/entity/photoUrlEntity.py">
+      <file leaf-file-name="writingThread.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thread/data_Thread/writingThread.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="414">
-              <caret line="21" column="38" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="38" />
-              <folding />
+              <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+              <folding>
+                <element signature="e#40#68#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="flickrPhotoApi.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrPhotoApi.py">
+      <file leaf-file-name="readingThread.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thread/data_Thread/readingThread.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="253">
+              <caret line="92" column="44" selection-start-line="92" selection-start-column="44" selection-end-line="92" selection-end-column="44" />
+              <folding>
+                <element signature="e#40#68#0" expanded="true" />
+                <marker date="1488808239533" expanded="true" signature="2481:2509" ph="SELECT uid F... users_1_copy" />
+                <marker date="1488808239533" expanded="true" signature="3044:3092" ph="SELECT photo... photos_2" />
+                <marker date="1488808239533" expanded="true" signature="3044:3109" ph="SELECT photo... photos_1_copy" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="threadPool.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thread/threadPool.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3">
+              <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+              <folding>
+                <element signature="e#41#69#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="flickrApi.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrApi.py">
+      <file leaf-file-name="abstractSpiderThread.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thread/spider_Thread/abstractSpiderThread.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="statCheck.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/flickrApi/statCheck.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="663">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logging.config" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/logging.config">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loggingTest.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/res/loggingTest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myapp.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/myapp.log">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="23">
-              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-              <folding>
-                <element signature="e#40#69#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userPhotosEntity.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/entity/userPhotosEntity.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="myRequest.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tools/myRequest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="102" column="15" selection-start-line="102" selection-start-column="15" selection-end-line="102" selection-end-column="15" />
-              <folding>
-                <element signature="e#40#81#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userEntity.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/entity/userEntity.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="entity.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/entity/baseEntity/entity.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="photoEntity.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/entity/photoEntity.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userFollowersEntity.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/entity/userFollowersEntity.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -257,57 +290,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/res/log/log06-19-31-16" />
-        <option value="$PROJECT_DIR$/res/log/log06-19-33-46" />
-        <option value="$PROJECT_DIR$/res/log/log06-19-35-02" />
-        <option value="$PROJECT_DIR$/res/log/log06-19-36-46" />
-        <option value="$PROJECT_DIR$/res/log/log06-19-38-02" />
-        <option value="$PROJECT_DIR$/res/log/log06-19-40-25" />
-        <option value="$PROJECT_DIR$/res/log/log06-19-41-52" />
-        <option value="$PROJECT_DIR$/res/log/log06-19-44-17" />
+        <option value="$PROJECT_DIR$/thread/apiThread/abstractSpiderThread.py" />
+        <option value="$PROJECT_DIR$/thread/apiThread/spiderThread.py" />
+        <option value="$PROJECT_DIR$/exception/dataThreadCrashException.py" />
+        <option value="$PROJECT_DIR$/exception/threadCrashException/dataThreadCrashException.py" />
+        <option value="$PROJECT_DIR$/exception/threadCrashException/threadCrashException.py" />
         <option value="$PROJECT_DIR$/thread/threadGenerator.py" />
-        <option value="$PROJECT_DIR$/res/log/log06-19-46-47" />
-        <option value="$PROJECT_DIR$/res/log/log06-19-49-06" />
-        <option value="$PROJECT_DIR$/res/log/log06-19-51-12" />
-        <option value="$PROJECT_DIR$/res/log/log06-19-53-22" />
-        <option value="$PROJECT_DIR$/db/alterTable.py" />
-        <option value="$PROJECT_DIR$/recoverryUid/recoveryByEachUid.py" />
-        <option value="$PROJECT_DIR$/recoverryUid/recoveryUid.py" />
-        <option value="$PROJECT_DIR$/thread/ipLimitedThread.py" />
-        <option value="$PROJECT_DIR$/res/log/log07-08-57-54" />
-        <option value="$PROJECT_DIR$/tools/myApp.py" />
-        <option value="$PROJECT_DIR$/res/myApp" />
-        <option value="$PROJECT_DIR$/thread/dataThread.py" />
-        <option value="$PROJECT_DIR$/lib/flickrApi/photoSize.py" />
-        <option value="$PROJECT_DIR$/thread/apiThread/photoUrlThread.py" />
-        <option value="$PROJECT_DIR$/thread/writingThread.py" />
-        <option value="$PROJECT_DIR$/thread/apiCallThread.py" />
-        <option value="$PROJECT_DIR$/db/dbWrite.py" />
-        <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/entity/baseEntity/userEntity.py" />
-        <option value="$PROJECT_DIR$/lib/flickrApi/stat.py" />
-        <option value="$PROJECT_DIR$/db/dbRead.py" />
-        <option value="$PROJECT_DIR$/tools/log.py" />
-        <option value="$PROJECT_DIR$/test/test.py" />
-        <option value="$PROJECT_DIR$/mylog/loggingTest.py" />
-        <option value="$PROJECT_DIR$/entity/baseEntity/photoEntity.py" />
-        <option value="$PROJECT_DIR$/entity/baseEntity/abstractUserEntity.py" />
-        <option value="$PROJECT_DIR$/entity/baseEntity/abstractPhotoEntity.py" />
-        <option value="$PROJECT_DIR$/entity/userEntity.py" />
-        <option value="$PROJECT_DIR$/entity/baseEntity/entity.py" />
-        <option value="$PROJECT_DIR$/entity/userFollowersEntity.py" />
-        <option value="$PROJECT_DIR$/entity/photoEntity.py" />
-        <option value="$PROJECT_DIR$/entity/userPhotosEntity.py" />
-        <option value="$PROJECT_DIR$/entity/photoUrlEntity.py" />
-        <option value="$PROJECT_DIR$/tools/myRequest.py" />
-        <option value="$PROJECT_DIR$/lib/flickrApi/userInformation.py" />
+        <option value="$PROJECT_DIR$/entity/entity.py" />
         <option value="$PROJECT_DIR$/lib/flickrApi/userFollowers.py" />
-        <option value="$PROJECT_DIR$/lib/flickrApi/photoInformation.py" />
-        <option value="$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrUserApi.py" />
+        <option value="$PROJECT_DIR$/thread/dataThread/DataThreadControl.py" />
+        <option value="$PROJECT_DIR$/dataProcess/taskAllocation.py" />
+        <option value="$PROJECT_DIR$/db/dbRead.py" />
+        <option value="$PROJECT_DIR$/exception/threadCrashException.py" />
+        <option value="$PROJECT_DIR$/thread/dataThread.py" />
+        <option value="$PROJECT_DIR$/exception/ipLimitedException.py" />
+        <option value="C:/Python27/Lib/urllib2.py" />
+        <option value="$PROJECT_DIR$/tools/myRequest.py" />
+        <option value="$PROJECT_DIR$/lib/flickrApi/stat.py" />
+        <option value="$PROJECT_DIR$/lib/flickrApi/statCheck.py" />
+        <option value="$PROJECT_DIR$/lib/flickrApi/api.py" />
         <option value="$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrPhotoApi.py" />
+        <option value="$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrUserApi.py" />
         <option value="$PROJECT_DIR$/lib/flickrApi/userPhotos.py" />
-        <option value="$PROJECT_DIR$/lib/flickrApi/photoUrl.py" />
+        <option value="$PROJECT_DIR$/lib/flickrApi/userInformation.py" />
         <option value="$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrApi.py" />
+        <option value="$PROJECT_DIR$/exception/dbException.py" />
+        <option value="$PROJECT_DIR$/thread/ipLimitedThread.py" />
+        <option value="$PROJECT_DIR$/thread/spiderThread/abstractSpiderThread.py" />
+        <option value="$PROJECT_DIR$/tools/hostname.py" />
+        <option value="$PROJECT_DIR$/tools/myApp.py" />
+        <option value="$PROJECT_DIR$/db/dbConnect.py" />
+        <option value="$PROJECT_DIR$/entity/abstractEntity/entity.py" />
+        <option value="$PROJECT_DIR$/entity/abstractEntity/abstractUserEntity.py" />
+        <option value="$PROJECT_DIR$/entity/abstractEntity/abstractPhotoEntity.py" />
+        <option value="$PROJECT_DIR$/lib/flickrApi/photoInformation.py" />
+        <option value="$PROJECT_DIR$/entity/flickrEntity.py" />
+        <option value="$PROJECT_DIR$/thread/spiderThread/spiderThread.py" />
+        <option value="$PROJECT_DIR$/db/dbWritingRules/dbWritingRules.py" />
+        <option value="$PROJECT_DIR$/thread/dataThread/writingThread.py" />
+        <option value="$PROJECT_DIR$/tools/codingLineCounting.py" />
+        <option value="$PROJECT_DIR$/thread/dataThread/readingThread.py" />
+        <option value="$PROJECT_DIR$/thread/spiderThread/taskAllocation.py" />
+        <option value="$PROJECT_DIR$/thread/dataThread/dataThreadControl.py" />
+        <option value="$PROJECT_DIR$/mian.py" />
+        <option value="$PROJECT_DIR$/thread/threadPool.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/lib/flickrApi/photoUrl.py" />
+        <option value="$PROJECT_DIR$/db/dbWritingRules/abstractDBWriting.py" />
+        <option value="$PROJECT_DIR$/thread/data_Thread/readingThread.py" />
+        <option value="$PROJECT_DIR$/thread/spider_Thread/abstractSpiderThread.py" />
+        <option value="$PROJECT_DIR$/res/logging.config" />
+        <option value="$PROJECT_DIR$/res/loggingTest.py" />
       </list>
     </option>
   </component>
@@ -319,7 +352,6 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -348,55 +380,32 @@
       <foldersAlwaysOnTop value="false" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Coding" />
+              <option name="myItemId" value="FlickrCrawler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Coding" />
+              <option name="myItemId" value="FlickrCrawler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Coding" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tools" />
+              <option name="myItemId" value="FlickrCrawler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Coding" />
+              <option name="myItemId" value="FlickrCrawler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Coding" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Coding" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Coding" />
+              <option name="myItemId" value="FlickrCrawler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -406,29 +415,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Coding" />
+              <option name="myItemId" value="FlickrCrawler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Coding" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uidNotExist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Coding" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Coding" />
+              <option name="myItemId" value="FlickrCrawler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -438,194 +429,152 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Coding" />
+              <option name="myItemId" value="FlickrCrawler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Coding" />
+              <option name="myItemId" value="FlickrCrawler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flickrApi" />
+              <option name="myItemId" value="exception" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Coding" />
+              <option name="myItemId" value="FlickrCrawler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Coding" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="flickrApi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="abstractApi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Coding" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Coding" />
+              <option name="myItemId" value="FlickrCrawler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Coding" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Coding" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="baseEntity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
-        <option name="show-excluded-files" value="false" />
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/spider-develop" />
-    <property name="SearchEverywhereHistoryKey" value="IpLimitException&#9;null&#9;null&#10;update&#9;null&#9;null" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/flickrApi/statCheck.py" />
+    <property name="SearchEverywhereHistoryKey" value="assert&#9;FILE&#9;file://C:/Python27/Lib/lib2to3/fixes/fix_asserts.py&#10;:&#9;null&#9;null&#10;IpLimitException&#9;null&#9;null&#10;update&#9;null&#9;null" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="js.eslint.eslintPackage" value="" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="ToolWindowEvent Log.ShowToolbar" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="OPEN_URL_DIALOG">
       <recent name="https://github.com/dataSnail/spider" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/thread/apiThread" />
       <recent name="C:\Users\xk\PycharmProjects\Coding\lib\flickrApi\abstractApi" />
       <recent name="C:\Users\xk\PycharmProjects\Coding\db" />
       <recent name="C:\Users\xk\PycharmProjects\Flickr\lib" />
       <recent name="C:\Users\xk\PycharmProjects\Flickr" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\xk\PycharmProjects\Coding\thread\apiThread" />
-      <recent name="C:\Users\xk\PycharmProjects\Coding\db\dbOperation" />
-      <recent name="C:\Users\xk\PycharmProjects\Coding\tools" />
-      <recent name="C:\Users\xk\PycharmProjects\Coding\machineLearing" />
-      <recent name="C:\Users\xk\PycharmProjects\Coding\res\uidNotExist" />
+      <recent name="$PROJECT_DIR$/thread/spiderThread" />
+      <recent name="$PROJECT_DIR$/entity/abstractEntity" />
+      <recent name="$PROJECT_DIR$/entity" />
+      <recent name="$PROJECT_DIR$/thread" />
+      <recent name="$PROJECT_DIR$/exception" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.stat">
-    <configuration default="false" name="flickrUserApi" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.loggingTest">
+    <configuration default="false" name="threadPool" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="C:\Python27\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib/flickrApi/abstractApi" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/thread" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Flickr" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrUserApi.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/thread/threadPool.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="userInformation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="readingThread" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="C:\Python27\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib/flickrApi" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/thread/data_Thread" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Flickr" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/flickrApi/userInformation.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/thread/data_Thread/readingThread.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="photoInformation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="C:\Python27\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib/flickrApi" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Flickr" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/flickrApi/photoInformation.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="userPhotos" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="abstractDBWriting" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="C:\Python27\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib/flickrApi" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/db/dbWritingRules" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Flickr" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/flickrApi/userPhotos.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db/dbWritingRules/abstractDBWriting.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="photoUrl" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="loggingTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="C:\Python27\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib/flickrApi" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/res" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Flickr" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/flickrApi/photoUrl.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/res/loggingTest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -838,60 +787,6 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="prc" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Python27\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Flickr" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/prc.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="MD5" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Python27\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/res" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Flickr" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\xk\PycharmProjects\Coding\tools\MD5.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="testing" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Python27\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Flickr" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -910,43 +805,7 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="recovery" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Python27\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/res" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Flickr" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\xk\PycharmProjects\Coding\recoverryUid\recoveryByEachUid.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="countUser" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Python27\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/db" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Flickr" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\xk\PycharmProjects\Coding\db\dbOperation\countUser.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="stat" type="PythonConfigurationType" factoryName="Python">
+    <configuration default="false" name="statcheck" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -959,51 +818,27 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Flickr" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/flickrApi/stat.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/flickrApi/statCheck.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="app" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Python27\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/res" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Flickr" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\xk\PycharmProjects\Coding\tools\cleanApp.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <list size="13">
-      <item index="0" class="java.lang.String" itemvalue="Python.prc" />
-      <item index="1" class="java.lang.String" itemvalue="Python.MD5" />
-      <item index="2" class="java.lang.String" itemvalue="Python.testing" />
-      <item index="3" class="java.lang.String" itemvalue="Python.main" />
-      <item index="4" class="java.lang.String" itemvalue="Python.recovery" />
-      <item index="5" class="java.lang.String" itemvalue="Python.countUser" />
-      <item index="6" class="java.lang.String" itemvalue="Python.stat" />
-      <item index="7" class="java.lang.String" itemvalue="Python.app" />
-      <item index="8" class="java.lang.String" itemvalue="Python.flickrUserApi" />
-      <item index="9" class="java.lang.String" itemvalue="Python.userInformation" />
-      <item index="10" class="java.lang.String" itemvalue="Python.photoInformation" />
-      <item index="11" class="java.lang.String" itemvalue="Python.userPhotos" />
-      <item index="12" class="java.lang.String" itemvalue="Python.photoUrl" />
+    <list size="7">
+      <item index="0" class="java.lang.String" itemvalue="Python.main" />
+      <item index="1" class="java.lang.String" itemvalue="Python.statcheck" />
+      <item index="2" class="java.lang.String" itemvalue="Python.threadPool" />
+      <item index="3" class="java.lang.String" itemvalue="Python.readingThread" />
+      <item index="4" class="java.lang.String" itemvalue="Python.main (1)" />
+      <item index="5" class="java.lang.String" itemvalue="Python.abstractDBWriting" />
+      <item index="6" class="java.lang.String" itemvalue="Python.loggingTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.photoUrl" />
-        <item index="1" class="java.lang.String" itemvalue="Python.userPhotos" />
-        <item index="2" class="java.lang.String" itemvalue="Python.photoInformation" />
-        <item index="3" class="java.lang.String" itemvalue="Python.userInformation" />
-        <item index="4" class="java.lang.String" itemvalue="Python.flickrUserApi" />
+        <item index="0" class="java.lang.String" itemvalue="Python.loggingTest" />
+        <item index="1" class="java.lang.String" itemvalue="Python.main (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.abstractDBWriting" />
+        <item index="3" class="java.lang.String" itemvalue="Python.threadPool" />
+        <item index="4" class="java.lang.String" itemvalue="Python.readingThread" />
       </list>
     </recent_temporary>
   </component>
@@ -1076,26 +911,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="0" width="1936" height="1056" extended-state="1" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15724947" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15085287" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="false" weight="0.2410148" sideWeight="0.50208336" order="9" side_tool="true" content_ui="tabs" x="2703" y="330" width="957" height="228" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19956616" sideWeight="0.5042644" order="9" side_tool="true" content_ui="tabs" x="1020" y="362" width="957" height="228" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20151679" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19956616" sideWeight="0.49573562" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39935064" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39874214" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261105" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1107,17 +942,20 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20260021" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20043337" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20628998" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18763326" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261105" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39935064" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39874214" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1133,168 +971,258 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
     <MESSAGE value="apiAdded" />
-    <option name="LAST_COMMIT_MESSAGE" value="apiAdded" />
+    <MESSAGE value="reconstruct" />
+    <option name="LAST_COMMIT_MESSAGE" value="reconstruct" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="20" />
+      <option name="time" value="28" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/log/log07-08-52-48" />
-    <entry file="file://$PROJECT_DIR$/res/log/log07-08-44-50" />
-    <entry file="file://$PROJECT_DIR$/res/log/log06-22-26-21" />
-    <entry file="file://$PROJECT_DIR$/res/log/log16-11-31-07" />
-    <entry file="file://$PROJECT_DIR$/res/myApp">
+    <entry file="file://$PROJECT_DIR$/thread/loggingThread.py" />
+    <entry file="file://$PROJECT_DIR$/lib/ipTest/ipLimited.py" />
+    <entry file="file://$PROJECT_DIR$/exception/threadCrashException.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+        <state relative-caret-position="457">
+          <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/dbOperation/corrcetWrongUpate.py">
+    <entry file="file://$PROJECT_DIR$/lib/flickrApi/api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="883">
-          <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
+        <state relative-caret-position="138">
+          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/log/log16-11-39-43" />
-    <entry file="file://$PROJECT_DIR$/res/log/log12-19-51-09" />
-    <entry file="file://$PROJECT_DIR$/db/dbOperation/createIndex.py">
+    <entry file="file://$PROJECT_DIR$/lib/flickrApi/userFollowers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="183">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="https://github.com/dataSnail/spider">
-      <provider selected="true" editor-type-id="httpFileEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thread/dataThread.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="44" column="39" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thread/apiThread/userInformationThread.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thread/writingThread.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thread/apiCallThread.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="74" column="25" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thread/apiThread/photoUrlThread.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myException/ipLimitException.py" />
-    <entry file="file://$PROJECT_DIR$/test/usefullCodeSegement.py">
+    <entry file="file://$PROJECT_DIR$/entity/abstractEntity/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/dbWrite.py">
+    <entry file="file://$PROJECT_DIR$/thread/dataThread.py" />
+    <entry file="file://$PROJECT_DIR$/thread/threadGenerator.py" />
+    <entry file="file://$PROJECT_DIR$/lib/flickrApi/userInformation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1725">
-          <caret line="80" column="26" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
+        <state relative-caret-position="1951">
+          <caret line="85" column="59" selection-start-line="85" selection-start-column="59" selection-end-line="85" selection-end-column="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/dbRead.py">
+    <entry file="file://$PROJECT_DIR$/thread/ipLimitedThread.py" />
+    <entry file="file://$PROJECT_DIR$/exception/dbException.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="112" column="28" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
+        <state relative-caret-position="207">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/MySQLdb/cursors.py" />
+    <entry file="file://$PROJECT_DIR$/db/dbRead.py" />
+    <entry file="file://$PROJECT_DIR$/db/dbWrite.py" />
+    <entry file="file://$PROJECT_DIR$/db/dbClose.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/hostname.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/MySQLdb/connections.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/abstractEntity/abstractUserEntity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="13" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/thread/logThread.py">
+    <entry file="file://$PROJECT_DIR$/entity/abstractEntity/abstractPhotoEntity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrPhotoApi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrUserApi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/flickrApi/userPhotos.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/abstractEntity/entity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entity/flickrEntity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/flickrApi/photoInformation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1817">
+          <caret line="87" column="47" selection-start-line="87" selection-start-column="47" selection-end-line="87" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/os.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-454">
+          <caret line="208" column="4" selection-start-line="208" selection-start-column="4" selection-end-line="208" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/dbConnect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/lib2to3/fixes/fix_asserts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/myApp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+          <folding>
+            <element signature="e#40#61#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/codingLineCounting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1104">
+          <caret line="48" column="40" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+          <folding>
+            <element signature="e#40#49#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thread/spider_Thread/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thread/spider_Thread/taskAllocation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding>
+            <element signature="e#40#66#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Coding/thread/apiCallThread.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/log.py">
+    <entry file="file://$PROJECT_DIR$/thread/data_Thread/dataThreadControl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
+        <state relative-caret-position="1495">
+          <caret line="67" column="40" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/prc.py">
+    <entry file="file://$PROJECT_DIR$/../Coding/thread/dataThread.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="26" />
+        <state relative-caret-position="230">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
           <folding>
-            <element signature="e#40#83#0" expanded="false" />
+            <element signature="e#40#63#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mylog/__init__.py">
+    <entry file="file://$PROJECT_DIR$/lib/flickrApi/photoUrl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="322">
+          <caret line="14" column="57" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/test.py">
+    <entry file="file://$PROJECT_DIR$/thread/spider_Thread/spiderThread.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mylog/loggingTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        <state relative-caret-position="664">
+          <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -1302,221 +1230,115 @@
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thread/threadPool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3">
+          <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
           <folding>
-            <element signature="e#40#84#0" expanded="false" />
+            <element signature="e#41#69#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/thread/threadGenerator.py">
+    <entry file="file://$PROJECT_DIR$/thread/data_Thread/writingThread.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="11" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+        <state relative-caret-position="414">
+          <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
           <folding>
-            <element signature="e#40#74#0" expanded="false" />
+            <element signature="e#40#68#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/entity/baseEntity/abstractUserEntity.py">
+    <entry file="file://$PROJECT_DIR$/../Coding/thread/apiThread/photoInformationThread.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        <state relative-caret-position="-142">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/entity/baseEntity/abstractPhotoEntity.py">
+    <entry file="file://$PROJECT_DIR$/db/dbWritingRules/dbWritingRules.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/log/log26-13-54-14">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/log/log25-15-50-04">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/log/log25-13-27-59">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/myApp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
+        <state relative-caret-position="552">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/-762174762/tools/myRequest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="268" column="8" selection-start-line="268" selection-start-column="8" selection-end-line="268" selection-end-column="8" />
-          <folding>
-            <element signature="e#146#191#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/userEntity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/flickrApi/stat.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/baseEntity/entity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/photoEntity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/userFollowersEntity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/myRequest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="102" column="15" selection-start-line="102" selection-start-column="15" selection-end-line="102" selection-end-column="15" />
-          <folding>
-            <element signature="e#40#81#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/userPhotosEntity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrUserApi.py">
+    <entry file="file://$PROJECT_DIR$/db/dbWritingRules/abstractDBWriting.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entity/photoUrlEntity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="21" column="38" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/flickrApi/photoInformation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3064">
-          <caret line="47" column="39" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
+          <caret line="36" column="54" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
           <folding>
-            <element signature="e#40#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/flickrApi/userInformation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1035">
-          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#50#0" expanded="true" />
-            <marker date="1488114144529" expanded="true" signature="6773:6896" ph="UPDATE user " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/flickrApi/userPhotos.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="733">
-          <caret line="228" column="0" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrPhotoApi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/flickrApi/photoUrl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#69#0" expanded="true" />
+            <element signature="e#40#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/flickrApi/abstractApi/flickrApi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        <state relative-caret-position="-1582">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thread/data_Thread/readingThread.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="92" column="44" selection-start-line="92" selection-start-column="44" selection-end-line="92" selection-end-column="44" />
           <folding>
-            <element signature="e#40#69#0" expanded="true" />
+            <element signature="e#40#68#0" expanded="true" />
+            <marker date="1488808239533" expanded="true" signature="2481:2509" ph="SELECT uid F... users_1_copy" />
+            <marker date="1488808239533" expanded="true" signature="3044:3092" ph="SELECT photo... photos_2" />
+            <marker date="1488808239533" expanded="true" signature="3044:3109" ph="SELECT photo... photos_1_copy" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/flickrApi/userFollowers.py">
+    <entry file="file://$PROJECT_DIR$/thread/spider_Thread/abstractSpiderThread.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1196">
-          <caret line="76" column="60" selection-start-line="76" selection-start-column="60" selection-end-line="76" selection-end-column="60" />
-          <folding>
-            <element signature="e#69#107#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="253">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/logging.config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/flickrApi/statCheck.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/myapp.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/loggingTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
