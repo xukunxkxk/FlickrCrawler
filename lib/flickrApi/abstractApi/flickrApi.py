@@ -4,6 +4,9 @@ from urllib2 import HTTPError
 from tools.myRequest import Requests
 from exception.ipLimitedException import IpLimitedExcetpion
 from entity.flickrEntity import *
+import logging
+import logging.config
+import os
 
 class AbstractFlickrApi(object):
     def __init__(self):
@@ -16,6 +19,9 @@ class AbstractFlickrApi(object):
         self.exits = True
         self.taskList = []
         self.apiName = str(self.__class__).split(".")[1][:-2]
+        logFilePath = os.path.join(os.path.dirname(__file__), "../../../res/logging.conf")
+        logging.config.fileConfig(logFilePath)
+        self.logger = logging.getLogger("log")
 
     def setApp(self, app):
         self.app = app
@@ -33,7 +39,7 @@ class AbstractFlickrApi(object):
             self._statCheck()
         #爬取出现异常，分析并处理
         except (HTTPError, IOError) as errorMsg:
-            print errorMsg
+            logging.error(str(errorMsg) + self.taskId)
             self._exceptionCheck(errorMsg)
             return None
 

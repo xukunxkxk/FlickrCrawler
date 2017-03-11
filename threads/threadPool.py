@@ -7,6 +7,9 @@ from spider_Thread.taskAllocation import TaskAllocation
 from Queue import Queue
 from lib.flickrApi.statCheck import StatCheck
 from time import sleep
+import logging
+import logging.config
+import os
 
 class ThreadPool(Thread):
     POOLSIZE = 160
@@ -14,12 +17,16 @@ class ThreadPool(Thread):
     def __init__(self, tableName):
         super(ThreadPool, self).__init__()
         self.tableName = tableName
-
+        self.spiderList = []
 
     def setApi(self, index):
         self.api = self.APILIST[index]
 
     def init(self):
+        logFilePath = os.path.join(os.path.dirname(__file__), r"../res/logging.conf")
+        logging.config.fileConfig(logFilePath)
+        self.logger = logging.getLogger("log")
+
         self.spiderThreadPoolSize = self.POOLSIZE
         self.dataQueue = DataQueue()
 
@@ -45,14 +52,28 @@ class ThreadPool(Thread):
         self.dataThreadControl.start()
         self._checkStat()
         self._initSpiderPoolThread(self.spiderThreadPoolSize)
+        while True:
+            self._spiderCheck()
+            sleep(300)
 
     def _initSpiderPoolThread(self, spiderPoolSize):
         for x in xrange(spiderPoolSize):
             self._initSpiderThread()
 
     def _initSpiderThread(self):
-        self.taskAllocation.allocate()
+        self.spiderList.append(self.taskAllocation.allocate())
 
+    def _spiderCheck(self):
+        self.logger.info("Running Spider Thread Check")
+        removeList = []
+        for spiderThread in self.spiderList:
+            if not spiderThread.is_alive():
+                removeList.append(spiderThread)
+        self.logger.info("%s Threads Are Dead" % len(removeList))
+        for spiderThread in removeList:
+            self.spiderList.remove(spiderThread)
+            self.spiderList.append(self.taskAllocation.allocate())
+            self.logger.info("Has Init An New Thread")
 
     def _restart(self):
         pass
@@ -60,15 +81,15 @@ class ThreadPool(Thread):
     def _checkStat(self):
         stat = StatCheck.get_stat()
         while stat == False:
-            print "Ip Limited Waiting 5 Minutes And Try Again!"
+            self.logger.info("Ip Limited Waiting 5 Minutes And Try Again!")
             sleep(300)
 
 
 class DataQueue:
     def __init__(self):
         self.readingQueue = Queue()
-        self.writingQueue = Queue(maxsize=200)
-        self.entityQueue = Queue(maxsize=200)
+        self.writingQueue = Queue(maxsize=1000)
+        self.entityQueue = Queue(maxsize=1000)
 
     def getReadingQueue(self):
         return self.readingQueue

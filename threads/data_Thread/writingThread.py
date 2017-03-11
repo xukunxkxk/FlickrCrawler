@@ -5,8 +5,9 @@ from db.dbConnect import dbConnect
 from time import sleep
 from db.dbWritingRules.dbWritingRules import *
 from exception.threadCrashException import WritingThreadCrashExcetpion
-import MySQLdb
 import logging
+import logging.config
+import os
 def group(uid):
     if uid == '':
         return None
@@ -22,13 +23,20 @@ class WritingThread(Thread):
         self.maxSQLLength = 100
         self.writingDB = None
         self.update = True
+        logFilePath = os.path.join(os.path.dirname(__file__), "../../res/logging.conf")
+        logging.config.fileConfig(logFilePath)
+        self.logger = logging.getLogger("log")
 
     def run(self):
+        self.logger.info("Writing Thread Has been started")
         try:
             self._running()
         except Exception as e:
-            print e
+            self.logger.error(e)
             raise WritingThreadCrashExcetpion("Error: Writing Thread Has Been Crashed!")
+
+    def setDBLock(self, lock):
+        self.dbLock = lock
 
     def setTableName(self, tableName):
         self.writingDB.setDBTable(tableName)
@@ -37,6 +45,7 @@ class WritingThread(Thread):
         self.api = api
         className = api+ "Writing"+"()"
         self.writingDB = eval(className)
+        self.writingDB.setDBLock(self.dbLock)
         if self.api == self.APILIST[0] or self.api == self.APILIST[2]:
             self.update = False
         self.writingDB.setFlag(flag="flag", flagValue=0)

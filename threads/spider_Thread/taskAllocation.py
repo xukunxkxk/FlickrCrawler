@@ -19,16 +19,19 @@ class TaskAllocation:
         self.readQueue = readQueue
 
     def allocate(self):
+        spiderThread = None
         if self.api == self.APILIST[0]:
-            UserFollowerThread(self.app, self, self.entityQueue).start()
+            spiderThread = UserFollowerThread(self.app, self, self.entityQueue)
         elif self.api == self.APILIST[1]:
-            UserInformationThread(self.app, self, self.entityQueue).start()
+            spiderThread = UserInformationThread(self.app, self, self.entityQueue)
         elif self.api == self.APILIST[2]:
-            UserPhotosThread(self.app, self, self.entityQueue).start()
+            spiderThread = UserPhotosThread(self.app, self, self.entityQueue)
         elif self.api == self.APILIST[3]:
-            PhotoInformationThread(self.app, self, self.entityQueue).start()
+            spiderThread = PhotoInformationThread(self.app, self, self.entityQueue)
         elif self.api == self.APILIST[4]:
-            PhotoUrlThread(self.app, self, self.entityQueue).start()
+            spiderThread = PhotoUrlThread(self.app, self, self.entityQueue)
+        spiderThread.start()
+        return spiderThread
 
     def getTask(self):
         return self.readQueue.get()

@@ -3,12 +3,19 @@
 from urllib2 import HTTPError, urlopen
 from bs4 import BeautifulSoup
 
+import logging
+import logging.config
+import os
+
+
 
 class StatCheck:
     statTryCount = 0
+    logFilePath = os.path.join(os.path.dirname(__file__), "../../res/logging.conf")
+    logging.config.fileConfig(logFilePath)
+    logger = logging.getLogger("log")
     def __init__(self):
         pass
-
     @staticmethod
     def get_stat():
         host = "https://api.flickr.com/services/rest/?"
@@ -26,6 +33,7 @@ class StatCheck:
                 StatCheck.statTryCount = 0
                 return True
         except AttributeError as e:
+            StatCheck.logger.erro(e)
             StatCheck.statTryCount = 0
             return False
         except (HTTPError, IOError) as e:
@@ -33,6 +41,7 @@ class StatCheck:
                 return StatCheck.get_stat()
             else:
                 StatCheck.statTryCount = 0
+                StatCheck.logger.erro(e)
                 return False
 
 

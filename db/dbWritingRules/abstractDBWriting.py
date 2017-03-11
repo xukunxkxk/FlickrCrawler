@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 import MySQLdb
 from db.dbConnect import dbConnect
-
+import logging
+import logging.config
+import os
 
 class AbstractDBWriting(object):
     def __init__(self):
@@ -10,7 +12,13 @@ class AbstractDBWriting(object):
         self.entityValueList = []
         self.task = None
         self._getConnection()
+        self.writingCount = 0
+        logFilePath = os.path.join(os.path.dirname(__file__), "../../res/logging.conf")
+        logging.config.fileConfig(logFilePath)
+        self.logger = logging.getLogger("log")
 
+    def setDBLock(self, lock):
+        self.dbLock = lock
 
     def setConnection(self, conn, cur):
         self._setConn(conn)
@@ -21,7 +29,7 @@ class AbstractDBWriting(object):
 
     def setFlag(self, flagValue=0, flag="flag"):
         self.flag = flag
-        self.falgValue =flagValue
+        self.flagValue =flagValue
 
     def update(self, entity):
         self._updateEntityCoping(entity)
@@ -34,16 +42,23 @@ class AbstractDBWriting(object):
             self._updateEntityCoping(entity)
             valuesList.append(self.values)
         try:
+            self.dbLock.acquire()
             self.cur.executemany(self.sql, valuesList)
         #过长
         except MySQLdb.OperationalError as e:
-            print e
+            self.logger.error(e)
             self._closeConnection()
             self._getConnection()
             for entity in entityList:
-                self.insert(entity)
+                self.update(entity)
+            self.conn.commit()
+            self.dbLock.release()
         else:
             self.conn.commit()
+            self.dbLock.release()
+        self.writingCount += len(entityList)
+        if self.writingCount % 1000 == 0:
+            self.logger.info("Has Complete %s " % self.writingCount)
 
     def _updateEntityCoping(self, entity):
         self.values = entity.getValue().values()
@@ -59,7 +74,7 @@ class AbstractDBWriting(object):
         for field in self.fieldName:
             sql += field + "=%s"
             sql += ", "
-        sql += self.flag + "=%s " % self.falgValue
+        sql += self.flag + "=%s " % self.flagValue
         sql += "where " + self.task + "=%s"
         self.sql = sql
     
@@ -73,18 +88,20 @@ class AbstractDBWriting(object):
         valuesList = []
         for entity in entityList:
             self._insertEntityCoping(entity)
-            print self.values
         try:
             self.cur.executemany(self.sql, valuesList)
         #过长插不进去
         except MySQLdb.OperationalError as e:
-            print e
+            self.logger.error(e)
             self._closeConnection()
             self._getConnection()
             for entity in entityList:
                 self.insert(entity)
         else:
             self.conn.commit()
+        self.writingCount += len(entityList)
+        if self.writingCount % 1000 == 0:
+            self.logger.info("Has Complete %s " % self.writingCount)
 
     def _insertEntityCoping(self, entity):
         self.values = entity.getValue().values()

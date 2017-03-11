@@ -6,6 +6,8 @@ from time import sleep
 from exception.dbException import DBEmptyException
 from exception.threadCrashException import ReadingThreadCrashExcetpion
 import logging
+import logging.config
+import os
 
 import MySQLdb
 
@@ -22,7 +24,16 @@ class ReadingThread(Thread):
         self.readingCount = 0
         #小于多少开始读数据库
         self.readingBound = 100
-    
+        logFilePath = os.path.join(os.path.dirname(__file__), "../../res/logging.conf")
+        logging.config.fileConfig(logFilePath)
+        self.logger = logging.getLogger("log")
+
+    def setTableName(self, tableName):
+        self.tableName = tableName
+
+    def setDBLock(self, lock):
+        self.dbLock = lock
+
     def setApi(self, api):
         self.api = api
     
@@ -46,7 +57,7 @@ class ReadingThread(Thread):
         #         self.readingQueue.put(uid[0])   #返回的是一个元组，取第一个
         #         self.readingCount +=1
         #     self.conn.commit()
-        #     print "Had Read %d uid" %self.readingCount
+        #     self.logger.info("Had Read %d uid" %self.readingCount)
         #     return True
         # except MySQLdb.Error as e:
         #     return False
@@ -64,7 +75,7 @@ class ReadingThread(Thread):
         #             self.readingCount += 1
         #     self.conn.commit()
         #     if self.readingCount >= 0:
-        #         print "Had Read %d uid" %self.readingCount
+        #         self.logger.info("Had Read %d uid" %self.readingCount)
         #         return True
         #     else:
         #         return False
@@ -74,40 +85,42 @@ class ReadingThread(Thread):
         try:
             # 返回错误用户
             self.readingCount = 0
-            s = "SELECT uid FROM users_1_copy"
+            s = "SELECT uid FROM " + self.tableName
             self.cur.execute(s)
             for uid in self.cur.fetchall():
                 self.readingQueue.put(uid[0])  # 返回的是一个元组，取第一个
                 self.readingCount += 1
             self.conn.commit()
             if self.readingCount > 0:
-                print "Had Read %d uid" % self.readingCount
+                self.logger.info("Had Read %d uid" % self.readingCount)
             else:
-                raise DBEmptyException("DB has no photoid")
+                raise DBEmptyException("DB has no uid")
         except MySQLdb.Error as e:
-            print e
+            self.logger.error(e)
 
     def _readPhotoId(self):
         try:
             self.readingCount = 0
-            s = "SELECT photoid FROM photos_1_copy WHERE flag = 1  limit 0,1000000"
+            s = "SELECT photoid FROM " + self.tableName +" WHERE flag = 1  limit 0,1000000"
             self.cur.execute(s)
             for uid in self.cur.fetchall():
                 self.readingQueue.put(uid[0])  # 返回的是一个元组，取第一个
                 self.readingCount += 1
             self.conn.commit()
             if self.readingCount > 0:
-                print "Had Read %d photoid" % self.readingCount
+                self.logger.info("Had Read %d photoid" % self.readingCount)
             else:
-                raise DBEmptyException("DB has no photoid")
+                raise DBEmptyException("DB has no photoid!")
         except MySQLdb.Error as e:
-            print e
+            self.logger.error(e)
 
     def run(self):
+        self.logger.info("Reading Thread Has been started")
         try:
             self._running()
         except Exception as e:
             print e
+            self.logger.error(e)
             raise ReadingThreadCrashExcetpion("Error: Reading Thread Has Been Crashed!")
 
     def _running(self):
@@ -115,9 +128,11 @@ class ReadingThread(Thread):
             try:
                 while self.readingQueue.qsize() >= self.readingBound or self.readingBound == -1:
                     sleep(10)
+                self.dbLock.acquire()
                 self._readDB()
+                self.dbLock.release()
             except DBEmptyException as e:
-                logging.warn(e.msg)
+                self.logger.error(e.msg)
                 self.readingBound = -1
 
 

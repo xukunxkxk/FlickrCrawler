@@ -5,15 +5,20 @@ from Queue import Queue
 from threading import Lock
 from time import sleep
 import random
-
+import logging
+import logging.config
 import os
 
+
 class MyApp:
-    filePath = os.path.join(os.path.dirname(__file__) + r'/../res/myApp')
     APIKYELIMIT = 3600
     APITIMING = 3600
 
     def __init__(self):
+        self.filePath = os.path.join(os.path.dirname(__file__) + r'\..\res\myApp')
+        logFilepath = os.path.join(os.path.dirname(__file__), "../res/logging.conf")
+        logging.config.fileConfig(logFilepath)
+        self.logger = logging.getLogger("log")
         self.api_key = list()  # api_key
         self.secret = list()  # secret
         self.accessToken = list()  # accessToken
@@ -55,8 +60,8 @@ class MyApp:
                 self.time.append(0)
         except IOError as e:
             print e
-        print 'App Initialized Successfully'
-        print "%d App" % self.size
+        self.logger.info('App Initialized Successfully')
+        self.logger.info("%d App" % self.size)
 
     # 返回App
     def getApp(self):

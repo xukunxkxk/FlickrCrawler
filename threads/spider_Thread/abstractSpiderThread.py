@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 from threading import Thread
 from lib.flickrApi.api import *
-
-
-
+import logging
+import logging.config
+import os
 from time import sleep
 from exception.ipLimitedException import IpLimitedExcetpion
 from lib.flickrApi.statCheck import StatCheck
@@ -16,6 +16,9 @@ class AbstractSpiderThread(Thread):
         self.entityQueue = entityQueue
         self.taskAllocation = taskAllocation
         self.stat = True
+        logFilePath = os.path.join(os.path.dirname(__file__), r"..\..\res\logging.conf")
+        logging.config.fileConfig(logFilePath)
+        self.logger = logging.getLogger("log")
 
     def run(self):
         while True:
@@ -23,6 +26,7 @@ class AbstractSpiderThread(Thread):
             #检测网站是否封ip
             self._statCheck()
             self._spiderWork()
+            # sleep(1)
 
     def _setSpider(self):
         #未对taskAllocation变量加锁
@@ -46,7 +50,7 @@ class AbstractSpiderThread(Thread):
             if entity != None:
                 self.entityQueue.put(entity)
         except IpLimitedExcetpion as e:
-            print e.msg
+            self.logger.warning(e.msg)
             self.stat = False
 
 
