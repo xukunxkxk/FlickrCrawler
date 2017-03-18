@@ -31,12 +31,9 @@ class ReadingThread(Thread):
     def setTableName(self, tableName):
         self.tableName = tableName
 
-    def setDBLock(self, lock):
-        self.dbLock = lock
-
     def setApi(self, api):
         self.api = api
-    
+
     def setReadingQueue(self, readingQueue):
         self.readingQueue = readingQueue
 
@@ -101,12 +98,18 @@ class ReadingThread(Thread):
     def _readPhotoId(self):
         try:
             self.readingCount = 0
-            s = "SELECT photoid FROM " + self.tableName +" WHERE flag = 1  limit 0,1000000"
+            s = "select photoid from " + self.tableName +" where flag = 1 limit 10000"
             self.cur.execute(s)
-            for uid in self.cur.fetchall():
-                self.readingQueue.put(uid[0])  # 返回的是一个元组，取第一个
+            tempList = []
+            for photoid in self.cur.fetchall():
+                tempList.append(photoid[0]) # 返回的是一个元组，取第一个
                 self.readingCount += 1
             self.conn.commit()
+            writingUrl = "update " + self.tableName + " set flag = 2 where flag = 1 limit 10000"
+            self.cur.execute(writingUrl)
+            self.conn.commit()
+            for photoid in tempList:
+                self.readingQueue.put(photoid)
             if self.readingCount > 0:
                 self.logger.info("Had Read %d photoid" % self.readingCount)
             else:
@@ -116,6 +119,7 @@ class ReadingThread(Thread):
 
     def run(self):
         self.logger.info("Reading Thread Has been started")
+        self._cleanFailureFlag()
         try:
             self._running()
         except Exception as e:
@@ -128,12 +132,45 @@ class ReadingThread(Thread):
             try:
                 while self.readingQueue.qsize() >= self.readingBound or self.readingBound == -1:
                     sleep(10)
-                self.dbLock.acquire()
                 self._readDB()
-                self.dbLock.release()
             except DBEmptyException as e:
                 self.logger.error(e.msg)
                 self.readingBound = -1
+
+    def _cleanFailureFlag(self):
+        if self.api == self.APILIST[4]:
+            logFilePath = os.path.join(os.path.dirname(__file__), r"../../res/notExitId.log")
+            notExitPhotoIdLog = open(logFilePath, "r")
+            notExitPhotoIdList = []
+            for line in notExitPhotoIdLog.readlines():
+                photoid = line.strip("\n")
+                notExitPhotoIdList.append((photoid,))
+            sql = "update " + self.tableName + " set flag = 3 where photoid=%s"
+            try:
+                self.cur.executemany(sql, notExitPhotoIdList)
+                self.conn.commit()
+                self.logger.info("None exists Url Has Been Coped")
+            except MySQLdb.Error as e:
+                self.logger.error(e)
+            notExitPhotoIdLog = open(logFilePath, "w")
+            notExitPhotoIdLog.write("")
+
+
+            sql = "update " + self.tableName + " set flag = 1 where flag = 2 and downloadurl is null"
+            try:
+                self.cur.execute(sql)
+                self.conn.commit()
+                self.logger.info("Failure Download Url Has Been Rewind")
+            except MySQLdb.Error as e:
+                self.logger.error(e)
+
+            sql = "update " + self.tableName + " set flag = 0 where flag = 2 "
+            try:
+                self.cur.execute(sql)
+                self.conn.commit()
+                self.logger.info("Success Download Url Has Been Update")
+            except MySQLdb.Error as e:
+                self.logger.error(e)
 
 
     def closeConn(self):

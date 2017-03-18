@@ -9,7 +9,7 @@ if __name__ == '__main__':
     import os
     logfilepath = os.path.join(os.path.dirname('__file_'), "../res/logging.conf")
     logging.config.fileConfig(logfilepath)
-    logger = logging.getLogger("log")
+    logger = logging.getLogger("apilogHandler")
 
     logger.debug('This is debug message')
     logger.info('This is info message')

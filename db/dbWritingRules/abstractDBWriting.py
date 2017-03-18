@@ -17,9 +17,6 @@ class AbstractDBWriting(object):
         logging.config.fileConfig(logFilePath)
         self.logger = logging.getLogger("log")
 
-    def setDBLock(self, lock):
-        self.dbLock = lock
-
     def setConnection(self, conn, cur):
         self._setConn(conn)
         self._setCur(cur)
@@ -42,7 +39,6 @@ class AbstractDBWriting(object):
             self._updateEntityCoping(entity)
             valuesList.append(self.values)
         try:
-            self.dbLock.acquire()
             self.cur.executemany(self.sql, valuesList)
         #过长
         except MySQLdb.OperationalError as e:
@@ -52,12 +48,10 @@ class AbstractDBWriting(object):
             for entity in entityList:
                 self.update(entity)
             self.conn.commit()
-            self.dbLock.release()
         else:
             self.conn.commit()
-            self.dbLock.release()
         self.writingCount += len(entityList)
-        if self.writingCount % 1000 == 0:
+        if self.writingCount % 100 == 0:
             self.logger.info("Has Complete %s " % self.writingCount)
 
     def _updateEntityCoping(self, entity):
@@ -74,10 +68,10 @@ class AbstractDBWriting(object):
         for field in self.fieldName:
             sql += field + "=%s"
             sql += ", "
-        sql += self.flag + "=%s " % self.flagValue
-        sql += "where " + self.task + "=%s"
+        sql = sql.strip(", ")
+        sql += " where " + self.task + "=%s"
         self.sql = sql
-    
+
     
     def insert(self, entity):
         self._insertEntityCoping(entity)
@@ -100,7 +94,7 @@ class AbstractDBWriting(object):
         else:
             self.conn.commit()
         self.writingCount += len(entityList)
-        if self.writingCount % 1000 == 0:
+        if self.writingCount % 10 == 0:
             self.logger.info("Has Complete %s " % self.writingCount)
 
     def _insertEntityCoping(self, entity):

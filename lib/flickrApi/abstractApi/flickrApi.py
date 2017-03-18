@@ -21,7 +21,7 @@ class AbstractFlickrApi(object):
         self.apiName = str(self.__class__).split(".")[1][:-2]
         logFilePath = os.path.join(os.path.dirname(__file__), "../../../res/logging.conf")
         logging.config.fileConfig(logFilePath)
-        self.logger = logging.getLogger("log")
+        self.logger = logging.getLogger("apiLog")
 
     def setApp(self, app):
         self.app = app
@@ -39,7 +39,6 @@ class AbstractFlickrApi(object):
             self._statCheck()
         #爬取出现异常，分析并处理
         except (HTTPError, IOError) as errorMsg:
-            logging.error(str(errorMsg) + self.taskId)
             self._exceptionCheck(errorMsg)
             return None
 
@@ -86,8 +85,10 @@ class AbstractFlickrApi(object):
         try:
             self.stat = str(self.request.getAttrsValue('rsp', 'stat'))
             if self.stat == "fail":
-                self.stat = True
-                self.exits = False
+                if str(self.request.getAttrsValue('err', 'code')) == "1":
+                    self.stat = True
+                    self.exits = False
+                    self.logger.error(self.taskId)
             elif self.stat == "ok":
                 self.stat = True
         except AttributeError:
@@ -110,5 +111,4 @@ class AbstractFlickrApi(object):
             return True
 
 if __name__ == '__main__':
-    a = AbstractFlickrApi()
-    a.setTaskId("1111")
+    pass

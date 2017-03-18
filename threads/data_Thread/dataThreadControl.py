@@ -45,12 +45,10 @@ class DataThreadControl(Thread):
         self.readingThread.setApi(self.api)
         self.readingThread.setTableName(self.tableName)
         self.readingThread.setReadingQueue(self.readingQueue)
-        self.readingThread.setDBLock(self.dbLock)
-    
+
     def writingThreadInit(self):
         self._writingConnClose()
         self.writingThread = WritingThread()
-        self.writingThread.setDBLock(self.dbLock)
         self.writingThread.setApi(self.api)
         self.writingThread.setTableName(self.tableName)
         self.writingThread.setWritingQueue(self.writingQueue)

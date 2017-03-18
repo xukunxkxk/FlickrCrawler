@@ -35,8 +35,6 @@ class WritingThread(Thread):
             self.logger.error(e)
             raise WritingThreadCrashExcetpion("Error: Writing Thread Has Been Crashed!")
 
-    def setDBLock(self, lock):
-        self.dbLock = lock
 
     def setTableName(self, tableName):
         self.writingDB.setDBTable(tableName)
@@ -45,10 +43,9 @@ class WritingThread(Thread):
         self.api = api
         className = api+ "Writing"+"()"
         self.writingDB = eval(className)
-        self.writingDB.setDBLock(self.dbLock)
         if self.api == self.APILIST[0] or self.api == self.APILIST[2]:
             self.update = False
-        self.writingDB.setFlag(flag="flag", flagValue=0)
+        # self.writingDB.setFlag(flag="flag", flagValue=0)
 
     def setWritingQueue(self, writingQueue):
         self.writingQueue = writingQueue

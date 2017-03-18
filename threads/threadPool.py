@@ -12,7 +12,7 @@ import logging.config
 import os
 
 class ThreadPool(Thread):
-    POOLSIZE = 160
+    POOLSIZE = 60
     APILIST = ["UserFollowers", "UserInformation", "UserPhotos", "PhotoInformation", "PhotoUrl"]
     def __init__(self, tableName):
         super(ThreadPool, self).__init__()
@@ -88,8 +88,8 @@ class ThreadPool(Thread):
 class DataQueue:
     def __init__(self):
         self.readingQueue = Queue()
-        self.writingQueue = Queue(maxsize=1000)
-        self.entityQueue = Queue(maxsize=1000)
+        self.writingQueue = Queue(maxsize=200)
+        self.entityQueue = Queue(maxsize=200)
 
     def getReadingQueue(self):
         return self.readingQueue
