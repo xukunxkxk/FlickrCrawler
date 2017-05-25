@@ -3,10 +3,10 @@
 # from urllib import urlopen
 from urllib2 import HTTPError, urlopen
 from bs4 import BeautifulSoup
-from entity.flickrEntity import UserFollowersEntity
-from tools.myApp import MyApp
+from entity.flickr_entity import UserFollowersEntity
+from tools.my_app import MyApp
 
-from lib.flickrApi.abstractApi.flickrUserApi import FlickrUserApi
+from lib.flickr_api.abstract_api.flickr_user_api import FlickrUserApi
 
 class UserFollower(FlickrUserApi):
     def __init__(self, app, uid):

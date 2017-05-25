@@ -1,13 +1,13 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
 from threading import Thread
-from lib.flickrApi.api import *
+from lib.flickr_api.api import *
 import logging
 import logging.config
 import os
 from time import sleep
-from exception.ipLimitedException import IpLimitedExcetpion
-from lib.flickrApi.statCheck import StatCheck
+from exception.ip_limited_exception import IpLimitedExcetpion
+from lib.flickr_api.stat_check import StatCheck
 
 class AbstractSpiderThread(Thread):
     def __init__(self, app, taskAllocation, entityQueue):

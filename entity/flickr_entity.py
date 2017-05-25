@@ -1,7 +1,7 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
-from entity.abstractEntity.abstractUserEntity import AbstractUserEntity
-from entity.abstractEntity.abstractPhotoEntity import AbstractPhotoEntity
+from entity.abstract_entity.abstract_user_entity import AbstractUserEntity
+from entity.abstract_entity.abstract_photo_entity import AbstractPhotoEntity
 
 
 class PhotoInformationEntity(AbstractPhotoEntity):

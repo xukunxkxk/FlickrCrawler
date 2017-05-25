@@ -1,7 +1,7 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
-from spiderThread import *
-from tools.myApp import MyApp
+from spider_thread import *
+from tools.my_app import MyApp
 
 class TaskAllocation:
     APILIST = ["UserFollowers", "UserInformation", "UserPhotos", "PhotoInformation", "PhotoUrl"]

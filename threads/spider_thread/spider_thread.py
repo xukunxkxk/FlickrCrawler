@@ -1,6 +1,6 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
-from abstractSpiderThread import AbstractSpiderThread
+from abstract_spider_thread import AbstractSpiderThread
 
 
 class UserFollowerThread(AbstractSpiderThread):
@@ -27,7 +27,7 @@ class PhotoUrlThread(AbstractSpiderThread):
 if __name__ == '__main__':
     APILIST = ["UserFollowers", "UserInformation", "UserPhotos", "PhotoInformation", "PhotoUrl"]
     from Queue import Queue
-    from taskAllocation import TaskAllocation
+    from task_allocation import TaskAllocation
     readQueue = Queue()
     entityQueue = Queue()
     readQueue.put("10001104@N00")

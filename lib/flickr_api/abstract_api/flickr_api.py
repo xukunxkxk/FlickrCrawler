@@ -1,9 +1,9 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
 from urllib2 import HTTPError
-from tools.myRequest import Requests
-from exception.ipLimitedException import IpLimitedExcetpion
-from entity.flickrEntity import *
+from tools.my_request import Requests
+from exception.ip_limited_exception import IpLimitedExcetpion
+from entity.flickr_entity import *
 import logging
 import logging.config
 import os

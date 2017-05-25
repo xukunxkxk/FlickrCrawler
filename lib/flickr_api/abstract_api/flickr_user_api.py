@@ -1,6 +1,6 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
-from flickrApi import AbstractFlickrApi
+from flickr_api import AbstractFlickrApi
 
 class FlickrUserApi(AbstractFlickrApi):
     def __init__(self):

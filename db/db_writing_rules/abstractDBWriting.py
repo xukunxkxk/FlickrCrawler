@@ -1,7 +1,7 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
 import MySQLdb
-from db.dbConnect import dbConnect
+from db.db_connect import dbConnect
 import logging
 import logging.config
 import os
@@ -131,8 +131,8 @@ class AbstractDBWriting(object):
         self.cur.close()
 
 if __name__ == '__main__':
-    from entity.flickrEntity import *
-    from db.dbConnect import dbConnect
+    from entity.flickr_entity import *
+    from db.db_connect import dbConnect
 
     # infoEntity1 = PhotoInformationEntity("1")
     # infoEntity1.setValue(views=1, title=2, comments=5)

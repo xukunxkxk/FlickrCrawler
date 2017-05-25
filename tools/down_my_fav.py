@@ -1,6 +1,6 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
-from tools import myRequest
+from tools import my_request
 from urllib import urlretrieve
 from urllib2 import HTTPError
 from urllib2 import urlopen
@@ -36,7 +36,7 @@ from urllib2 import urlopen
 #             print e
 
 if __name__ == '__main__':
-    request = myRequest.Requests()
+    request = my_request.Requests()
     photourl = "https://api.flickr.com/services/rest/?&method=flickr.favorites.getPublicList&api_key=0b20e726fd5a04cb2be8a7177f20deac&user_id=143531823@N07"
     request.get(photourl)
     originList = set()

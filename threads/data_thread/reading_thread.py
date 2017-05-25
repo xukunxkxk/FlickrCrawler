@@ -1,10 +1,10 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
 from threading import Thread
-from db.dbConnect import dbConnect
+from db.db_connect import dbConnect
 from time import sleep
-from exception.dbException import DBEmptyException
-from exception.threadCrashException import ReadingThreadCrashExcetpion
+from exception.db_exception import DBEmptyException
+from exception.thread_crash_exception import ReadingThreadCrashExcetpion
 import logging
 import logging.config
 import os

@@ -3,7 +3,7 @@
 from urllib import urlencode, urlretrieve
 from urllib2 import urlopen
 from bs4 import BeautifulSoup
-from myGzip import gzipDecode
+from my_gzip import gzipDecode
 import urllib2, cookielib
 import sys
 import re

@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 
 from threading import Thread
-from data_Thread.dataThreadControl import DataThreadControl
-from spider_Thread.taskAllocation import TaskAllocation
+from data_thread.data_thread_control import DataThreadControl
+from spider_thread.task_allocation import TaskAllocation
 from Queue import Queue
-from lib.flickrApi.statCheck import StatCheck
+from lib.flickr_api.stat_check import StatCheck
 from time import sleep
 import logging
 import logging.config

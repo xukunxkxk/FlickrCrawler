@@ -1,8 +1,8 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
 import sys
-from tools.timeStamp import timestampConvertToTime
-from lib.flickrApi.abstractApi.flickrPhotoApi import FlickrPhotoApi
+from tools.timestamp import timestampConvertToTime
+from lib.flickr_api.abstract_api.flickr_photo_api import FlickrPhotoApi
 
 class PhotoInformation(FlickrPhotoApi):
     def __init__(self):
@@ -89,7 +89,7 @@ class PhotoInformation(FlickrPhotoApi):
 
 
 if __name__ == '__main__':
-    from tools.myApp import MyApp
+    from tools.my_app import MyApp
     app = MyApp()
     photoInfo = PhotoInformation()
     photoInfo.setApp(app)

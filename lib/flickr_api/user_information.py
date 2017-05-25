@@ -1,7 +1,7 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
 import sys
-from lib.flickrApi.abstractApi.flickrUserApi import FlickrUserApi
+from lib.flickr_api.abstract_api.flickr_user_api import FlickrUserApi
 
 class UserInformation(FlickrUserApi):
     def __init__(self):
@@ -89,7 +89,7 @@ class UserInformation(FlickrUserApi):
 
 
 if __name__ == '__main__':
-    from tools.myApp import MyApp
+    from tools.my_app import MyApp
     app = MyApp()
     userInfo = UserInformation()
     userInfo.setApp(app)

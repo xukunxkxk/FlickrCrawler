@@ -1,8 +1,8 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
 from threading import Thread,Lock
-from readingThread import ReadingThread
-from writingThread import WritingThread
+from reading_thread import ReadingThread
+from writing_thread import WritingThread
 
 class DataThreadControl(Thread):
     APILIST = ["UserFollowers", "UserInformation", "UserPhotos", "PhotoInformation", "PhotoUrl"]
