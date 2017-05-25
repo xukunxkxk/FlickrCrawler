@@ -3,7 +3,7 @@
 from threading import Thread
 from db.db_connect import dbConnect
 from time import sleep
-from db.db_writing_rules.dbWritingRules import *
+from db.db_writing_rules.db_writing_rules import *
 from exception.thread_crash_exception import WritingThreadCrashExcetpion
 import logging
 import logging.config

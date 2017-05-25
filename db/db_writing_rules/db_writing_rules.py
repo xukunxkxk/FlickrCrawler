@@ -1,7 +1,7 @@
 # __author__=xk
 # -*- coding: utf-8 -*-
 
-from abstractDBWriting import AbstractDBWriting
+from abstract_DB_writing import AbstractDBWriting
 
 class PhotoInformationWriting(AbstractDBWriting):
     def __init__(self):

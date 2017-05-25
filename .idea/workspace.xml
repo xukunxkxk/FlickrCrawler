@@ -6,7 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45125a5d-0f61-40fa-bed4-7861b0fd50da" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/db/db_writing_rules/abstractDBWriting.py" afterPath="$PROJECT_DIR$/db/db_writing_rules/abstract_DB_writing.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/db/db_writing_rules/dbWritingRules.py" afterPath="$PROJECT_DIR$/db/db_writing_rules/db_writing_rules.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/threads/data_thread/writing_thread.py" afterPath="$PROJECT_DIR$/threads/data_thread/writing_thread.py" />
     </list>
     <ignored path="Flickr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -241,6 +244,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlickrCrawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlickrCrawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlickrCrawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlickrCrawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="abstract_entity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -743,7 +778,14 @@
       <option name="project" value="LOCAL" />
       <updated>1495718259435</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="reconstruct">
+      <created>1495718399390</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1495718399390</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView">
@@ -918,7 +960,7 @@
     <entry file="file://$PROJECT_DIR$/../Coding/thread1/apiCallThread.py" />
     <entry file="file://$PROJECT_DIR$/../Coding/thread1/dataThread.py" />
     <entry file="file://$PROJECT_DIR$/../Coding/thread1/apiThread/photoInformationThread.py" />
-    <entry file="file://$PROJECT_DIR$/db/db_writing_rules/dbWritingRules.py">
+    <entry file="file://$PROJECT_DIR$/db/db_writing_rules/db_writing_rules.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
@@ -1033,7 +1075,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/db_writing_rules/abstractDBWriting.py">
+    <entry file="file://$PROJECT_DIR$/db/db_writing_rules/abstract_DB_writing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1491">
           <caret line="75" column="29" lean-forward="false" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
